@@ -1,0 +1,1 @@
+In this section you will place documents i.e., Design Document, diagrams, architecture etc. Also note that blogposts can be placed here also.

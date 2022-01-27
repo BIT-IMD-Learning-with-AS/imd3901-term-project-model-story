@@ -1,0 +1,47 @@
+/* just some css to make an overlay cover all A-Frame */
+
+#user-gesture-overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 999999;
+    cursor: pointer;
+  }
+  
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  #user-gesture-button {
+    display: none;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(235, 79, 38);
+    color: white;
+    padding: 14px 20px;
+    margin: 0px 10px 8px 10px;
+    border: 5px solid #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  #user-gesture-button:hover {
+    background-color: rgb(246, 194, 67);
+  }
+  
+  #loading-animation {
+    display: block;
+    width: 80%;
+    height: 80%;
+  }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello, IMD3901 Term Project!</title>
+        <meta name="description" content="HHello, IMD3901 Term Project!">
+        <script src="js/aframe.min.js"></script>
+
+        <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
+        <link rel="stylesheet" href="css/user-gesture.css">
+        <script>
+            AFRAME.registerComponent('start-experience', {
+                init: function () {
+                    //we can't play sound on some browsers until we have some user interaction
+                    //this means we should only start playing ambient music after this button is clicked
+                    console.log('scene loaded');
+                    document.querySelector('#loading-animation').style.display = 'none';
+                    document.querySelector('#user-gesture-button').style.display = 'block';
+                }
+            });
+
+            //function called from user-gesture click
+            const startExperience = function () {
+                //hide user-gesture overlay
+                document.querySelector('#user-gesture-overlay').style.display = 'none';
+
+                //start all ambient music
+                const ambientSounds = document.querySelectorAll('.ambient-music');
+                ambientSounds.forEach(function (soundEntity) {
+                    soundEntity.components.sound.playSound();
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <!-- by having a 2D "user gesture" we can allow sounds to play and the like. We will make it an overlay so nothing can be clicked before the user gesture ... -->
+        <!-- https://developers.google.com/web/updates/2017/09/autoplay-policy-changes (fun memes on webpage;) -->
+        <div id="user-gesture-overlay">
+            <div class="center">
+                <button id="user-gesture-button" onclick="startExperience();">enter experience</button>
+                <!-- loading gif from: https://www.behance.net/gallery/31234507/Open-source-Loading-GIF-Icons-Vol-1 -->
+                <img id="loading-animation"
+                    src="https://cdn.glitch.com/4d85200f-900f-4f4a-b950-82c4af80c1fb%2Floader.gif?v=1611262527887">
+            </div>
+        </div>
+
+        <a-scene start-experience>
+            <a-entity id="box" position="0 2 -3" geometry="primitive:box; width:3.0; height:4.0; depth:1.0"
+                material="color:#FF0000;"></a-entity>
+
+            <a-entity id="plane" position="0 0 0" rotation="-90 0 0" scale="10 10 10"
+                geometry="primitive:plane; width:1.0; height:1.0;" material="color:rgb(0, 255, 0);"></a-entity>
+        </a-scene>
+    </body>
+</html>
