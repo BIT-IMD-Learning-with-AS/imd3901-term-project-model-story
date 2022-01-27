@@ -11,8 +11,8 @@ including instructions for running your project.
 
 ## Team Members and Roles ##
 
-- _Team Member 1_
-  - Role 
+- _Erin Waldram_
+  - Project Manager
   - Link to portfolio
 - _Team Member 2_
   - Role 
