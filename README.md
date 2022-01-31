@@ -19,12 +19,12 @@ Instruction incoming
   - Lead Coder
   - Lead Game Designer
   - Link to portfolio
-  - _Chris Hearty_
+- _Chris Hearty_
   - Secondary Coder
   - Secondary 3D Modeler
   - Floater 
   - Link to portfolio
-  - _Chloe  Versace_
+- _Chloe  Versace_
   - Lead 3D Modeler
   - Secondary UI/UX Designer 
   - Link to portfolio
