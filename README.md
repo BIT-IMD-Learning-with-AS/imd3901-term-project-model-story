@@ -14,7 +14,7 @@ Instruction incoming
   - Project Manager
   - Secondary Coder
   - Lead Sound Design
-  PORTFOLIO: www.pagesoferin.com
+  - PORTFOLIO: www.pagesoferin.com
 - _Gavin Isaac_
   - Lead Coder
   - Lead Game Designer
