@@ -5,9 +5,9 @@
  - _Number of Hours: ~4_
 
  ### Overview ###
-    Welcome to my first blog post as a member and project manager of Model&Story! \
-    Model&Story is a team of 5 Carleton University students, with varying skill sets.The \team consists of myself, Chloe V., Chris H., Gavin I., and Zoe P. \
-    Our first official week working together had us selecting one of three major projects to \complete throughout the duration of this semester, along with setting up the GitHub \ repositories, Google Drive folders, Trello boards, and any other forgotten \administrative task necessary for our team's beginnings. \Aditionally, team roles and general aesthetic has been chosen, \and future meetings have been planned to fully flesh out our chosen topic.
+    Welcome to my first blog post as a member and project manager of Model&Story!
+    Model&Story is a team of 5 Carleton University students, with varying skill sets.The team consists of myself, Chloe V., Chris H., Gavin I., and Zoe P.
+    Our first official week working together had us selecting one of three major projects to complete throughout the duration of this semester, along with setting up the GitHub repositories, Google Drive folders, <br>Trello boards, and any other forgotten administrative task necessary for our team's beginnings. Aditionally, team roles and general aesthetic has been chosen, and future meetings have been planned to fully flesh out our chosen topic.
 
  ### Challenges ###
     Our challenges this week primarily involved around how new and budding our project is. Without many prior classes discussing our overall goals and deliverables, as well as a proper application design yet to be made, some decisions proved harder to make than others. We did, however, manage to get on our feet rather quickly.
