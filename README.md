@@ -23,7 +23,7 @@ Instruction incoming
   - Secondary Coder
   - Secondary 3D Modeler
   - Floater 
-  - Link to portfolio
+  - PORTFOLIO BLOG: http://chris.heartyhome.ca/modelStory.html
 - _Chloe  Versace_
   - Lead 3D Modeler
   - Secondary UI/UX Designer 
