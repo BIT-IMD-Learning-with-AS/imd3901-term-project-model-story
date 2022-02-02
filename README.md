@@ -18,7 +18,7 @@ Instruction incoming
 - _Gavin Isaac_
   - Lead Coder
   - Lead Game Designer
-  - Link to portfolio
+  - DEVELOPMENT BLOG: https://gavinisaacds3.blogspot.com/
 - _Chris Hearty_
   - Secondary Coder
   - Secondary 3D Modeler
