@@ -18,5 +18,6 @@
   "homepage": "https://github.com/BIT-IMD-Learning-with-AS/IMD3901-term-project#readme",
   "dependencies": {
     "express": "^4.17.2"
-  }
+  },
+  "devDependencies": {}
 }

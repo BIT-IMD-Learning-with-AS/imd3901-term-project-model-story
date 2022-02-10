@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hello, IMD3901 Term Project!</title>
-        <meta name="description" content="HHello, IMD3901 Term Project!">
+        <title>Hello, Model&Story</title>
+        <meta name="description" content="Hello, Model&Story!">
         <script src="js/aframe.min.js"></script>
+        <script src="js/aframe-environment-component.min.js"></script>
+        <script src = "js/time-effect.js"></script>
 
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
         <link rel="stylesheet" href="css/user-gesture.css">
@@ -36,7 +38,7 @@
         <!-- https://developers.google.com/web/updates/2017/09/autoplay-policy-changes (fun memes on webpage;) -->
         <div id="user-gesture-overlay">
             <div class="center">
-                <button id="user-gesture-button" onclick="startExperience();">enter experience</button>
+                <button id="user-gesture-button" onclick="startExperience();">Enter Experience</button>
                 <!-- loading gif from: https://www.behance.net/gallery/31234507/Open-source-Loading-GIF-Icons-Vol-1 -->
                 <img id="loading-animation"
                     src="https://cdn.glitch.com/4d85200f-900f-4f4a-b950-82c4af80c1fb%2Floader.gif?v=1611262527887">
@@ -44,11 +46,28 @@
         </div>
 
         <a-scene start-experience>
-            <a-entity id="box" position="0 2 -3" geometry="primitive:box; width:3.0; height:4.0; depth:1.0"
-                material="color:#FF0000;"></a-entity>
 
-            <a-entity id="plane" position="0 0 0" rotation="-90 0 0" scale="10 10 10"
-                geometry="primitive:plane; width:1.0; height:1.0;" material="color:rgb(0, 255, 0);"></a-entity>
+            <a-entity camera wasd-controls look-controls position = "0 12.6 0"> <!--spawning us high in an apartment-->
+                <a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>
+                <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
+            </a-entity>
+
+
+            <!--<a-entity id="box" position="0 2 -3" geometry="primitive:box; width:3.0; height:4.0; depth:1.0"
+                material="color:#FF0000;"></a-entity> -->
+
+            <a-entity id="plane" position="0 12 0" rotation="-90 0 0" scale="20 20 20"
+                geometry="primitive:plane; width:1.0; height:1.0;" material="color:rgb(211, 211, 211);"></a-entity>
+
+            <!--Making a clock to toggle Day/Night-->
+            <a-entity id="clock" class = "button interactive" position="5 13 5" geometry="primitive:cylinder; radius:1.0; height:0.5;" rotation ="0, 0, 90"
+                material="color:white;"
+                time-effect
+                animation__mouseenter="property:material.color; type:color; to:rgb(128, 128, 128); startEvents:mouseenter; dur:200;"
+                animation__mouseleave="property:material.color; type:color; to:rgb(255, 255, 255); startEvents:mouseleave; dur:200;"
+                animation__mouseclick="startEvents:click; dur:300;"></a-entity>
+
+            <a-entity class = "back-environment" environment="preset:default;"></a-entity>
         </a-scene>
     </body>
 </html>
