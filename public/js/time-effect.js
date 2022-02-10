@@ -9,19 +9,20 @@ AFRAME.registerComponent('time-effect', {
         //also,, it is only called once the entire A-Frame scene is built.
 
         const CONTEXT_AF = this; //this refers to 'this' component, because 'this' in an event listener refers to something else.
-        CONTEXT_AF.bg = document.querySelector('#back-environment');
-        CONTEXT_AF.isDay = true;
+        const bg = document.getElementById('bg')
+        //CONTEXT_AF.bg = document.querySelector('#back-environment');
+        var isDay = true;
         
         CONTEXT_AF.el.addEventListener('click', function() {
-            if (CONTEXT_AF.isDay=== true) {
+            if (isDay === true) {
                 //stop spinning
-                CONTEXT_AF.bg.setAttribute('environment', 'preset:starry;');
-                CONTEXT_AF.isDay = false;
+                bg.setAttribute('environment', 'preset:starry;');
+                isDay = false;
             }
             else {
                 //start spinning
-                CONTEXT_AF.bg.setAttribute('environment', 'preset:default;');
-                CONTEXT_AF.isDay = true;
+                bg.setAttribute('environment', 'preset:forest;');
+                isDay = true;
             }
         });
    

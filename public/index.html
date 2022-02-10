@@ -9,6 +9,7 @@
 
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
         <link rel="stylesheet" href="css/user-gesture.css">
+        
         <script>
             AFRAME.registerComponent('start-experience', {
                 init: function () {
@@ -32,7 +33,10 @@
                 });
             }
         </script>
+
     </head>
+
+
     <body>
         <!-- by having a 2D "user gesture" we can allow sounds to play and the like. We will make it an overlay so nothing can be clicked before the user gesture ... -->
         <!-- https://developers.google.com/web/updates/2017/09/autoplay-policy-changes (fun memes on webpage;) -->
@@ -67,7 +71,7 @@
                 animation__mouseleave="property:material.color; type:color; to:rgb(255, 255, 255); startEvents:mouseleave; dur:200;"
                 animation__mouseclick="startEvents:click; dur:300;"></a-entity>
 
-            <a-entity class = "back-environment" environment="preset:default;"></a-entity>
+            <a-entity class = "back-environment" id = "bg" environment="preset:forest;"></a-entity>
         </a-scene>
     </body>
 </html>
