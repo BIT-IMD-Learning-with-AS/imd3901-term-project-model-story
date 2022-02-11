@@ -51,6 +51,7 @@
 
         <a-scene start-experience>
 
+           
             <a-entity camera wasd-controls look-controls position = "0 13.5 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
@@ -71,14 +72,28 @@
                 geometry="primitive: box; width:1.0; height:6.0; depth:20.0;" material="color:rgb(200, 200, 200);"></a-entity>
                 <a-entity id="wall" position="0 13 10" rotation="0 0 0" scale="1 1 1"
                 geometry="primitive: box; width:20.0; height:6.0; depth:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
+
                 <a-entity id="wall" position="0 11 -10" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:20.0; height:4.0; depth:1.0;" material="color:rgb(200, 200, 200);"></a-entity>         
+                geometry="primitive: box; width:20.0; height:4.0; depth:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
+                <a-entity id="wall" position="0 16 -10" rotation="0 0 0" scale="1 1 1"
+                geometry="primitive: box; width:20.0; height:3.0; depth:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
+                         
+                <a-entity id="wall" position="3 13 -10" rotation="0 0 0" scaale="1 1 1"
+                geometry="primitive: box; width:5.0; height:6.0; depth: 1;" material="color:rgb(200, 200, 200);"></a-entity>              
+                <a-entity id="wall" position="3 13 7" rotation="0 0 0" scale="1 1 1"
+                geometry="primitive: box; width:0.4; height:6.0; depth:9.0;" material="color:rgb(200, 200, 200);"></a-entity>
+                <a-entity id="wall" position="3 13 -7" rotation="0 0 0" scale="1 1 1"
+                geometry="primitive: box; width:0.4; height:6.0; depth:6.0;" material="color:rgb(200, 200, 200);"></a-entity>
+                <a-entity id="wall" position="7 13 0" rotation="0 0 0" scale="1 1 1"
+                geometry="primitive: box; width:8.0; height:6.0; depth:0.4;" material="color:rgb(200, 200, 200);"></a-entity>
+                <a-entity id="wall" position="7 13 0" rotation="0 0 0" scale="1 1 1"
+                geometry="primitive: box; width:8.0; height:6.0; depth:0.4;" material="color:rgb(200, 200, 200);"></a-entity>
 
 
             </a-entity>
             
             <!--Making a clock to toggle Day/Night-->
-            <a-entity id="clock" class = "button interactive" position="5 13 5" geometry="primitive:cylinder; radius:1.0; height:0.5;" rotation ="0, 0, 90"
+            <a-entity id="clock" class = "button interactive" position="3 14 5" geometry="primitive:cylinder; radius:0.8; height:0.5;" rotation ="0, 0, 90"
                 material="color:white;"
                 time-effect
                 animation__mouseenter="property:material.color; type:color; to:rgb(128, 128, 128); startEvents:mouseenter; dur:200;"
@@ -86,6 +101,8 @@
                 animation__mouseclick="startEvents:click; dur:300;"></a-entity>
 
             <a-entity class = "back-environment" id = "bg" environment="preset:forest;"></a-entity>
+        
+        
         </a-scene>
     </body>
 </html>
