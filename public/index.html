@@ -3,10 +3,12 @@
     <head>
         <title>Hello, Model&Story</title>
         <meta name="description" content="Hello, Model&Story!">
-        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
         <script src="js/aframe.min.js"></script>
         <script src="js/aframe-environment-component.min.js"></script>
         <script src = "js/time-effect.js"></script>
+        <script src = "js/aframe-physics-system.js"></script> <!--Copy and pasted from the source Anthony gave us.-->
+        <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
+        <script src="http://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
 
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
         <link rel="stylesheet" href="css/user-gesture.css">
@@ -50,7 +52,7 @@
             </div>
         </div>
 
-        <a-scene physics="debug:false;" start-experience>
+        <a-scene physics start-experience>
 
            
             <a-entity camera wasd-controls look-controls position = "0 13.5 0"> <!--spawning us high in an apartment-->
@@ -62,8 +64,9 @@
             
             <a-entity id = "apartment" static-body>
                 
-                <a-entity id="floor" position="0 12 0" rotation="-90 0 0" scale="20 20 20"
-                geometry="primitive:plane; width:1.0; height:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
+                <a-entity id="floor" position="0 12.0 0"
+                geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
+                static-body></a-entity>
                 <a-entity id="roof" position="0 16 0" rotation="-270 0 0" scale="20 20 20"
                 geometry="primitive:plane; width:1.0; height:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
 
@@ -94,8 +97,8 @@
             </a-entity>
 
             <!-- Collision Testing and Physics Testing-->
-            <a-box dynamic-body="mass: 50;" color = "#AA0000" position = "-3 14 -4"></a-box>
-            <a-sphere dynamic-body="mass:1" color = "#00AA00" position = "-6 14 -4"></a-sphere>
+            <a-box color = "#AA0000" position = "-3 14 -4"
+            dynamic-body ></a-box>
             
             <!--Making a clock to toggle Day/Night-->
             <a-entity id="clock" class = "button interactive" position="3 14 5" geometry="primitive:cylinder; radius:0.8; height:0.5;" rotation ="0, 0, 90"
