@@ -54,7 +54,18 @@
 
         <a-scene physics start-experience>
 
-           
+            <a-assets>
+                <!--Starting to load in some SFX here-->
+                <audio id="city_amb" src="assets/sound/citySounds.mp3" preload="auto" crossorigin="anonymous"></audio>
+                <audio id = "good1_sfx" src = "assets/sound/goodSound_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+                <audio id="good2_sfx" src = "assets/sound/goodSound_2.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+                <audio id="light1_sfx" src = "assets/sound/lightSwitch_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+            </a-assets>
+
+            <!--Sound coming from the windows test-->
+            <a-entity class = "ambient-music" position="-4 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
+            <a-entity class = "ambient-music" position="10 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
+
             <a-entity camera wasd-controls look-controls position = "0 13.5 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
@@ -106,10 +117,12 @@
             <a-entity id="clock" class = "button interactive" position="3 14 5" geometry="primitive:cylinder; radius:0.8; height:0.5;" rotation ="0, 0, 90"
                 material="color:white;"
                 time-effect
+                sound = "src:#light1_sfx; on:click;"
                 animation__mouseenter="property:material.color; type:color; to:rgb(128, 128, 128); startEvents:mouseenter; dur:200;"
                 animation__mouseleave="property:material.color; type:color; to:rgb(255, 255, 255); startEvents:mouseleave; dur:200;"
-                animation__mouseclick="startEvents:click; dur:300;"></a-entity>
-
+                animation__mouseclick="startEvents:click; dur:300;">
+            </a-entity>
+                
             <a-entity class = "back-environment" id = "bg" environment="preset:forest;"></a-entity>
         
         

@@ -15,12 +15,12 @@ AFRAME.registerComponent('time-effect', {
         
         CONTEXT_AF.el.addEventListener('click', function() {
             if (isDay === true) {
-                //stop spinning
+                //set Night
                 bg.setAttribute('environment', 'preset:starry;');
                 isDay = false;
             }
             else {
-                //start spinning
+                //set Day
                 bg.setAttribute('environment', 'preset:forest;');
                 isDay = true;
             }
