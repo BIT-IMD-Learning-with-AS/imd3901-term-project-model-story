@@ -9,13 +9,6 @@
         <script src = "js/aframe-physics-system.js"></script> <!--Copy and pasted from the source Anthony gave us.-->
         <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
         <script src="http://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
-        <!-- Pickup Code from scrath -->
-        <script src="js/pickup.js"></script>
-        <!-- Component Super-Hands Test-->
-        <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>-->
-        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
-        <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
-
 
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
         <link rel="stylesheet" href="css/user-gesture.css">
@@ -59,16 +52,23 @@
             </div>
         </div>
 
-        <a-scene physics start-experience id="scene">
+        <a-scene physics start-experience>
 
-           
-            <a-entity id="camera" camera wasd-controls look-controls position = "0 13.5 0"> <!--spawning us high in an apartment-->
+            <a-assets>
+                <!--Starting to load in some SFX here-->
+                <audio id="city_amb" src="assets/sound/citySounds.mp3" preload="auto" crossorigin="anonymous"></audio>
+                <audio id = "good1_sfx" src = "assets/sound/goodSound_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+                <audio id="good2_sfx" src = "assets/sound/goodSound_2.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+                <audio id="light1_sfx" src = "assets/sound/lightSwitch_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+            </a-assets>
+
+            <!--Sound coming from the windows test-->
+            <a-entity class = "ambient-music" position="-4 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
+            <a-entity class = "ambient-music" position="10 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
+
+            <a-entity camera wasd-controls look-controls position = "0 13.5 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-
-                <!-- For Super-Hands -->
-                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
-                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
             </a-entity>
 
 
@@ -113,21 +113,16 @@
             <a-box color = "#0000AA" position = "-3 16 -4.5"
             dynamic-body ></a-box>
             
-            <!-- Interactable Boxes Test -->
-            <!-- Pickup -->
-            <a-entity pickup class="interactive" dynamic-body position="0 13 -3" geometry="primitive:box; width:0.5; height:0.6; depth:0.5;" material="color:red"></a-entity>
-            
-            <!-- Super-hands Test >> not working right now-->
-            <a-box dynamic-body hoverable grabbable stretchable draggable dropppable color="blue" position="0 14 -5"></a-box>
-
             <!--Making a clock to toggle Day/Night-->
             <a-entity id="clock" class = "button interactive" position="3 14 5" geometry="primitive:cylinder; radius:0.8; height:0.5;" rotation ="0, 0, 90"
                 material="color:white;"
                 time-effect
+                sound = "src:#light1_sfx; on:click;"
                 animation__mouseenter="property:material.color; type:color; to:rgb(128, 128, 128); startEvents:mouseenter; dur:200;"
                 animation__mouseleave="property:material.color; type:color; to:rgb(255, 255, 255); startEvents:mouseleave; dur:200;"
-                animation__mouseclick="startEvents:click; dur:300;"></a-entity>
-
+                animation__mouseclick="startEvents:click; dur:300;">
+            </a-entity>
+                
             <a-entity class = "back-environment" id = "bg" environment="preset:forest;"></a-entity>
         
         
