@@ -68,6 +68,10 @@
                 <audio id = "good1_sfx" src = "assets/sound/goodSound_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="good2_sfx" src = "assets/sound/goodSound_2.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="light1_sfx" src = "assets/sound/lightSwitch_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+
+                <a-asset-item id="apartment_model" response-type="arraybuffer" src="assets/models/apartment.gltf"></a-asset-item>
+                <a-asset-item id="chair_model" response-type="arraybuffer" src="assets/models/GLTF/chair.glb"></a-asset-item>
+
             </a-assets>
 
             <!--Sound coming from the windows test-->
@@ -80,9 +84,12 @@
             </a-entity>
 
 
-            
-            <a-entity id = "apartment" static-body>
+            <a-entity id="apartment" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
+            <a-entity id="chair" position="0 10 0" scale="12 12 12" gltf-model="#chair_model" shadow static-body></a-entity>
+           <!-- <a-entity id = "apartment" static-body>
+
                 
+                 loading GLTF models to the scene 
                 <a-entity id="floor" position="0 12.0 0"
                 geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
                 static-body></a-entity>
@@ -113,7 +120,7 @@
                 geometry="primitive: box; width:8.0; height:6.0; depth:0.4;" material="color:rgb(200, 200, 200);"></a-entity>
 
 
-            </a-entity>
+            </a-entity>-->
 
             <!-- Collision Testing and Physics Testing-->
             <a-box color = "#AA0000" position = "-3 14 -4"
