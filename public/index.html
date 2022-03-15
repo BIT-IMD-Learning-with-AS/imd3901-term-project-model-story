@@ -71,6 +71,24 @@
 
                 <a-asset-item id="apartment_model" response-type="arraybuffer" src="assets/models/apartment.gltf"></a-asset-item>
 
+
+            <!-- living room -->
+
+            <!-- bedroom -->
+
+            <!-- bathroom -->
+
+            <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
+            <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
+            <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
+            <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
+
+            <!-- kitchen -->
+
+            <!-- other -->
+
+                <!--assets
+
                 <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
                 <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
                 <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
@@ -210,6 +228,7 @@
 
                 <a-asset-item id="washer_model" response-type="arraybuffer" src="assets/models/GLTF/washer.glb"></a-asset-item>
                 <a-asset-item id="wDS_model" response-type="arraybuffer" src="assets/models/GLTF/washerDryerStacked.glb"></a-asset-item>
+                -->
 
             </a-assets>
 
@@ -217,7 +236,7 @@
             <a-entity class = "ambient-music" position="-4 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
             <a-entity class = "ambient-music" position="10 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
 
-            <a-entity id="camera" camera wasd-controls look-controls position = "0 13.5 0"> <!--spawning us high in an apartment-->
+            <a-entity id="camera" camera wasd-controls look-controls position = "-10 20 -10"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
             </a-entity>
@@ -226,8 +245,29 @@
                 <a-entity id="floor" position="0 10.0 0"
                 geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
                 static-body></a-entity>
+
                 <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
-                <a-entity id="chair" position="0 10 0" scale="12 12 12" gltf-model="#chair_model" shadow static-body></a-entity>
+
+            <!-- living room -->
+
+                <!--
+            <a-entity id="chair" position="0 10 0" scale="12 12 12" gltf-model="#chair_model" shadow static-body></a-entity>
+                -->
+
+
+            <!-- bedroom -->
+
+            <!-- bathroom -->
+
+            <a-entity id="shower" position="-8 10 -9" scale="12 13 12" rotation="0 -90 0" gltf-model="#sR_model" shadow static-body></a-entity>
+            <a-entity id="sink" position="-19 10 -16" scale="12 14 12" rotation="0 0 0" gltf-model="#bCD_model" shadow static-body></a-entity>
+            <a-entity id="bathroom_mirror" position="-18.5 18 -21" scale="15 15 13" gltf-model="#bM_model" shadow static-body></a-entity>
+            <a-entity id="toilet" position="-27 10 -13.5" scale="12 16 12" rotation="0 90 0" gltf-model="#toilet_model" shadow static-body></a-entity>
+
+            <!-- kitchen -->
+
+            <!-- other -->
+
             </a-entity>
 
            <!-- <a-entity id = "apartment" static-body>
