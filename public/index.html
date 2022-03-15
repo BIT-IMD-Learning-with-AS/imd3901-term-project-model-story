@@ -74,6 +74,12 @@
 
             <!-- living room -->
 
+            <a-asset-item id="lS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofa.glb"></a-asset-item>
+            <a-asset-item id="tM_model" response-type="arraybuffer" src="assets/models/GLTF/televisionModern.glb"></a-asset-item>
+            <a-asset-item id="tCoffee_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffee.glb"></a-asset-item>
+            <a-asset-item id="lC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChair.glb"></a-asset-item>
+            <a-asset-item id="rugR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRounded.glb"></a-asset-item>
+
             <!-- bedroom -->
 
             <!-- bathroom -->
@@ -236,7 +242,7 @@
             <a-entity class = "ambient-music" position="-4 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
             <a-entity class = "ambient-music" position="10 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
 
-            <a-entity id="camera" camera wasd-controls look-controls position = "-10 20 -10"> <!--spawning us high in an apartment-->
+            <a-entity id="camera" camera wasd-controls look-controls position = "0 20 -10"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
             </a-entity>
@@ -249,6 +255,12 @@
                 <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
 
             <!-- living room -->
+
+            <a-entity id="sofa_chair" position="13 10 -9" scale="11 11 11" rotation = "0 90 0" gltf-model="#lC_model" shadow static-body></a-entity>
+            <a-entity id="sofa" position="14 10 -16" scale="11 11 11" gltf-model="#lS_model" shadow static-body></a-entity>
+            <a-entity id="TV" position="20 13 -4" scale="12 12 12" rotation = "0 180 0" gltf-model="#tM_model" shadow static-body></a-entity>
+            <a-entity id="table_LR" position="21 10 -3.5" scale="11 13 11" rotation = "0 0 0" gltf-model="#tCoffee_model" shadow static-body></a-entity>
+            <a-entity id="rug_LR" position="9 10.5 -6" scale="11 11 11" rotation = "0 0 0" gltf-model="#rugR_model" shadow static-body></a-entity>
 
                 <!--
             <a-entity id="chair" position="0 10 0" scale="12 12 12" gltf-model="#chair_model" shadow static-body></a-entity>
