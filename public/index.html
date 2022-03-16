@@ -12,10 +12,11 @@
         
         <!-- Pickup Code from scrath -->
         <script src="js/pickup.js"></script>
+        <script src="js/placement.js"></script>
         <!-- Component Super-Hands Test-->
-        <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>-->
+        <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
-        <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
+        <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>-->
 
 
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
@@ -131,9 +132,9 @@
             <!-- Interactable Boxes Test -->
             <!-- Pickup -->
             <a-entity pickup class="interactive" dynamic-body position="0 13 -3" geometry="primitive:box; width:0.5; height:0.6; depth:0.5;" material="color:red"></a-entity>
-            
+            <a-entity placement class="interactive" position="6 10.8 0" geometry="primitive:cylinder; radius:0.8; height:0.3;" material="color:black"></a-entity>
             <!-- Super-hands Test >> not working right now-->
-            <a-box dynamic-body hoverable grabbable stretchable draggable dropppable color="blue" position="0 14 -5"></a-box>
+            <!--<a-box dynamic-body hoverable grabbable stretchable draggable dropppable color="blue" position="0 14 -5"></a-box>-->
 
             <!--Making a clock to toggle Day/Night-->
             <a-entity id="clock" class = "button interactive" position="3 14 5" geometry="primitive:cylinder; radius:0.8; height:0.5;" rotation ="0, 0, 90"
