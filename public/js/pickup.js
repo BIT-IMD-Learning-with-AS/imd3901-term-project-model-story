@@ -3,6 +3,7 @@
 AFRAME.registerComponent('pickup', {
     schema : {
         //list properties
+        pickedUp: {type: 'bool', default: false}
     },
     init : function(){
         //called when program starts
@@ -11,7 +12,7 @@ AFRAME.registerComponent('pickup', {
         const CONTEXT_AF        = this; // 'this' is this component
         CONTEXT_AF.camera       = document.querySelector('#camera');
         CONTEXT_AF.scene        = document.querySelector('#scene');
-        let pickedUp            = false;
+        //let pickedUp            = false;
         let clone;
 
         CONTEXT_AF.el.addEventListener('click', function() {
@@ -34,11 +35,13 @@ AFRAME.registerComponent('pickup', {
                 clone.pickedUp = true;
                 CONTEXT_AF.camera.appendChild(clone);
                 this.parentNode.removeChild(this);
-                clone.setAttribute('position', {x: 0.7, y: -0.4, z: -1})
-
+                clone.setAttribute('position', {x: 0.6, y: -0.6, z: -0.8})
+                
                 console.log("Picked Up");
             }
         })
+
+        
 
     }
 })

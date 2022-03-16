@@ -12,10 +12,11 @@
         
         <!-- Pickup Code from scrath -->
         <script src="js/pickup.js"></script>
+        <script src="js/placement.js"></script>
         <!-- Component Super-Hands Test-->
-        <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>-->
+        <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
-        <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
+        <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>-->
 
 
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
@@ -83,13 +84,13 @@
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
             </a-entity>
 
-
+            <!--
             <a-entity id="apartment" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
             <a-entity id="chair" position="0 10 0" scale="12 12 12" gltf-model="#chair_model" shadow static-body></a-entity>
-           <!-- <a-entity id = "apartment" static-body>
+            <a-entity id = "apartment" static-body>
 
                 
-                 loading GLTF models to the scene 
+                 loading GLTF models to the scene -->
                 <a-entity id="floor" position="0 12.0 0"
                 geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
                 static-body></a-entity>
@@ -120,7 +121,7 @@
                 geometry="primitive: box; width:8.0; height:6.0; depth:0.4;" material="color:rgb(200, 200, 200);"></a-entity>
 
 
-            </a-entity>-->
+            </a-entity>
 
             <!-- Collision Testing and Physics Testing-->
             <a-box color = "#AA0000" position = "-3 14 -4"
@@ -131,6 +132,10 @@
             <!-- Interactable Boxes Test -->
             <!-- Pickup -->
             <a-entity pickup class="interactive" dynamic-body position="0 13 -3" geometry="primitive:box; width:0.5; height:0.6; depth:0.5;" material="color:red"></a-entity>
+            <a-entity pickup class="interactive" dynamic-body position="0 13 -5" geometry="primitive:box; width:0.1; height:0.1; depth:0.1;" material="color:red"></a-entity>
+            <a-entity pickup class="interactive" dynamic-body position="0 13 -1" geometry="primitive:box; width:1; height:1; depth:1;" material="color:red"></a-entity>
+
+            <a-entity placement class="interactive" position="0 12.5 0" geometry="primitive:cylinder; radius:0.3; height:0.2;" material="color:black"></a-entity>
             
             <!-- Super-hands Test >> not working right now-->
             <a-box dynamic-body hoverable grabbable stretchable draggable dropppable color="blue" position="0 14 -5"></a-box>
