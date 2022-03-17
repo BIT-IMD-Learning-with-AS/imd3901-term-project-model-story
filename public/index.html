@@ -85,9 +85,9 @@
             </a-entity>
 
 
-            <!--<a-entity id="apartment" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
+            <a-entity id="apartment" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
             <a-entity id="chair" position="0 10 0" scale="12 12 12" gltf-model="#chair_model" shadow static-body></a-entity>
-            <a-entity id = "apartment" static-body>-->
+            <!--<a-entity id = "apartment" static-body>
 
                 
                  loading GLTF models to the scene 
@@ -121,7 +121,7 @@
                 geometry="primitive: box; width:8.0; height:6.0; depth:0.4;" material="color:rgb(200, 200, 200);"></a-entity>
 
 
-            </a-entity>
+            </a-entity>-->
 
             <!-- Collision Testing and Physics Testing-->
             <a-box color = "#AA0000" position = "-3 14 -4"
@@ -132,7 +132,8 @@
             <!-- Interactable Boxes Test -->
             <!-- Pickup -->
             <a-entity pickup="objVal:1;" dynamic-body class="interactive" position="0 13 -3" geometry="primitive:box; width:0.5; height:0.6; depth:0.5;" material="color:red"></a-entity>
-            <a-entity id="placement1" class="interactive" position="0 12.8 0" geometry="primitive:cylinder; radius:0.2; height:0.3;" material="color:black"></a-entity>
+            <a-entity id="placement1" position="0 12.8 0" geometry="primitive:cylinder; radius:0.2; height:0.3;" material="color:black"></a-entity>
+            
             <!-- Super-hands Test >> not working right now-->
             <!--<a-box dynamic-body hoverable grabbable stretchable draggable dropppable color="blue" position="0 14 -5"></a-box>-->
 
