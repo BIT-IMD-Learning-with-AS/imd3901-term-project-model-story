@@ -1,0 +1,153 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v3.1.267422042)"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 112,
+            "type": "VEC3",
+            "max": [
+                128.5029754638672,
+                18.123014450073243,
+                171.23757934570313
+            ],
+            "min": [
+                -128.4961395263672,
+                18.123014450073243,
+                -101.5709228515625
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 112,
+            "type": "VEC3",
+            "max": [
+                0.0,
+                1.0,
+                0.0
+            ],
+            "min": [
+                0.0,
+                1.0,
+                0.0
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 112,
+            "type": "VEC2",
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 246,
+            "type": "SCALAR",
+            "max": [
+                111.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 4076,
+            "uri": "NavMesh.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1344,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1344,
+            "byteLength": 1344,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2688,
+            "byteLength": 896,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 3584,
+            "byteLength": 492,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "aiStandardSurface2SG",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "pPlane1",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "NavMesh.obj",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "pPlane1",
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
