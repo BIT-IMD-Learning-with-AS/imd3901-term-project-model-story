@@ -97,8 +97,8 @@
         </a-entity>
         <a-entity gltf-model="#nav_mesh" nav-mesh position="0 9 0" scale="0.2 0.2 0.2"></a-entity>
 
-        <a-entity id="rig" movement-controls="constrainToNavMesh: true" position="0 17 0">
-            <a-entity camera position="0 1.8 0" wasd-controls look-controls>
+        <a-entity id="rig" movement-controls="constrainToNavMesh: true" position="0 17 0" wasd-controls look-controls>
+            <a-entity camera position="0 1.8 0" >
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
             </a-entity>
         </a-entity>
