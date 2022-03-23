@@ -7,6 +7,7 @@
         <script src="js/aframe-environment-component.min.js"></script>
         <script src="js/time-effect.js"></script>
         <script src="js/aframe-physics-system.js"></script>
+        <script src="js/tele.js"></script>
         <!--Copy and pasted from the source Anthony gave us.-->
         <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
         <script
@@ -278,13 +279,12 @@
 
             <!-- camera -->        
 
-            <a-entity id="camera" camera wasd-controls look-controls position = "0 20 0"> <!--spawning us high in an apartment-->
+            <a-entity id="camera" camera look-controls position = "5 20 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
                 
             </a-entity>
 
-            <a-entity teleport-controls="hitEntity: [nav-mesh];" vive-controls="hand: left;"></a-entity>
 
             <a-entity id = "apartment" static-body>
 
@@ -400,7 +400,7 @@
             <!-- Pickup -->
             <a-entity pickup="objVal:1;" dynamic-body class="interactive" position="0 13 -3"
             geometry="primitive:box; width:0.5; height:0.6; depth:0.5;" material="color:red"></a-entity>
-        <a-entity id="placement1" position="0 12.8 0" geometry="primitive:cylinder; radius:0.2; height:0.3;"
+            <a-entity id="placement1" position="0 12.8 0" geometry="primitive:cylinder; radius:0.2; height:0.3;"
             material="color:black"></a-entity>
             
             <!-- Super-hands Test >> not working right now-->
@@ -414,7 +414,46 @@
             animation__mouseleave="property:material.color; type:color; to:rgb(255, 255, 255); startEvents:mouseleave; dur:200;"
             animation__mouseclick="startEvents:click; dur:300;">
             </a-entity>
-                
+
+            <!--Teleporting?-->
+a
+            <a-entity id="teleHall" class="button interactive" position="5 20 0"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+            <a-entity id="teleKitchen" class="button interactive" position="15 20 14"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+            <a-entity id="teleBalcony" class="button interactive" position="7 20 28"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+            <a-entity id="teleTV" class="button interactive" position="15 20 -10"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+
             <a-entity class = "back-environment" id = "bg" environment="preset:forest;"></a-entity>
         
         
