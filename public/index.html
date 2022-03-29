@@ -18,8 +18,6 @@
         <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
             <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
             <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>-->
-
-
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
         <link rel="stylesheet" href="css/user-gesture.css">
         
@@ -35,7 +33,6 @@
      
          //function called from user-gesture click.
          //THIS IS THE INTRODUCTION
-         //MAY TURN IT INTO A SEPERATE JS FILE.
          var round = 0;
          const startExperience = function() {
            console.log(round);
@@ -71,7 +68,7 @@
              setTimeout(function(){
               textEl.classList.remove('fade-out');
               buttonEl.classList.remove('fade-out');
-              textEl.innerHTML = "To Contribute to The Land Back Movement...";
+              textEl.innerHTML = "Inspired by the teachings of The Land Back Movement...";
              }, 2000);
      
              setTimeout(function(){
@@ -102,19 +99,19 @@
                  textNew = document.querySelector('#welcome-text-2');
                  textNew.innerHTML = "Every one of us is a piece of the puzzle that makes up the mural of life.";
                  textNew.classList.add('fade-in');         
-             }, 7000);
+             }, 5000);
      
              setTimeout(function(){
                  textNew = document.querySelector('#welcome-text-3');
-                 textNew.innerHTML = "We can work to restore nature's once abundant ecosystems.";
+                 textNew.innerHTML = "We can work to restore nature's once abundant ecosystems with small, everyday tasks.";
                  textNew.classList.add('fade-in');
-               }, 11000);
+               }, 9000);
      
                setTimeout(function(){
                  textNew = document.querySelector('#welcome-text-4');
-                 textNew.innerHTML = "Let's see where our work will get us in 10, 20 years, shall we?";
+                 textNew.innerHTML = "Let's see where our work will get this city in 10, 20 years, shall we?";
                  textNew.classList.add('fade-in');
-               }, 16000);
+               }, 13000);
      
                setTimeout(function(){
                  buttonEl.classList.remove('fade-out');
@@ -124,7 +121,7 @@
      
                setTimeout(function(){
                  buttonEl.classList.add('fade-in');
-               }, 20000);
+               }, 18000);
      
              round = 3;
              return;
@@ -136,7 +133,10 @@
              ambientSounds.forEach(function(soundEntity) {
                soundEntity.components.sound.playSound();
              });
-            document.querySelector('#user-gesture-overlay').style.display = "none";
+            document.querySelector('#user-gesture-overlay').classList.add('fade-out');
+            setTimeout(function(){
+              document.querySelector('#user-gesture-overlay').style.display = 'none';
+               }, 2000);
            }
          }
        </script>
@@ -172,57 +172,57 @@
                 <a-asset-item id="nav_mesh" response-type="arraybuffer" src="assets/models/GLTF/NavMeshTP.gltf"></a-asset-item>
 
 
-            <!-- living room -->
+              <!-- living room -->
 
-            <a-asset-item id="lS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofa.glb"></a-asset-item>
-            <a-asset-item id="tM_model" response-type="arraybuffer" src="assets/models/GLTF/televisionModern.glb"></a-asset-item>
-            <a-asset-item id="tCoffee_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffee.glb"></a-asset-item>
-            <a-asset-item id="lC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChair.glb"></a-asset-item>
-            <a-asset-item id="rugR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRounded.glb"></a-asset-item>
-            <a-asset-item id="cF_model" response-type="arraybuffer" src="assets/models/GLTF/ceilingFan.glb"></a-asset-item>
+              <a-asset-item id="lS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofa.glb"></a-asset-item>
+              <a-asset-item id="tM_model" response-type="arraybuffer" src="assets/models/GLTF/televisionModern.glb"></a-asset-item>
+              <a-asset-item id="tCoffee_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffee.glb"></a-asset-item>
+              <a-asset-item id="lC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChair.glb"></a-asset-item>
+              <a-asset-item id="rugR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRounded.glb"></a-asset-item>
+              <a-asset-item id="cF_model" response-type="arraybuffer" src="assets/models/GLTF/ceilingFan.glb"></a-asset-item>
 
-            <!-- bedroom -->
+              <!-- bedroom -->
 
-            <a-asset-item id="bedS_model" response-type="arraybuffer" src="assets/models/GLTF/bedSingle.glb"></a-asset-item>
-            <a-asset-item id="bCO_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseOpen.glb"></a-asset-item>
-            <a-asset-item id="desk_model" response-type="arraybuffer" src="assets/models/GLTF/desk.glb"></a-asset-item>
-            <a-asset-item id="cBD_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBedDrawer.glb"></a-asset-item>
-            <a-asset-item id="coatR_model" response-type="arraybuffer" src="assets/models/GLTF/coatRack.glb"></a-asset-item>
-            <a-asset-item id="sT_model" response-type="arraybuffer" src="assets/models/GLTF/sideTable.glb"></a-asset-item>
-            <a-asset-item id="sTD_model" response-type="arraybuffer" src="assets/models/GLTF/sideTableDrawers.glb"></a-asset-item>
-            <a-asset-item id="trashcan_model" response-type="arraybuffer" src="assets/models/GLTF/trashcan.glb"></a-asset-item>
+              <a-asset-item id="bedS_model" response-type="arraybuffer" src="assets/models/GLTF/bedSingle.glb"></a-asset-item>
+              <a-asset-item id="bCO_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseOpen.glb"></a-asset-item>
+              <a-asset-item id="desk_model" response-type="arraybuffer" src="assets/models/GLTF/desk.glb"></a-asset-item>
+              <a-asset-item id="cBD_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBedDrawer.glb"></a-asset-item>
+              <a-asset-item id="coatR_model" response-type="arraybuffer" src="assets/models/GLTF/coatRack.glb"></a-asset-item>
+              <a-asset-item id="sT_model" response-type="arraybuffer" src="assets/models/GLTF/sideTable.glb"></a-asset-item>
+              <a-asset-item id="sTD_model" response-type="arraybuffer" src="assets/models/GLTF/sideTableDrawers.glb"></a-asset-item>
+              <a-asset-item id="trashcan_model" response-type="arraybuffer" src="assets/models/GLTF/trashcan.glb"></a-asset-item>
 
-            <!-- bathroom -->
+              <!-- bathroom -->
 
-            <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
-            <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
-            <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
-            <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
-            <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
+              <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
+              <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
+              <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
+              <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
+              <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
 
-            <!-- kitchen -->
+              <!-- kitchen -->
 
-            <a-asset-item id="kF_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridge.glb"></a-asset-item>
-            <a-asset-item id="kM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenMicrowave.glb"></a-asset-item>
-            <a-asset-item id="kSink_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenSink.glb"></a-asset-item>
-            <a-asset-item id="kSE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStoveElectric.glb"></a-asset-item>
-            <a-asset-item id="kBar_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBar.glb"></a-asset-item>
-            <a-asset-item id="kB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBlender.glb"></a-asset-item>
-            <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
-            <a-asset-item id="kC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinet.glb"></a-asset-item>
-            <a-asset-item id="sB_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBar.glb"></a-asset-item>
-            <a-asset-item id="kCU_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpper.glb"></a-asset-item>
-            <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
-            <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
+              <a-asset-item id="kF_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridge.glb"></a-asset-item>
+              <a-asset-item id="kM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenMicrowave.glb"></a-asset-item>
+              <a-asset-item id="kSink_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenSink.glb"></a-asset-item>
+              <a-asset-item id="kSE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStoveElectric.glb"></a-asset-item>
+              <a-asset-item id="kBar_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBar.glb"></a-asset-item>
+              <a-asset-item id="kB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBlender.glb"></a-asset-item>
+              <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
+              <a-asset-item id="kC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinet.glb"></a-asset-item>
+              <a-asset-item id="sB_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBar.glb"></a-asset-item>
+              <a-asset-item id="kCU_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpper.glb"></a-asset-item>
+              <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
+              <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
 
-            <!--
-                <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
-                <a-asset-item id="kCCI_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerInner.glb"></a-asset-item>
-                <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
-            -->
+              <!--
+                  <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
+                  <a-asset-item id="kCCI_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerInner.glb"></a-asset-item>
+                  <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
+              -->
 
 
-            <!-- other -->
+              <!-- other -->
 
                 <!--assets
 
@@ -367,7 +367,7 @@
                 <a-asset-item id="wDS_model" response-type="arraybuffer" src="assets/models/GLTF/washerDryerStacked.glb"></a-asset-item>
                 -->
 
-            </a-assets>
+          </a-assets>
 
             <!--Sound coming from the windows test-->
             <a-entity class = "ambient-music" position="-4 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
@@ -377,83 +377,68 @@
 
             <a-entity id="camera" camera wasd-controls look-controls position = "0 20 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
-                <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-                
+                <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>  
             </a-entity>
 
             <a-entity teleport-controls="hitEntity: [nav-mesh];" vive-controls="hand: left;"></a-entity>
 
             <a-entity id = "apartment" static-body>
-
-            <!-- apartment layout -->
+              <!-- apartment layout -->
 
                 <a-entity id="floor" position="0 10.0 0"
                 geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
                 static-body></a-entity>
 
                 <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
-
-            <!-- living room -->
-
-            <a-entity id="sofa_chair" position="13 10 -9" scale="11 11 11" rotation = "0 90 0" gltf-model="#lC_model" shadow static-body></a-entity>
-            <a-entity id="sofa" position="14 10 -16" scale="11 11 11" gltf-model="#lS_model" shadow static-body></a-entity>
-            <a-entity id="TV" position="20 13 -4" scale="12 12 12" rotation = "0 180 0" gltf-model="#tM_model" shadow static-body></a-entity>
-            <a-entity id="table_LR" position="21 10 -3.5" scale="11 13 11" rotation = "0 0 0" gltf-model="#tCoffee_model" shadow static-body></a-entity>
-            <a-entity id="rug_LR" position="9 10.5 -6" scale="11 11 11" rotation = "0 0 0" gltf-model="#rugR_model" shadow static-body></a-entity>
-           
-
-            <!-- bedroom -->
-
-            <a-entity id="bed" position="-15 11 8" scale="12 12 12" rotation = "0 180 0" gltf-model="#bedS_model" shadow static-body></a-entity>
-            <a-entity id="closet" position="-18 20 -6.5" scale="13 15 11" rotation = "0 0 0" gltf-model="#coatR_model" shadow static-body></a-entity>
-            <a-entity id="closet" position="-26 20 -6.5" scale="13 15 11" rotation = "0 0 0" gltf-model="#coatR_model" shadow static-body></a-entity>
-            <a-entity id="bed_table" position="-26 11 7.5" scale="11 6 11" rotation = "0 0 0" gltf-model="#sT_model" shadow static-body></a-entity>
-            <a-entity id="cab" position="-16.5 11 18" scale="11 12 11" rotation = "0 180 0" gltf-model="#cBD_model" shadow static-body></a-entity>
-            <a-entity id="trash" position="-14 10 14" scale="11 11 11" rotation = "0 0 0" gltf-model="#trashcan_model" shadow static-body></a-entity>
-            <a-entity id="desk" position="-6 10 16" scale="14 15 12" rotation = "0 180 0" gltf-model="#desk_model" shadow static-body></a-entity>
-            <a-entity id="bookcase" position="-2 10 20" scale="11 14 11" rotation = "0 90 0" gltf-model="#bCO_model" shadow static-body></a-entity>
-            <a-entity id="fan" position="-15 28 8" scale="16 12 12" rotation = "0 0 0" gltf-model="#cF_model" shadow static-body></a-entity>
-           
-
+              
+              <!-- living room -->
+              <a-entity id="sofa_chair" position="13 10 -9" scale="11 11 11" rotation = "0 90 0" gltf-model="#lC_model" shadow static-body></a-entity>
+              <a-entity id="sofa" position="14 10 -16" scale="11 11 11" gltf-model="#lS_model" shadow static-body></a-entity>
+              <a-entity id="TV" position="20 13 -4" scale="12 12 12" rotation = "0 180 0" gltf-model="#tM_model" shadow static-body></a-entity>
+              <a-entity id="table_LR" position="21 10 -3.5" scale="11 13 11" rotation = "0 0 0" gltf-model="#tCoffee_model" shadow static-body></a-entity>
+              <a-entity id="rug_LR" position="9 10.5 -6" scale="11 11 11" rotation = "0 0 0" gltf-model="#rugR_model" shadow static-body></a-entity>
             
-            <!-- bathroom -->
-
-            <a-entity id="shower" position="-8 10 -9" scale="12 13 12" rotation="0 -90 0" gltf-model="#sR_model" shadow static-body></a-entity>
-            <a-entity id="sink" position="-13.8 10 -16.3" scale="12 14 12" rotation="0 0 0" gltf-model="#bCD_model" shadow static-body></a-entity>
-            <a-entity id="bathroom_mirror" position="-13.5 18 -21" scale="15 15 13" gltf-model="#bM_model" shadow static-body></a-entity>
-            <a-entity id="toilet" position="-25 10 -21" scale="12 16 12" rotation="0 0 0" gltf-model="#toilet_model" shadow static-body></a-entity>
-            <a-entity id="cab" position="-21.5 19 -19" scale="16 12 12" rotation = "0 0 0" gltf-model="#bC_model" shadow static-body></a-entity>
-            <a-entity id="cab" position="-11 19 -19" scale="16 12 12" rotation = "0 0 0" gltf-model="#bC_model" shadow static-body></a-entity>
-            <a-entity id="kit_cab" position="-19 10 -18" scale="12 15 8" rotation ="0 0 0" gltf-model="#kC_model" shadow static-body></a-entity>
-            <a-entity id="kit_cab" position="-8.6 10 -18" scale="12 15 8" rotation ="0 0 0" gltf-model="#kC_model" shadow static-body></a-entity>
+              <!-- bedroom -->
+              <a-entity id="bed" position="-15 11 8" scale="12 12 12" rotation = "0 180 0" gltf-model="#bedS_model" shadow static-body></a-entity>
+              <a-entity id="closet" position="-18 20 -6.5" scale="13 15 11" rotation = "0 0 0" gltf-model="#coatR_model" shadow static-body></a-entity>
+              <a-entity id="closet" position="-26 20 -6.5" scale="13 15 11" rotation = "0 0 0" gltf-model="#coatR_model" shadow static-body></a-entity>
+              <a-entity id="bed_table" position="-26 11 7.5" scale="11 6 11" rotation = "0 0 0" gltf-model="#sT_model" shadow static-body></a-entity>
+              <a-entity id="cab" position="-16.5 11 18" scale="11 12 11" rotation = "0 180 0" gltf-model="#cBD_model" shadow static-body></a-entity>
+              <a-entity id="trash" position="-14 10 14" scale="11 11 11" rotation = "0 0 0" gltf-model="#trashcan_model" shadow static-body></a-entity>
+              <a-entity id="desk" position="-6 10 16" scale="14 15 12" rotation = "0 180 0" gltf-model="#desk_model" shadow static-body></a-entity>
+              <a-entity id="bookcase" position="-2 10 20" scale="11 14 11" rotation = "0 90 0" gltf-model="#bCO_model" shadow static-body></a-entity>
+              <a-entity id="fan" position="-15 28 8" scale="16 12 12" rotation = "0 0 0" gltf-model="#cF_model" shadow static-body></a-entity>
             
-
-            <!-- kitchen -->
-
-            <a-entity id="fridge" position="21.7 10 7.5" scale="10 13 14" rotation="0 -90 0" gltf-model="#kF_model" shadow static-body></a-entity>
-            <a-entity id="stove" position="18 10 3" scale="10 13 9" gltf-model="#kSE_model" shadow static-body></a-entity>
-            <a-entity id="microwave" position="23 15.5 3.5" scale="12 12 12" rotation="0 -90 0" gltf-model="#kM_model" shadow static-body></a-entity>
-            <a-entity id="blender" position="23 15.8 3" scale="12 12 12" gltf-model="#kB_model" shadow static-body></a-entity>
-            <a-entity id="sink" position="14 10 3" scale="10 13 9" gltf-model="#kSink_model" shadow static-body></a-entity>
-            <a-entity id="kit_cab_edge" position="26.6 10 -1" scale="10 13 9" rotation ="0 180 0" gltf-model="#kCCR_model" shadow static-body></a-entity>
-            <a-entity id="kit_cab" position="22 10 3.1" scale="10 13 9" rotation ="0 -90 0" gltf-model="#kC_model" shadow static-body></a-entity>
-            <a-entity id="bar" position="14 10 4" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
-            <a-entity id="bar" position="14 10 8.3" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
-            <a-entity id="bar" position="14 10 12.3" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
-            <a-entity id="bar_stool" position="11 10 11" scale="11 11 11" rotation = "0 90 0" gltf-model="#sB_model" shadow static-body></a-entity>
-            <a-entity id="bar_stool" position="11 10 7" scale="11 11 11" rotation = "0 90 0" gltf-model="#sB_model" shadow static-body></a-entity>
-            <a-entity id="kit_cab_up" position="25 20 3.1" scale="10 13 9" rotation ="0 -90 0" gltf-model="#kCU_model" shadow static-body></a-entity>
-            <a-entity id="kit_cab_up" position="14 20 1" scale="10 13 9" rotation ="0 0 0" gltf-model="#kCUD_model" shadow static-body></a-entity>
-            <a-entity id="kit_cab_up" position="18 20 1" scale="10 13 9" rotation ="0 0 0" gltf-model="#kCUD_model" shadow static-body></a-entity>
-
-            
-            <!-- other -->
-
+              <!-- bathroom -->
+              <a-entity id="shower" position="-8 10 -9" scale="12 13 12" rotation="0 -90 0" gltf-model="#sR_model" shadow static-body></a-entity>
+              <a-entity id="sink" position="-13.8 10 -16.3" scale="12 14 12" rotation="0 0 0" gltf-model="#bCD_model" shadow static-body></a-entity>
+              <a-entity id="bathroom_mirror" position="-13.5 18 -21" scale="15 15 13" gltf-model="#bM_model" shadow static-body></a-entity>
+              <a-entity id="toilet" position="-25 10 -21" scale="12 16 12" rotation="0 0 0" gltf-model="#toilet_model" shadow static-body></a-entity>
+              <a-entity id="cab" position="-21.5 19 -19" scale="16 12 12" rotation = "0 0 0" gltf-model="#bC_model" shadow static-body></a-entity>
+              <a-entity id="cab" position="-11 19 -19" scale="16 12 12" rotation = "0 0 0" gltf-model="#bC_model" shadow static-body></a-entity>
+              <a-entity id="kit_cab" position="-19 10 -18" scale="12 15 8" rotation ="0 0 0" gltf-model="#kC_model" shadow static-body></a-entity>
+              <a-entity id="kit_cab" position="-8.6 10 -18" scale="12 15 8" rotation ="0 0 0" gltf-model="#kC_model" shadow static-body></a-entity>
+              
+              <!-- kitchen -->
+              <a-entity id="fridge" position="21.7 10 7.5" scale="10 13 14" rotation="0 -90 0" gltf-model="#kF_model" shadow static-body></a-entity>
+              <a-entity id="stove" position="18 10 3" scale="10 13 9" gltf-model="#kSE_model" shadow static-body></a-entity>
+              <a-entity id="microwave" position="23 15.5 3.5" scale="12 12 12" rotation="0 -90 0" gltf-model="#kM_model" shadow static-body></a-entity>
+              <a-entity id="blender" position="23 15.8 3" scale="12 12 12" gltf-model="#kB_model" shadow static-body></a-entity>
+              <a-entity id="sink" position="14 10 3" scale="10 13 9" gltf-model="#kSink_model" shadow static-body></a-entity>
+              <a-entity id="kit_cab_edge" position="26.6 10 -1" scale="10 13 9" rotation ="0 180 0" gltf-model="#kCCR_model" shadow static-body></a-entity>
+              <a-entity id="kit_cab" position="22 10 3.1" scale="10 13 9" rotation ="0 -90 0" gltf-model="#kC_model" shadow static-body></a-entity>
+              <a-entity id="bar" position="14 10 4" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
+              <a-entity id="bar" position="14 10 8.3" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
+              <a-entity id="bar" position="14 10 12.3" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
+              <a-entity id="bar_stool" position="11 10 11" scale="11 11 11" rotation = "0 90 0" gltf-model="#sB_model" shadow static-body></a-entity>
+              <a-entity id="bar_stool" position="11 10 7" scale="11 11 11" rotation = "0 90 0" gltf-model="#sB_model" shadow static-body></a-entity>
+              <a-entity id="kit_cab_up" position="25 20 3.1" scale="10 13 9" rotation ="0 -90 0" gltf-model="#kCU_model" shadow static-body></a-entity>
+              <a-entity id="kit_cab_up" position="14 20 1" scale="10 13 9" rotation ="0 0 0" gltf-model="#kCUD_model" shadow static-body></a-entity>
+              <a-entity id="kit_cab_up" position="18 20 1" scale="10 13 9" rotation ="0 0 0" gltf-model="#kCUD_model" shadow static-body></a-entity>
+              <!-- other -->
             </a-entity>
 
            <!-- <a-entity id = "apartment" static-body>
-
-                
                  loading GLTF models to the scene 
                 <a-entity id="floor" position="0 12.0 0"
                 geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
@@ -513,8 +498,6 @@
             </a-entity>
                 
             <a-entity class = "back-environment" id = "bg" environment="preset:forest;"></a-entity>
-        
-        
         </a-scene>
     </body>
 </html>
