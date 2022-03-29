@@ -39,7 +39,7 @@
             const startExperience = function () {
                 //hide user-gesture overlay
                 document.querySelector('#user-gesture-overlay').style.display = 'none';
-
+                document.querySelector('#UI').style.display = 'block';
                 //start all ambient music
                 const ambientSounds = document.querySelectorAll('.ambient-music');
                 ambientSounds.forEach(function (soundEntity) {
@@ -64,10 +64,10 @@
         </div>
 
         <a-scene id="scene" physics start-experience>
-
             <a-assets>
                 <!--Starting to load in some SFX here-->
                 <audio id="city_amb" src="assets/sound/citySounds.mp3" preload="auto" crossorigin="anonymous"></audio>
+                <audio id="bird_amb" src="assets/sound/birdSounds.mp3" preload="auto" crossorigin="anonymous"></audio>
                 <audio id = "good1_sfx" src = "assets/sound/goodSound_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="good2_sfx" src = "assets/sound/goodSound_2.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="light1_sfx" src = "assets/sound/lightSwitch_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
@@ -282,7 +282,9 @@
             <a-entity id="camera" camera look-controls position = "5 20 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-                
+                <div id="UI">
+                    Puzzles: 0/5
+                </div>
             </a-entity>
 
 

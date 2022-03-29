@@ -1,76 +1,64 @@
 'use strict'
 
-AFRAME.registerComponent('landBridge-effect', {
+AFRAME.registerComponent('environment-effect', {
     schema : {
     },
     init : function () {
-        //this is basically like setup in Open Frameworks
-        //called once when program starts.
-        //also,, it is only called once the entire A-Frame scene is built.
+        //This objectives array is where we store completed puzzles. 
+        let objectives = [0,0,0,0,0];
 
-        const CONTEXT_AF = this; //this refers to 'this' component, because 'this' in an event listener refers to something else.
+        //0: if the land bridge puzzle is complete
+        if (objectives[0] === 1)
+        {
+            //swap whatever landbridge model for another gltf.
+        }
+
+        //1: if the watering can puzzle is complete
+        if (objectives[1] === 1)
+        {
+            //basically just add a metric butt-ton of PLANTS
+            //either have them pre-placed and load them, or just spawn them similar to A2.
+        }
+
+        //2: sewage puzzle
+        if (objectives[2] === 1)
+        {
+            //change the colour of the object, or load in a second model
+        }
+
+        //3: stars
+        if (objectives[3] === 1)
+        {
+            //change the background.
+            //might have to rebuild the environment at this point.
+        }
+
+        //4: Crickets puzzle
+        if (objectives[4] === 1)
+        {
+            //Easiest effects to change because it's just swapping sound effects.
+            document.getElementsByClassName('ambient-music').setAttribute('sound', {src:'#bird_amb'});
+        }
+
+        //Check all
+        if (objectives === [1,1,1,1,1])
+        {
+            //Trigger Win Screen
+            //Take code from intro screen and just rework it
+
+        }
+
+       // const CONTEXT_AF = this; //this refers to 'this' component, because 'this' in an event listener refers to something else.
         
-        CONTEXT_AF.el.addEventListener('click', function() {
-            if (bridge === true) {
+        //CONTEXT_AF.el.addEventListener('click', function() {
+          //  if (bridge === true) {
                 //swap scene to the landbridge
-            }
-            else {
+            //}
+            //else {
                 //bridgeless scene
-            }
-        });
+            //}
+        //});
    
    
-    }
-});
-
-
-AFRAME.registerComponent('bird-effect', {
-    schema : {
-    },
-    init : function () {
-        const CONTEXT_AF = this; 
-        
-        CONTEXT_AF.el.addEventListener('click', function() {
-            if (birds === true) {
-                //swap scene to include birds
-            }
-            else {
-                //birdless scene
-            }
-        });
-    }
-});
-
-AFRAME.registerComponent('stars-effect', {
-    schema : {
-    },
-    init : function () {
-        const CONTEXT_AF = this; 
-        
-        CONTEXT_AF.el.addEventListener('click', function() {
-            if (birds === true) {
-                //swap scene to include stars
-            }
-            else {
-                //starless scene
-            }
-        });
-    }
-});
-
-AFRAME.registerComponent('plantsGrow-effect', {
-    schema : {
-    },
-    init : function () {
-        const CONTEXT_AF = this; 
-        
-        CONTEXT_AF.el.addEventListener('click', function() {
-            if (birds === true) {
-                //swap scene to include more plants
-            }
-            else {
-                //plant-less scene
-            }
-        });
     }
 });
