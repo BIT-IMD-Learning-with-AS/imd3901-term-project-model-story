@@ -5,10 +5,21 @@
         <meta name="description" content="Hello, Model&Story!">
         <script src="js/aframe.min.js"></script>
         <script src="js/aframe-environment-component.min.js"></script>
-        <script src = "js/time-effect.js"></script>
-        <script src = "js/aframe-physics-system.js"></script> <!--Copy and pasted from the source Anthony gave us.-->
+        <script src="js/time-effect.js"></script>
+        <script src="js/aframe-physics-system.js"></script>
+        <script src="js/tele.js"></script>
+        <!--Copy and pasted from the source Anthony gave us.-->
         <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
-        <script src="http://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script
+            src="http://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <!-- Pickup Code from scrath -->
+        <script src="js/pickup.js"></script>
+        <script src="js/placement.js"></script>
+        <!-- Component Super-Hands Test-->
+        <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+            <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+            <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>-->
+
 
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
         <link rel="stylesheet" href="css/user-gesture.css">
@@ -52,7 +63,7 @@
             </div>
         </div>
 
-        <a-scene physics start-experience>
+        <a-scene id="scene" physics start-experience>
 
             <a-assets>
                 <!--Starting to load in some SFX here-->
@@ -60,21 +71,293 @@
                 <audio id = "good1_sfx" src = "assets/sound/goodSound_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="good2_sfx" src = "assets/sound/goodSound_2.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="light1_sfx" src = "assets/sound/lightSwitch_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+
+                <a-asset-item id="apartment_model" response-type="arraybuffer" src="assets/models/apartment.gltf"></a-asset-item>
+                <a-asset-item id="nav_mesh" response-type="arraybuffer" src="assets/models/GLTF/NavMeshTP.gltf"></a-asset-item>
+
+
+            <!-- living room -->
+
+            <a-asset-item id="lS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofa.glb"></a-asset-item>
+            <a-asset-item id="tM_model" response-type="arraybuffer" src="assets/models/GLTF/televisionModern.glb"></a-asset-item>
+            <a-asset-item id="tCoffee_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffee.glb"></a-asset-item>
+            <a-asset-item id="lC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChair.glb"></a-asset-item>
+            <a-asset-item id="rugR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRounded.glb"></a-asset-item>
+            <a-asset-item id="cF_model" response-type="arraybuffer" src="assets/models/GLTF/ceilingFan.glb"></a-asset-item>
+
+            <!-- bedroom -->
+
+            <a-asset-item id="bedS_model" response-type="arraybuffer" src="assets/models/GLTF/bedSingle.glb"></a-asset-item>
+            <a-asset-item id="bCO_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseOpen.glb"></a-asset-item>
+            <a-asset-item id="desk_model" response-type="arraybuffer" src="assets/models/GLTF/desk.glb"></a-asset-item>
+            <a-asset-item id="cBD_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBedDrawer.glb"></a-asset-item>
+            <a-asset-item id="coatR_model" response-type="arraybuffer" src="assets/models/GLTF/coatRack.glb"></a-asset-item>
+            <a-asset-item id="sT_model" response-type="arraybuffer" src="assets/models/GLTF/sideTable.glb"></a-asset-item>
+            <a-asset-item id="sTD_model" response-type="arraybuffer" src="assets/models/GLTF/sideTableDrawers.glb"></a-asset-item>
+            <a-asset-item id="trashcan_model" response-type="arraybuffer" src="assets/models/GLTF/trashcan.glb"></a-asset-item>
+
+            <!-- bathroom -->
+
+            <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
+            <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
+            <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
+            <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
+            <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
+
+            <!-- kitchen -->
+
+            <a-asset-item id="kF_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridge.glb"></a-asset-item>
+            <a-asset-item id="kM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenMicrowave.glb"></a-asset-item>
+            <a-asset-item id="kSink_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenSink.glb"></a-asset-item>
+            <a-asset-item id="kSE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStoveElectric.glb"></a-asset-item>
+            <a-asset-item id="kBar_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBar.glb"></a-asset-item>
+            <a-asset-item id="kB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBlender.glb"></a-asset-item>
+            <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
+            <a-asset-item id="kC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinet.glb"></a-asset-item>
+            <a-asset-item id="sB_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBar.glb"></a-asset-item>
+            <a-asset-item id="kCU_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpper.glb"></a-asset-item>
+            <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
+            <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
+
+            <!--
+                <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
+                <a-asset-item id="kCCI_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerInner.glb"></a-asset-item>
+                <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
+            -->
+
+
+            <!-- other -->
+
+                <!--assets
+
+                <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
+                <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
+                <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
+                <a-asset-item id="bS_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomSink.glb"></a-asset-item>
+                <a-asset-item id="bSS_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomSinkSquare.glb"></a-asset-item>
+                <a-asset-item id="bathtub_model" response-type="arraybuffer" src="assets/models/GLTF/bathtub.glb"></a-asset-item>
+                <a-asset-item id="bear_model" response-type="arraybuffer" src="assets/models/GLTF/bear.glb"></a-asset-item>
+                <a-asset-item id="bB_model" response-type="arraybuffer" src="assets/models/GLTF/bedBunk.glb"></a-asset-item>
+                <a-asset-item id="bedD_model" response-type="arraybuffer" src="assets/models/GLTF/bedDouble.glb"></a-asset-item>
+                <a-asset-item id="bedS_model" response-type="arraybuffer" src="assets/models/GLTF/bedSingle.glb"></a-asset-item>
+                <a-asset-item id="bench_model" response-type="arraybuffer" src="assets/models/GLTF/bench.glb"></a-asset-item>
+                <a-asset-item id="benchC_model" response-type="arraybuffer" src="assets/models/GLTF/benchCushion.glb"></a-asset-item>
+                <a-asset-item id="bCL_model" response-type="arraybuffer" src="assets/models/GLTF/benchCushionLow.glb"></a-asset-item>
+                <a-asset-item id="bCC_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseClosed.glb"></a-asset-item>
+                <a-asset-item id="bCCW_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseClosedWide.glb"></a-asset-item>
+                <a-asset-item id="bCO_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseOpen.glb"></a-asset-item>
+                <a-asset-item id="bCOL_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseOpenLow.glb"></a-asset-item>
+                <a-asset-item id="books_model" response-type="arraybuffer" src="assets/models/GLTF/books.glb"></a-asset-item>
+
+                <a-asset-item id="cB_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBed.glb"></a-asset-item>
+                <a-asset-item id="cBD_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBedDrawer.glb"></a-asset-item>
+                <a-asset-item id="cBDT_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBedDrawerTable.glb"></a-asset-item>
+                <a-asset-item id="cT_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetTelevision.glb"></a-asset-item>
+                <a-asset-item id="cTD_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetTelevisionDoors.glb"></a-asset-item>
+                <a-asset-item id="cBC_model" response-type="arraybuffer" src="assets/models/GLTF/cardboardBoxClosed.glb"></a-asset-item>
+                <a-asset-item id="cBO_model" response-type="arraybuffer" src="assets/models/GLTF/cardboardBoxOpen.glb"></a-asset-item>
+                <a-asset-item id="cF_model" response-type="arraybuffer" src="assets/models/GLTF/ceilingFan.glb"></a-asset-item>
+                <a-asset-item id="chair_model" response-type="arraybuffer" src="assets/models/GLTF/chair.glb"></a-asset-item>
+                <a-asset-item id="cC_model" response-type="arraybuffer" src="assets/models/GLTF/chairCushion.glb"></a-asset-item>
+                <a-asset-item id="cD_model" response-type="arraybuffer" src="assets/models/GLTF/chairDesk.glb"></a-asset-item>
+                <a-asset-item id="cMC_model" response-type="arraybuffer" src="assets/models/GLTF/chairModernCushion.glb"></a-asset-item>
+                <a-asset-item id="cMFC_model" response-type="arraybuffer" src="assets/models/GLTF/chairModernFrameCushion.glb"></a-asset-item>
+                <a-asset-item id="cR_model" response-type="arraybuffer" src="assets/models/GLTF/chairRounded.glb"></a-asset-item>
+                <a-asset-item id="coatR_model" response-type="arraybuffer" src="assets/models/GLTF/coatRack.glb"></a-asset-item>
+                <a-asset-item id="cRS_model" response-type="arraybuffer" src="assets/models/GLTF/coatRackStanding.glb"></a-asset-item>
+                <a-asset-item id="cK_model" response-type="arraybuffer" src="assets/models/GLTF/computerKeyboard.glb"></a-asset-item>
+                <a-asset-item id="cM_model" response-type="arraybuffer" src="assets/models/GLTF/computerMouse.glb"></a-asset-item>
+                <a-asset-item id="cS_model" response-type="arraybuffer" src="assets/models/GLTF/computerScreen.glb"></a-asset-item>
+
+                <a-asset-item id="desk_model" response-type="arraybuffer" src="assets/models/GLTF/desk.glb"></a-asset-item>
+                <a-asset-item id="dC_model" response-type="arraybuffer" src="assets/models/GLTF/deskCorner.glb"></a-asset-item>
+                <a-asset-item id="doorway_model" response-type="arraybuffer" src="assets/models/GLTF/doorway.glb"></a-asset-item>
+                <a-asset-item id="dF_model" response-type="arraybuffer" src="assets/models/GLTF/doorwayFront.glb"></a-asset-item>
+                <a-asset-item id="dO_model" response-type="arraybuffer" src="assets/models/GLTF/doorwayOpen.glb"></a-asset-item>
+                <a-asset-item id="dryer_model" response-type="arraybuffer" src="assets/models/GLTF/dryer.glb"></a-asset-item>
+
+                <a-asset-item id="fC_model" response-type="arraybuffer" src="assets/models/GLTF/floorCorner.glb"></a-asset-item>
+                <a-asset-item id="fCR_model" response-type="arraybuffer" src="assets/models/GLTF/floorCornerRound.glb"></a-asset-item>
+                <a-asset-item id="fF_model" response-type="arraybuffer" src="assets/models/GLTF/floorFull.glb"></a-asset-item>
+                <a-asset-item id="fH_model" response-type="arraybuffer" src="assets/models/GLTF/floorHalf.glb"></a-asset-item>
+
+                <a-asset-item id="hL_model" response-type="arraybuffer" src="assets/models/GLTF/hoodLarge.glb"></a-asset-item>
+                <a-asset-item id="hM_model" response-type="arraybuffer" src="assets/models/GLTF/hoodModern.glb"></a-asset-item>
+
+                <a-asset-item id="kBar_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBar.glb"></a-asset-item>
+                <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
+                <a-asset-item id="kB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBlender.glb"></a-asset-item>
+                <a-asset-item id="kC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinet.glb"></a-asset-item>
+                <a-asset-item id="kCCI_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerInner.glb"></a-asset-item>
+                <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
+                <a-asset-item id="kCD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetDrawer.glb"></a-asset-item>
+                <a-asset-item id="kCU_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpper.glb"></a-asset-item>
+                <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
+                <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
+                <a-asset-item id="kCM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCoffeeMachine.glb"></a-asset-item>
+                <a-asset-item id="kF_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridge.glb"></a-asset-item>
+                <a-asset-item id="kFB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridgeBuiltIn.glb"></a-asset-item>
+                <a-asset-item id="kFL_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridgeLarge.glb"></a-asset-item>
+                <a-asset-item id="kFS_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridgeSmall.glb"></a-asset-item>
+                <a-asset-item id="kM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenMicrowave.glb"></a-asset-item>
+                <a-asset-item id="kSink_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenSink.glb"></a-asset-item>
+                <a-asset-item id="kStove_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStove.glb"></a-asset-item>
+                <a-asset-item id="kSE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStoveElectric.glb"></a-asset-item>
+
+                <a-asset-item id="lRF_model" response-type="arraybuffer" src="assets/models/GLTF/lampRoundFloor.glb"></a-asset-item>
+                <a-asset-item id="lRT_model" response-type="arraybuffer" src="assets/models/GLTF/lampRoundTable.glb"></a-asset-item>
+                <a-asset-item id="lSC_model" response-type="arraybuffer" src="assets/models/GLTF/lampSquareCeiling.glb"></a-asset-item>
+                <a-asset-item id="lSF_model" response-type="arraybuffer" src="assets/models/GLTF/lampSquareFloor.glb"></a-asset-item>
+                <a-asset-item id="lST_model" response-type="arraybuffer" src="assets/models/GLTF/lampSquareTable.glb"></a-asset-item>
+                <a-asset-item id="lW_model" response-type="arraybuffer" src="assets/models/GLTF/lampWall.glb"></a-asset-item>
+                <a-asset-item id="laptop_model" response-type="arraybuffer" src="assets/models/GLTF/laptop.glb"></a-asset-item>
+                <a-asset-item id="lC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChair.glb"></a-asset-item>
+                <a-asset-item id="lCR_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChairRelax.glb"></a-asset-item>
+                <a-asset-item id="lDC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeDesignChair.glb"></a-asset-item>
+                <a-asset-item id="lDS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeDesignSofa.glb"></a-asset-item>
+                <a-asset-item id="lDSC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeDesignSofaCorner.glb"></a-asset-item>
+                <a-asset-item id="lS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofa.glb"></a-asset-item>
+                <a-asset-item id="lSofaC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofaCorner.glb"></a-asset-item>
+                <a-asset-item id="lSL_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofaLong.glb"></a-asset-item>
+                <a-asset-item id="lSO_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofaOttoman.glb"></a-asset-item>
+
+                <a-asset-item id="paneling_model" response-type="arraybuffer" src="assets/models/GLTF/paneling.glb"></a-asset-item>
+                <a-asset-item id="pillow_model" response-type="arraybuffer" src="assets/models/GLTF/pillow.glb"></a-asset-item>
+                <a-asset-item id="pB_model" response-type="arraybuffer" src="assets/models/GLTF/pillowBlue.glb"></a-asset-item>
+                <a-asset-item id="pBL_model" response-type="arraybuffer" src="assets/models/GLTF/pillowBlueLong.glb"></a-asset-item>
+                <a-asset-item id="pS1_model" response-type="arraybuffer" src="assets/models/GLTF/plantSmall1.glb"></a-asset-item>
+                <a-asset-item id="pS2_model" response-type="arraybuffer" src="assets/models/GLTF/plantSmall2.glb"></a-asset-item>
+                <a-asset-item id="pS3_model" response-type="arraybuffer" src="assets/models/GLTF/plantSmall3.glb"></a-asset-item>
+                <a-asset-item id="pP_model" response-type="arraybuffer" src="assets/models/GLTF/pottedPlant.glb"></a-asset-item>
+
+                <a-asset-item id="radio_model" response-type="arraybuffer" src="assets/models/GLTF/radio.glb"></a-asset-item>
+                <a-asset-item id="rD_model" response-type="arraybuffer" src="assets/models/GLTF/rugDoormat.glb"></a-asset-item>
+                <a-asset-item id="rR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRectangle.glb"></a-asset-item>
+                <a-asset-item id="rRound_model" response-type="arraybuffer" src="assets/models/GLTF/rugRound.glb"></a-asset-item>
+                <a-asset-item id="rugR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRounded.glb"></a-asset-item>
+                <a-asset-item id="rS_model" response-type="arraybuffer" src="assets/models/GLTF/rugSquare.glb"></a-asset-item>
+
+                <a-asset-item id="shower_model" response-type="arraybuffer" src="assets/models/GLTF/shower.glb"></a-asset-item>
+                <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
+                <a-asset-item id="sT_model" response-type="arraybuffer" src="assets/models/GLTF/sideTable.glb"></a-asset-item>
+                <a-asset-item id="sTD_model" response-type="arraybuffer" src="assets/models/GLTF/sideTableDrawers.glb"></a-asset-item>
+                <a-asset-item id="speaker_model" response-type="arraybuffer" src="assets/models/GLTF/speaker.glb"></a-asset-item>
+                <a-asset-item id="sS_model" response-type="arraybuffer" src="assets/models/GLTF/speakerSmall.glb"></a-asset-item>
+                <a-asset-item id="stairs_model" response-type="arraybuffer" src="assets/models/GLTF/stairs.glb"></a-asset-item>
+                <a-asset-item id="sC_model" response-type="arraybuffer" src="assets/models/GLTF/stairsCorner.glb"></a-asset-item>
+                <a-asset-item id="sO_model" response-type="arraybuffer" src="assets/models/GLTF/stairsOpen.glb"></a-asset-item>
+                <a-asset-item id="sOS_model" response-type="arraybuffer" src="assets/models/GLTF/stairsOpenSingle.glb"></a-asset-item>
+                <a-asset-item id="sB_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBar.glb"></a-asset-item>
+                <a-asset-item id="sBS_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBarSquare.glb"></a-asset-item>
+
+                <a-asset-item id="table_model" response-type="arraybuffer" src="assets/models/GLTF/table.glb"></a-asset-item>
+                <a-asset-item id="tC_model" response-type="arraybuffer" src="assets/models/GLTF/tableCloth.glb"></a-asset-item>
+                <a-asset-item id="tCoffee_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffee.glb"></a-asset-item>
+                <a-asset-item id="tCG_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffeeGlass.glb"></a-asset-item>
+                <a-asset-item id="tCGS_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffeeGlassSquare.glb"></a-asset-item>
+                <a-asset-item id="tCross_model" response-type="arraybuffer" src="assets/models/GLTF/tableCross.glb"></a-asset-item>
+                <a-asset-item id="tCC_model" response-type="arraybuffer" src="assets/models/GLTF/tableCrossCloth.glb"></a-asset-item>
+                <a-asset-item id="tGlass_model" response-type="arraybuffer" src="assets/models/GLTF/tableGlass.glb"></a-asset-item>
+                <a-asset-item id="tR_model" response-type="arraybuffer" src="assets/models/GLTF/tableRound.glb"></a-asset-item>
+                <a-asset-item id="tA_model" response-type="arraybuffer" src="assets/models/GLTF/televisionAntenna.glb"></a-asset-item>
+                <a-asset-item id="tM_model" response-type="arraybuffer" src="assets/models/GLTF/televisionModern.glb"></a-asset-item>
+                <a-asset-item id="tV_model" response-type="arraybuffer" src="assets/models/GLTF/televisionVintage.glb"></a-asset-item>
+                <a-asset-item id="toaster_model" response-type="arraybuffer" src="assets/models/GLTF/toaster.glb"></a-asset-item>
+                <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
+                <a-asset-item id="tS_model" response-type="arraybuffer" src="assets/models/GLTF/toiletSquare.glb"></a-asset-item>
+                <a-asset-item id="trashcan_model" response-type="arraybuffer" src="assets/models/GLTF/trashcan.glb"></a-asset-item>
+
+                <a-asset-item id="washer_model" response-type="arraybuffer" src="assets/models/GLTF/washer.glb"></a-asset-item>
+                <a-asset-item id="wDS_model" response-type="arraybuffer" src="assets/models/GLTF/washerDryerStacked.glb"></a-asset-item>
+                -->
+
             </a-assets>
 
             <!--Sound coming from the windows test-->
             <a-entity class = "ambient-music" position="-4 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
             <a-entity class = "ambient-music" position="10 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
 
-            <a-entity camera wasd-controls look-controls position = "0 13.5 0"> <!--spawning us high in an apartment-->
+            <!-- camera -->        
+
+            <a-entity id="camera" camera look-controls position = "5 20 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
+                
             </a-entity>
 
 
-            
             <a-entity id = "apartment" static-body>
+
+            <!-- apartment layout -->
+
+                <a-entity id="floor" position="0 10.0 0"
+                geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
+                static-body></a-entity>
+
+                <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
+
+            <!-- living room -->
+
+            <a-entity id="sofa_chair" position="13 10 -9" scale="11 11 11" rotation = "0 90 0" gltf-model="#lC_model" shadow static-body></a-entity>
+            <a-entity id="sofa" position="14 10 -16" scale="11 11 11" gltf-model="#lS_model" shadow static-body></a-entity>
+            <a-entity id="TV" position="20 13 -4" scale="12 12 12" rotation = "0 180 0" gltf-model="#tM_model" shadow static-body></a-entity>
+            <a-entity id="table_LR" position="21 10 -3.5" scale="11 13 11" rotation = "0 0 0" gltf-model="#tCoffee_model" shadow static-body></a-entity>
+            <a-entity id="rug_LR" position="9 10.5 -6" scale="11 11 11" rotation = "0 0 0" gltf-model="#rugR_model" shadow static-body></a-entity>
+           
+
+            <!-- bedroom -->
+
+            <a-entity id="bed" position="-15 11 8" scale="12 12 12" rotation = "0 180 0" gltf-model="#bedS_model" shadow static-body></a-entity>
+            <a-entity id="closet" position="-18 20 -6.5" scale="13 15 11" rotation = "0 0 0" gltf-model="#coatR_model" shadow static-body></a-entity>
+            <a-entity id="closet" position="-26 20 -6.5" scale="13 15 11" rotation = "0 0 0" gltf-model="#coatR_model" shadow static-body></a-entity>
+            <a-entity id="bed_table" position="-26 11 7.5" scale="11 6 11" rotation = "0 0 0" gltf-model="#sT_model" shadow static-body></a-entity>
+            <a-entity id="cab" position="-16.5 11 18" scale="11 12 11" rotation = "0 180 0" gltf-model="#cBD_model" shadow static-body></a-entity>
+            <a-entity id="trash" position="-14 10 14" scale="11 11 11" rotation = "0 0 0" gltf-model="#trashcan_model" shadow static-body></a-entity>
+            <a-entity id="desk" position="-6 10 16" scale="14 15 12" rotation = "0 180 0" gltf-model="#desk_model" shadow static-body></a-entity>
+            <a-entity id="bookcase" position="-2 10 20" scale="11 14 11" rotation = "0 90 0" gltf-model="#bCO_model" shadow static-body></a-entity>
+            <a-entity id="fan" position="-15 28 8" scale="16 12 12" rotation = "0 0 0" gltf-model="#cF_model" shadow static-body></a-entity>
+           
+
+            
+            <!-- bathroom -->
+
+            <a-entity id="shower" position="-8 10 -9" scale="12 13 12" rotation="0 -90 0" gltf-model="#sR_model" shadow static-body></a-entity>
+            <a-entity id="sink" position="-13.8 10 -16.3" scale="12 14 12" rotation="0 0 0" gltf-model="#bCD_model" shadow static-body></a-entity>
+            <a-entity id="bathroom_mirror" position="-13.5 18 -21" scale="15 15 13" gltf-model="#bM_model" shadow static-body></a-entity>
+            <a-entity id="toilet" position="-25 10 -21" scale="12 16 12" rotation="0 0 0" gltf-model="#toilet_model" shadow static-body></a-entity>
+            <a-entity id="cab" position="-21.5 19 -19" scale="16 12 12" rotation = "0 0 0" gltf-model="#bC_model" shadow static-body></a-entity>
+            <a-entity id="cab" position="-11 19 -19" scale="16 12 12" rotation = "0 0 0" gltf-model="#bC_model" shadow static-body></a-entity>
+            <a-entity id="kit_cab" position="-19 10 -18" scale="12 15 8" rotation ="0 0 0" gltf-model="#kC_model" shadow static-body></a-entity>
+            <a-entity id="kit_cab" position="-8.6 10 -18" scale="12 15 8" rotation ="0 0 0" gltf-model="#kC_model" shadow static-body></a-entity>
+            
+
+            <!-- kitchen -->
+
+            <a-entity id="fridge" position="21.7 10 7.5" scale="10 13 14" rotation="0 -90 0" gltf-model="#kF_model" shadow static-body></a-entity>
+            <a-entity id="stove" position="18 10 3" scale="10 13 9" gltf-model="#kSE_model" shadow static-body></a-entity>
+            <a-entity id="microwave" position="23 15.5 3.5" scale="12 12 12" rotation="0 -90 0" gltf-model="#kM_model" shadow static-body></a-entity>
+            <a-entity id="blender" position="23 15.8 3" scale="12 12 12" gltf-model="#kB_model" shadow static-body></a-entity>
+            <a-entity id="sink" position="14 10 3" scale="10 13 9" gltf-model="#kSink_model" shadow static-body></a-entity>
+            <a-entity id="kit_cab_edge" position="26.6 10 -1" scale="10 13 9" rotation ="0 180 0" gltf-model="#kCCR_model" shadow static-body></a-entity>
+            <a-entity id="kit_cab" position="22 10 3.1" scale="10 13 9" rotation ="0 -90 0" gltf-model="#kC_model" shadow static-body></a-entity>
+            <a-entity id="bar" position="14 10 4" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
+            <a-entity id="bar" position="14 10 8.3" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
+            <a-entity id="bar" position="14 10 12.3" scale="10 13 9" rotation = "0 90 0" gltf-model="#kBar_model" shadow static-body></a-entity>
+            <a-entity id="bar_stool" position="11 10 11" scale="11 11 11" rotation = "0 90 0" gltf-model="#sB_model" shadow static-body></a-entity>
+            <a-entity id="bar_stool" position="11 10 7" scale="11 11 11" rotation = "0 90 0" gltf-model="#sB_model" shadow static-body></a-entity>
+            <a-entity id="kit_cab_up" position="25 20 3.1" scale="10 13 9" rotation ="0 -90 0" gltf-model="#kCU_model" shadow static-body></a-entity>
+            <a-entity id="kit_cab_up" position="14 20 1" scale="10 13 9" rotation ="0 0 0" gltf-model="#kCUD_model" shadow static-body></a-entity>
+            <a-entity id="kit_cab_up" position="18 20 1" scale="10 13 9" rotation ="0 0 0" gltf-model="#kCUD_model" shadow static-body></a-entity>
+
+            
+            <!-- other -->
+
+            </a-entity>
+
+           <!-- <a-entity id = "apartment" static-body>
+
                 
+                 loading GLTF models to the scene 
                 <a-entity id="floor" position="0 12.0 0"
                 geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
                 static-body></a-entity>
@@ -105,7 +388,7 @@
                 geometry="primitive: box; width:8.0; height:6.0; depth:0.4;" material="color:rgb(200, 200, 200);"></a-entity>
 
 
-            </a-entity>
+            </a-entity>-->
 
             <!-- Collision Testing and Physics Testing-->
             <a-box color = "#AA0000" position = "-3 14 -4"
@@ -113,16 +396,71 @@
             <a-box color = "#0000AA" position = "-3 16 -4.5"
             dynamic-body ></a-box>
             
+            <!-- Interactable Boxes Test -->
+            <!-- Pickup -->
+            <a-entity pickup="objVal:1;" dynamic-body class="interactive" position="0 13 -3"
+            geometry="primitive:box; width:0.5; height:0.6; depth:0.5;" material="color:red"></a-entity>
+            <a-entity id="placement1" position="0 12.8 0" geometry="primitive:cylinder; radius:0.2; height:0.3;"
+            material="color:black"></a-entity>
+            
+            <!-- Super-hands Test >> not working right now-->
+             <!--<a-box dynamic-body hoverable grabbable stretchable draggable dropppable color="blue" position="0 14 -5"></a-box>-->
+
             <!--Making a clock to toggle Day/Night-->
-            <a-entity id="clock" class = "button interactive" position="3 14 5" geometry="primitive:cylinder; radius:0.8; height:0.5;" rotation ="0, 0, 90"
-                material="color:white;"
-                time-effect
-                sound = "src:#light1_sfx; on:click;"
-                animation__mouseenter="property:material.color; type:color; to:rgb(128, 128, 128); startEvents:mouseenter; dur:200;"
-                animation__mouseleave="property:material.color; type:color; to:rgb(255, 255, 255); startEvents:mouseleave; dur:200;"
-                animation__mouseclick="startEvents:click; dur:300;">
+            <a-entity id="clock" class="button interactive" position="0 19 -5"
+            geometry="primitive:cylinder; radius:2; height:1;" rotation="0, 0, 90" material="color:white;" time-effect
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(128, 128, 128); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(255, 255, 255); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;">
             </a-entity>
-                
+
+            <!--cricket puzzle-->
+            <a-entity class = "cricket" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);"></a-entity>
+            <a-entity class = "cricket" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);"></a-entity>
+            <a-entity class = "cricket" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);"></a-entity>
+            <a-entity class = "cricket" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);"></a-entity>
+
+
+            <!--Teleporting?-->
+a
+            <a-entity id="teleHall" class="button interactive" position="5 20 0"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+            <a-entity id="teleKitchen" class="button interactive" position="15 20 14"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+            <a-entity id="teleBalcony" class="button interactive" position="7 20 28"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+            <a-entity id="teleTV" class="button interactive" position="15 20 -10"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+
             <a-entity class = "back-environment" id = "bg" environment="preset:forest;"></a-entity>
         
         
