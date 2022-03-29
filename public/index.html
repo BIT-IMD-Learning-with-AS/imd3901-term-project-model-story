@@ -25,27 +25,121 @@
         
         <script>
             AFRAME.registerComponent('start-experience', {
-                init: function () {
-                    //we can't play sound on some browsers until we have some user interaction
-                    //this means we should only start playing ambient music after this button is clicked
-                    console.log('scene loaded');
-                    document.querySelector('#loading-animation').style.display = 'none';
-                    document.querySelector('#user-gesture-button').style.display = 'block';
-                }
-            });
-
-            //function called from user-gesture click
-            const startExperience = function () {
-                //hide user-gesture overlay
-                document.querySelector('#user-gesture-overlay').style.display = 'none';
-
-                //start all ambient music
-                const ambientSounds = document.querySelectorAll('.ambient-music');
-                ambientSounds.forEach(function (soundEntity) {
-                    soundEntity.components.sound.playSound();
-                });
-            }
-        </script>
+           init: function () {
+             //we can't play sound on some browsers until we have some user interaction
+             //this means we should only start playing ambient music after this button is clicked
+             console.log('scene loaded');
+             document.querySelector('#user-gesture-button').style.display='block';
+           }
+         });
+     
+         //function called from user-gesture click.
+         //THIS IS THE INTRODUCTION
+         //MAY TURN IT INTO A SEPERATE JS FILE.
+         var round = 0;
+         const startExperience = function() {
+           console.log(round);
+     
+           textEl = document.querySelector('#welcome-text');
+           buttonEl = document.querySelector('#user-gesture-button');
+     
+           //messy code, but the transitions work.
+           if (round == 0)
+           {
+             textEl.classList.add('fade-out');
+             buttonEl.classList.add('fade-out');
+     
+             setTimeout(function(){
+              textEl.classList.remove('fade-out');
+              buttonEl.classList.remove('fade-out');
+              textEl.innerHTML = "An Experience By the Model & Story Team";
+             }, 2000);
+     
+             setTimeout(function(){
+               textEl.classList.add('fade-in');
+               buttonEl.classList.add('fade-in');
+             }, 3000);
+             round = 1;
+             return;
+           }
+     
+           if (round == 1)
+           {
+             textEl.classList.add('fade-out');
+             buttonEl.classList.add('fade-out');
+     
+             setTimeout(function(){
+              textEl.classList.remove('fade-out');
+              buttonEl.classList.remove('fade-out');
+              textEl.innerHTML = "To Contribute to The Land Back Movement...";
+             }, 2000);
+     
+             setTimeout(function(){
+               textEl.classList.add('fade-in');
+               buttonEl.classList.add('fade-in');
+             }, 3000);
+             round = 2;
+             return;
+           }
+     
+           //final opening round
+           if (round == 2)
+           {
+             textEl.classList.add('fade-out');
+             buttonEl.classList.add('fade-out');
+     
+             setTimeout(function(){
+                buttonEl.style.display = "none";
+                textEl.classList.remove('fade-out');
+                textEl.innerHTML = "We seek to take care of the land, and to strengthen biodiversity in urban centres.";
+             }, 2000);
+     
+             setTimeout(function(){
+               textEl.classList.add('fade-in');
+             }, 3000);
+     
+             setTimeout(function(){
+                 textNew = document.querySelector('#welcome-text-2');
+                 textNew.innerHTML = "Every one of us is a piece of the puzzle that makes up the mural of life.";
+                 textNew.classList.add('fade-in');         
+             }, 7000);
+     
+             setTimeout(function(){
+                 textNew = document.querySelector('#welcome-text-3');
+                 textNew.innerHTML = "We can work to restore nature's once abundant ecosystems.";
+                 textNew.classList.add('fade-in');
+               }, 11000);
+     
+               setTimeout(function(){
+                 textNew = document.querySelector('#welcome-text-4');
+                 textNew.innerHTML = "Let's see where our work will get us in 10, 20 years, shall we?";
+                 textNew.classList.add('fade-in');
+               }, 16000);
+     
+               setTimeout(function(){
+                 buttonEl.classList.remove('fade-out');
+                 buttonEl.innerHTML = "Enter Experience";
+                 buttonEl.style.display = "block";
+               }, 17000);
+     
+               setTimeout(function(){
+                 buttonEl.classList.add('fade-in');
+               }, 20000);
+     
+             round = 3;
+             return;
+           }
+           if (round == 3)
+           {
+            //start all ambient music
+             const ambientSounds = document.querySelectorAll('.ambient-music');
+             ambientSounds.forEach(function(soundEntity) {
+               soundEntity.components.sound.playSound();
+             });
+            document.querySelector('#user-gesture-overlay').style.display = "none";
+           }
+         }
+       </script>
 
     </head>
 
@@ -55,10 +149,13 @@
         <!-- https://developers.google.com/web/updates/2017/09/autoplay-policy-changes (fun memes on webpage;) -->
         <div id="user-gesture-overlay">
             <div class="center">
-                <button id="user-gesture-button" onclick="startExperience();">Enter Experience</button>
-                <!-- loading gif from: https://www.behance.net/gallery/31234507/Open-source-Loading-GIF-Icons-Vol-1 -->
-                <img id="loading-animation"
-                    src="https://cdn.glitch.com/4d85200f-900f-4f4a-b950-82c4af80c1fb%2Floader.gif?v=1611262527887">
+                <div id = "welcome-text" class = 'fade-in'> Welcome to Missing Piece </div>
+                <div id = "welcome-text-2"> <br></div>
+                <div id = "welcome-text-3"> <br></div>
+                <div id = "welcome-text-4"><br> </div>
+                <br>
+                <br>
+                <button id="user-gesture-button" class = 'fade-in' onclick="startExperience();">Next</button>
             </div>
         </div>
 
