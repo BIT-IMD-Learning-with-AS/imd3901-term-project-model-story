@@ -49,9 +49,10 @@
         </script>
 
     </head>
-
-
     <body>
+        <div id="UI">
+            Puzzles: 0/5
+        </div>
         <!-- by having a 2D "user gesture" we can allow sounds to play and the like. We will make it an overlay so nothing can be clicked before the user gesture ... -->
         <!-- https://developers.google.com/web/updates/2017/09/autoplay-policy-changes (fun memes on webpage;) -->
         <div id="user-gesture-overlay">
@@ -282,9 +283,7 @@
             <a-entity id="camera" camera look-controls position = "5 20 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-                <div id="UI">
-                    Puzzles: 0/5
-                </div>
+                <a-entity class = "sound-fx"></a-entity> <!--Blank sound FX holder to follow the player around when they succeed or fail at things-->
             </a-entity>
 
 
