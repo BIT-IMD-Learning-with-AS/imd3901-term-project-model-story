@@ -1,13 +1,10 @@
 'use strict'
-
 AFRAME.registerComponent('environment-effect', {
-    schema : {
-    },
     init : function () {
+        console.log("ENVIRONMENT EFFECTS LOADED");
         //This objectives array is where we store completed puzzles. 
-        let objectives = [0,0,0,0,0];
-        let sound = document.getElementById("sound-fx");
-
+        let objectives = [0,0,0,0,1];
+        //let sound = document.getElementById("sound-fx");
         //0: if the land bridge puzzle is complete
         if (objectives[0] === 1)
         {
@@ -19,7 +16,7 @@ AFRAME.registerComponent('environment-effect', {
         //1: if the watering can puzzle is complete
         if (objectives[1] === 1)
         {
-            sound.setAttribute('sound', {src:'#good1_sfx'});
+            //sound.setAttribute('sound', {src:'#good1_sfx'});
             //basically just add a metric butt-ton of PLANTS
             //either have them pre-placed and load them, or just spawn them similar to A2.
             //entirely dependant on the outdoorsy layout, so I can't have it written out yet, but general idea is as follows:
@@ -35,14 +32,14 @@ AFRAME.registerComponent('environment-effect', {
         //2: sewage puzzle
         if (objectives[2] === 1)
         {
-            sound.setAttribute('sound', {src:'#good1_sfx'});
+            //sound.setAttribute('sound', {src:'#good1_sfx'});
             //change the colour of the object, or load in a second model
         }
 
         //3: stars
         if (objectives[3] === 1)
         {
-            sound.setAttribute('sound', {src:'#good1_sfx'});
+            //sound.setAttribute('sound', {src:'#good1_sfx'});
             //change the background.
             //might have to rebuild the environment at this point.
         }
@@ -50,15 +47,15 @@ AFRAME.registerComponent('environment-effect', {
         //4: Crickets puzzle
         if (objectives[4] === 1)
         {
-            sound.setAttribute('sound', {src:'#good1_sfx'});
+            //sound.setAttribute('sound', {src:'#good1_sfx'});
             //Easiest effects to change because it's just swapping sound effects.
-            document.getElementsByClassName('ambient-music').setAttribute('sound', {src:'#bird_amb'});
+            document.getElementsByClassName('ambient-music').setAttribute('sound', 'src:#bird_amb');
         }
 
         //Check all
         if (objectives === [1,1,1,1,1])
         {
-            sound.setAttribute('sound', {src:'#good1_sfx'});
+            //sound.setAttribute('sound', {src:'#good1_sfx'});
             //Trigger Win Screen
             //Take code from intro screen and just rework it
 
