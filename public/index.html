@@ -34,8 +34,7 @@
          //function called from user-gesture click.
          //THIS IS THE INTRODUCTION
          var round = 0;
-         const startExperience = function() {
-           console.log(round);
+         function startExperience() {
      
            textEl = document.querySelector('#welcome-text');
            buttonEl = document.querySelector('#user-gesture-button');
@@ -140,10 +139,7 @@
            }
          }
        </script>
-
     </head>
-
-
     <body>
         <!-- by having a 2D "user gesture" we can allow sounds to play and the like. We will make it an overlay so nothing can be clicked before the user gesture ... -->
         <!-- https://developers.google.com/web/updates/2017/09/autoplay-policy-changes (fun memes on webpage;) -->
@@ -155,7 +151,7 @@
                 <div id = "welcome-text-4"><br> </div>
                 <br>
                 <br>
-                <button id="user-gesture-button" class = 'fade-in' onclick="startExperience();">Next</button>
+                <button id="user-gesture-button" class = 'fade-in' onclick="startExperience()">Next</button>
             </div>
         </div>
 
