@@ -386,16 +386,7 @@
             </a-entity>
 
 
-            <a-entity id = "apartment" static-body>
-
-            <!-- apartment layout -->
-
-                <a-entity id="floor" position="0 10.0 0"
-                geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
-                static-body></a-entity>
-
-                <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
-
+            <a-entity id = "outside" static-body>
             <!-- buildings -->  
             
             <a-entity id="skyA_m" position="40 0 60" scale="11 11 11" gltf-model="#skyA" shadow static-body></a-entity>
@@ -424,6 +415,7 @@
             <a-entity id="lowH_m" position="9 0 53" scale="11 11 11" gltf-model="#lowH" shadow static-body></a-entity>
             <a-entity id="lowB_m" position="11 0 40" scale="11 11 11" gltf-model="#lowB" shadow static-body></a-entity>
 
+            <!-- land --> 
             <a-entity id="rock_m" position="-40 0 -10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-40 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-40 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
@@ -446,6 +438,19 @@
             <a-entity id="rock_m" position="-60 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-50 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-40 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+
+            </a-entity>
+
+            <a-entity id = "apartment" static-body>
+
+            <!-- apartment layout -->
+
+                <a-entity id="floor" position="0 10.0 0"
+                geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
+                static-body></a-entity>
+
+                <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
+
             
             <!--<a-entity id="slope_m" position="-80 00 10" rotation="0 90 0" scale="11 11 11" gltf-model="#slope" shadow static-body></a-entity>-->
             
