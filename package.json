@@ -19,5 +19,6 @@
   "dependencies": {
     "aframe-extras": "^6.1.1",
     "express": "^4.17.2"
-  }
+  },
+  "devDependencies": {}
 }

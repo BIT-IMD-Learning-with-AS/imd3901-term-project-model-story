@@ -8,6 +8,7 @@
         <script src="js/time-effect.js"></script>
         <script src="js/aframe-physics-system.js"></script>
         <script src="js/tele.js"></script>
+        <script src="js/doors.js"></script>
         <!--Copy and pasted from the source Anthony gave us.-->
         <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
         <script
@@ -71,6 +72,7 @@
                 <audio id = "good1_sfx" src = "assets/sound/goodSound_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="good2_sfx" src = "assets/sound/goodSound_2.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="light1_sfx" src = "assets/sound/lightSwitch_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
+                <audio id="door_sfx" src = "assets/sound/thunk.ogg" preload = "auto" crossorigin = "anonymous"></audio>
 
                 <a-asset-item id="apartment_model" response-type="arraybuffer" src="assets/models/APARTMENT/emptyApartment.gltf"></a-asset-item>
                 <a-asset-item id="nav_mesh" response-type="arraybuffer" src="assets/models/GLTF/NavMeshTP.gltf"></a-asset-item>
@@ -82,6 +84,10 @@
                 <a-asset-item id = "closetDoor01" response-type = "arraybuffer" src = "assets/models/APARTMENT/closetDoor01.gltf"></a-asset-item>
                 <a-asset-item id = "closetDoor02" response-type = "arraybuffer" src = "assets/models/APARTMENT/closetDoor02.gltf"></a-asset-item>
                 <a-asset-item id = "normalDoor" response-type = "arraybuffer" src = "assets/models/APARTMENT/normalDoor.gltf"></a-asset-item>
+
+                <!--WINDOWS-->
+                <a-asset-item id = "largeWindow" response-type = "arraybuffer" src = "assets/models/APARTMENT/largeWindow.gltf"></a-asset-item>
+                <a-asset-item id = "smallWindow" response-type = "arraybuffer" src = "assets/models/APARTMENT/smallWindow.gltf"></a-asset-item>
 
                 <!-- living room -->
 
@@ -302,13 +308,57 @@
                 static-body></a-entity>
 
                 <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
-                <a-entity id="balconyDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#balconyDoor01" shadow static-body></a-entity>
-                <a-entity id="balconyDoor02_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#balconyDoor02" shadow static-body></a-entity>
-                <a-entity id="closetDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#closetDoor01" shadow static-body></a-entity>
-                <a-entity id="closetDoor02_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#closetDoor02" shadow static-body></a-entity>
-                <a-entity id="bedroomDoor_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
-                <a-entity id="bathroomDoor_build" position="0 10.2 -18.5" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
+                <!--Doors-->
+                <a-entity id="balconyDoor01_build" 
+                            position="0 10.2 0" 
+                            scale="0.2 0.2 0.2" 
+                            gltf-model="#balconyDoor01" 
+                            shadow static-body
+                            >
+                </a-entity>
+                <a-entity id="balconyDoor02_build" 
+                            position="0 10.2 0" 
+                            scale="0.2 0.2 0.2" 
+                            gltf-model="#balconyDoor02" 
+                            shadow static-body>
+                </a-entity>
+                <a-entity id="closetDoor01_build" 
+                            position="0 10.2 0" 
+                            scale="0.2 0.2 0.2" 
+                            gltf-model="#closetDoor01" 
+                            shadow static-body>
+                </a-entity>
+                <a-entity id="closetDoor02_build" 
+                            position="0 10.2 0" 
+                            scale="0.2 0.2 0.2" 
+                            gltf-model="#closetDoor02" 
+                            shadow static-body
+                            >
+                </a-entity>
+                <a-entity id="bedroomDoor_build" 
+                            position="0 10.2 0" 
+                            scale="0.2 0.2 0.2" 
+                            gltf-model="#normalDoor" 
+                            shadow static-body
+                            animation__mouseclick="startEvents:click; dur:300;"
+                            door-swing>
+                </a-entity>
+                <a-entity id="bathroomDoor_build" 
+                            position="0 10.2 -18.5" 
+                            scale="0.2 0.2 0.2" 
+                            gltf-model="#normalDoor" 
+                            shadow static-body
+                            animation__mouseclick="startEvents:click; dur:300;"
+                            door-swing>
+                </a-entity>
+
+                <!--Unopenable, as we don't have a whole APARTMENT BUILDING, and we dont want our player falling off the world.-->
                 <a-entity id="hallwayDoor_build" position="-2 10 -22.5" rotation = "0 90 0" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
+                
+                <!--Windows-->
+                <a-entity id="bathroomWindow_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#largeWindow" shadow static-body></a-entity>
+                <a-entity id="smallBedroomWindow_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#smallWindow" shadow static-body></a-entity>
+                <a-entity id="largeBedroomWindow_build" position="0 10 20.5" scale="0.2 0.2 0.2" gltf-model="#smallWindow" shadow static-body></a-entity>
 
             <!-- living room -->
 
