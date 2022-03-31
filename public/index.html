@@ -64,7 +64,14 @@
         </div>
 
         <a-scene id="scene" physics start-experience>
-
+            <a-entity id="camera" camera look-controls wasd-controls position = "-26 20 5"> <!--spawning us high in an apartment-->
+                <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
+                <!--
+                    
+                -->
+                <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
+                
+            </a-entity>
             <a-assets>
                 <!--Starting to load in some SFX here-->
                 <audio id="city_amb" src="assets/sound/citySounds.mp3" preload="auto" crossorigin="anonymous"></audio>
@@ -141,6 +148,7 @@
             <a-asset-item id="lowK" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingK.glb"></a-asset-item>
             
             <a-asset-item id="rock" response-type="arraybuffer" src="assets/models/NATURE/cliff_block_rock.glb"></a-asset-item>
+            <a-asset-item id="curved" response-type="arraybuffer" src="assets/models/STREETS/A_curved.glb"></a-asset-item>
             
             
 
@@ -376,14 +384,7 @@
 
             <!-- camera -->        
 
-            <a-entity id="camera" camera look-controls wasd-controls position = "-26 20 5"> <!--spawning us high in an apartment-->
-                <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
-                <!--
-                    
-                -->
-                <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-                
-            </a-entity>
+
 
 
             <a-entity id = "outside" static-body>
@@ -416,7 +417,9 @@
             <a-entity id="lowB_m" position="11 0 40" scale="11 11 11" gltf-model="#lowB" shadow static-body></a-entity>
 
             <!-- land --> 
+            
             <a-entity id="rock_m" position="-40 0 -10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+
             <a-entity id="rock_m" position="-40 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-40 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-40 0 20" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
@@ -425,7 +428,7 @@
             <a-entity id="rock_m" position="-50 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-50 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-50 0 20" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-
+                
             <a-entity id="rock_m" position="-60 0 -10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-60 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-60 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
@@ -438,6 +441,8 @@
             <a-entity id="rock_m" position="-60 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-50 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-40 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+
+            <a-entity id="curved_m" position="-40 10 -30" scale="11 11 11" gltf-model="#curved" shadow static-body></a-entity>
 
             </a-entity>
 
