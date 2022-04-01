@@ -308,52 +308,18 @@
                 static-body></a-entity>
 
                 <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
-                <!--Doors-->
-                <a-entity id="balconyDoor01_build" 
-                            position="0 10.2 0" 
-                            scale="0.2 0.2 0.2" 
-                            gltf-model="#balconyDoor01" 
-                            shadow static-body
-                            >
-                </a-entity>
-                <a-entity id="balconyDoor02_build" 
-                            position="0 10.2 0" 
-                            scale="0.2 0.2 0.2" 
-                            gltf-model="#balconyDoor02" 
-                            shadow static-body>
-                </a-entity>
-                <a-entity id="closetDoor01_build" 
-                            position="0 10.2 0" 
-                            scale="0.2 0.2 0.2" 
-                            gltf-model="#closetDoor01" 
-                            shadow static-body>
-                </a-entity>
-                <a-entity id="closetDoor02_build" 
-                            position="0 10.2 0" 
-                            scale="0.2 0.2 0.2" 
-                            gltf-model="#closetDoor02" 
-                            shadow static-body
-                            >
-                </a-entity>
-                <a-entity id="bedroomDoor_build" 
-                            position="0 10.2 0" 
-                            scale="0.2 0.2 0.2" 
-                            gltf-model="#normalDoor" 
-                            shadow static-body
-                            animation__mouseclick="startEvents:click; dur:300;"
-                            door-swing>
-                </a-entity>
-                <a-entity id="bathroomDoor_build" 
-                            position="0 10.2 -18.5" 
-                            scale="0.2 0.2 0.2" 
-                            gltf-model="#normalDoor" 
-                            shadow static-body
-                            animation__mouseclick="startEvents:click; dur:300;"
-                            door-swing>
-                </a-entity>
-
-                <!--Unopenable, as we don't have a whole APARTMENT BUILDING, and we dont want our player falling off the world.-->
-                <a-entity id="hallwayDoor_build" position="-2 10 -22.5" rotation = "0 90 0" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
+                <!--
+                    DOORS
+                    UNOPENABLE, as it's not a priority and more of a slice-of-life thing.
+                -->
+                <!-- C'est pas bon-->
+                <a-entity id="balconyDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#balconyDoor01" shadow static-body></a-entity>
+                <a-entity id="balconyDoor02_build" position="1 10.2 0" scale="0.2 0.2 0.2" gltf-model="#balconyDoor02" shadow static-body></a-entity>
+                <a-entity id="closetDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#closetDoor01" shadow static-body></a-entity>
+                <a-entity id="closetDoor02_build" rotation = "0 -45 0" position="-9 10.2 18" scale="0.2 0.2 0.2" gltf-model="#closetDoor02" shadow static-body></a-entity>
+                <a-entity id="bedroomDoor_build" rotation = "0 -75 0" position="2 10.2 3" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
+                <a-entity id="bathroomDoor_build" rotation = "0 -75 0 " position="2 10.2 -15.5" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
+                <a-entity id="hallwayDoor_build" position="-2 10 -23" rotation = "0 90 0" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
                 
                 <!--Windows-->
                 <a-entity id="bathroomWindow_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#largeWindow" shadow static-body></a-entity>
