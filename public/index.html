@@ -84,6 +84,7 @@
                 <a-asset-item id = "closetDoor01" response-type = "arraybuffer" src = "assets/models/APARTMENT/closetDoor01.gltf"></a-asset-item>
                 <a-asset-item id = "closetDoor02" response-type = "arraybuffer" src = "assets/models/APARTMENT/closetDoor02.gltf"></a-asset-item>
                 <a-asset-item id = "normalDoor" response-type = "arraybuffer" src = "assets/models/APARTMENT/normalDoor.gltf"></a-asset-item>
+                <a-asset-item id = "bal1_test" response-type = "arraybuffer" src = "assets/models/APARTMENT/bal1_test.glb"></a-asset-item>
 
                 <!--WINDOWS-->
                 <a-asset-item id = "largeWindow" response-type = "arraybuffer" src = "assets/models/APARTMENT/largeWindow.gltf"></a-asset-item>
@@ -311,8 +312,11 @@
                 <!--
                     DOORS
                     UNOPENABLE, as it's not a priority and more of a slice-of-life thing.
+
+                    <a-entity id="balconyDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#balconyDoor01" shadow static-body></a-entity>
                 -->
-                <a-entity id="balconyDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#balconyDoor01" shadow static-body></a-entity>
+                
+                <a-entity id="balconyDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#bal1_test" shadow static-body></a-entity>
                 <a-entity id="balconyDoor02_build" position="1 10.2 0" scale="0.2 0.2 0.2" gltf-model="#balconyDoor02" shadow static-body></a-entity>
                 <a-entity id="closetDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#closetDoor01" shadow static-body></a-entity>
                 <a-entity id="closetDoor02_build" rotation = "0 -45 0" position="-9 10.2 18" scale="0.2 0.2 0.2" gltf-model="#closetDoor02" shadow static-body></a-entity>
