@@ -8,6 +8,7 @@
         <script src="js/time-effect.js"></script>
         <script src="js/aframe-physics-system.js"></script>
         <script src="js/tele.js"></script>
+        <script src="js/bug.js"></script>
         <!--Copy and pasted from the source Anthony gave us.-->
         <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
         <script
@@ -416,15 +417,15 @@
             </a-entity>
 
             <!--cricket puzzle-->
-            <a-entity class = "cricket" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);"></a-entity>
-            <a-entity class = "cricket" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);"></a-entity>
-            <a-entity class = "cricket" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);"></a-entity>
-            <a-entity class = "cricket" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);"></a-entity>
+            <a-entity class = "cricket" id = "cricket1" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);" bug></a-entity>
+            <a-entity class = "cricket" id = "cricket2" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);" bug></a-entity>
+            <a-entity class = "cricket" id = "cricket3" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);" bug></a-entity>
+            <a-entity class = "cricket" id = "cricket4" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);" bug></a-entity>
 
 
             <!--Teleporting?-->
 a
-            <a-entity id="teleHall" class="button interactive" position="5 20 0"
+            <a-entity id="teleHall" class="button interactive" position="5 14 0"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -433,7 +434,7 @@ a
             tele-button>
             </a-entity>
 
-            <a-entity id="teleKitchen" class="button interactive" position="15 20 14"
+            <a-entity id="teleKitchen" class="button interactive" position="15 14 14"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -442,7 +443,7 @@ a
             tele-button>
             </a-entity>
 
-            <a-entity id="teleBalcony" class="button interactive" position="7 20 28"
+            <a-entity id="teleBalcony" class="button interactive" position="7 14 28"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -451,7 +452,7 @@ a
             tele-button>
             </a-entity>
 
-            <a-entity id="teleTV" class="button interactive" position="15 20 -10"
+            <a-entity id="teleTV" class="button interactive" position="15 14 -10"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
