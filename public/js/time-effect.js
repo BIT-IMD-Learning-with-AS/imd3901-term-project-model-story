@@ -18,11 +18,13 @@ AFRAME.registerComponent('time-effect', {
                 //set Night
                 bg.setAttribute('environment', 'preset:starry;');
                 isDay = false;
+                CONTEXT_AF.el.emit('night', '', true)
             }
             else {
                 //set Day
                 bg.setAttribute('environment', 'preset:forest;');
                 isDay = true;
+                CONTEXT_AF.el.emit('day', '', true)
             }
         });
    
