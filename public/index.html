@@ -10,6 +10,7 @@
         <script src="js/tele.js"></script>
         <script src="js/doors.js"></script>
         <script src="js/bug.js"></script>
+        <script src="js/lightSwitch.js"></script>
 
         <!--Copy and pasted from the source Anthony gave us.-->
         <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
@@ -457,11 +458,15 @@
             <a-entity class = "cricket" id = "cricket4" position="0 19 0" rotation="0 0 0" scale="1 1 1" geometry="primitive: box; width:1.0; height:1.0; depth:1.0;" material="color:rgb(50, 200, 50);" bug></a-entity>
 
             <!--Lights-->
-            <a-entity light="type: directional; color: #FFF; intensity: 1.0" position="15 24 -10"></a-entity>
+            <a-entity id="l1" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="15 18 -10"></a-entity>
+            <a-entity id="ls1" class="button interactive" position="0 20 0" geometry="primitive: box; width:1.0; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
+            animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;" ls1></a-entity>
 
-            <!--Teleporting?-->
+            <!--Teleporting-->
 
-            <a-entity id="teleHall" class="button interactive" position="5 13 0"
+            <a-entity id="teleHall" class="button interactive" position="5 12 0"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -470,7 +475,7 @@
             tele-button>
             </a-entity>
 
-            <a-entity id="teleKitchen" class="button interactive" position="15 13 14"
+            <a-entity id="teleKitchen" class="button interactive" position="15 12 14"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -479,7 +484,7 @@
             tele-button>
             </a-entity>
 
-            <a-entity id="teleBalcony" class="button interactive" position="7 13 28"
+            <a-entity id="teleBalcony" class="button interactive" position="7 12 28"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -489,7 +494,7 @@
             door-swing>
             </a-entity>
 
-            <a-entity id="teleTV" class="button interactive" position="15 13 -10"
+            <a-entity id="teleTV" class="button interactive" position="15 12 -10"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -498,7 +503,7 @@
             tele-button>
             </a-entity>
 
-            <a-entity id="teleBath" class="button interactive" position="-4 13 -11"
+            <a-entity id="teleBath" class="button interactive" position="-4 12 -11"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -507,7 +512,7 @@
             tele-button>
             </a-entity>
 
-            <a-entity id="teleBathFar" class="button interactive" position="-18 13 -13"
+            <a-entity id="teleBathFar" class="button interactive" position="-18 12 -13"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
@@ -516,7 +521,16 @@
             tele-button>
             </a-entity>
 
-            <a-entity id="teleBed" class="button interactive" position="-5 13 7.5"
+            <a-entity id="teleBed" class="button interactive" position="-5 12 7.5"
+            geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
+            sound="src:#light1_sfx; on:click;"
+            animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(120, 98, 38); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;"
+            tele-button>
+            </a-entity>
+
+            <a-entity id="teleBed2" class="button interactive" position="-18 12 5"
             geometry="primitive:cylinder; radius:3; height:1;" rotation="0, 0, 0" material="color:yellow;"
             sound="src:#light1_sfx; on:click;"
             animation__mouseenter="property:material.color; type:color; to:rgb(247, 244, 69); startEvents:mouseenter; dur:200;"
