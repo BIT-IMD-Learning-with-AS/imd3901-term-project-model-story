@@ -14,6 +14,7 @@
         <!-- Pickup Code from scrath -->
         <script src="js/pickup.js"></script>
         <script src="js/placement.js"></script>
+        <script src="js/intro-credits.js"></script>
         <!-- Component Super-Hands Test-->
         <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
             <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
@@ -21,124 +22,6 @@
         <!-- need a user gesture to allow sound on some browsers i.e. iOS -->
         <link rel="stylesheet" href="css/user-gesture.css">
         
-        <script>
-            AFRAME.registerComponent('start-experience', {
-           init: function () {
-             //we can't play sound on some browsers until we have some user interaction
-             //this means we should only start playing ambient music after this button is clicked
-             console.log('scene loaded');
-             document.querySelector('#user-gesture-button').style.display='block';
-           }
-         });
-     
-         //function called from user-gesture click.
-         //THIS IS THE INTRODUCTION
-         var round = 0;
-         function startExperience() {
-     
-           textEl = document.querySelector('#welcome-text');
-           buttonEl = document.querySelector('#user-gesture-button');
-     
-           //messy code, but the transitions work.
-           if (round == 0)
-           {
-             textEl.classList.add('fade-out');
-             buttonEl.classList.add('fade-out');
-     
-             setTimeout(function(){
-              textEl.classList.remove('fade-out');
-              buttonEl.classList.remove('fade-out');
-              textEl.innerHTML = "An Experience By the Model & Story Team";
-             }, 2000);
-     
-             setTimeout(function(){
-               textEl.classList.add('fade-in');
-               buttonEl.classList.add('fade-in');
-             }, 3000);
-             round = 1;
-             return;
-           }
-     
-           if (round == 1)
-           {
-             textEl.classList.add('fade-out');
-             buttonEl.classList.add('fade-out');
-     
-             setTimeout(function(){
-              textEl.classList.remove('fade-out');
-              buttonEl.classList.remove('fade-out');
-              textEl.innerHTML = "Inspired by the teachings of The Land Back Movement...";
-             }, 2000);
-     
-             setTimeout(function(){
-               textEl.classList.add('fade-in');
-               buttonEl.classList.add('fade-in');
-             }, 3000);
-             round = 2;
-             return;
-           }
-     
-           //final opening round
-           if (round == 2)
-           {
-             textEl.classList.add('fade-out');
-             buttonEl.classList.add('fade-out');
-     
-             setTimeout(function(){
-                buttonEl.style.display = "none";
-                textEl.classList.remove('fade-out');
-                textEl.innerHTML = "We seek to take care of the land, and to strengthen biodiversity in urban centres.";
-             }, 2000);
-     
-             setTimeout(function(){
-               textEl.classList.add('fade-in');
-             }, 3000);
-     
-             setTimeout(function(){
-                 textNew = document.querySelector('#welcome-text-2');
-                 textNew.innerHTML = "Every one of us is a piece of the puzzle that makes up the mural of life.";
-                 textNew.classList.add('fade-in');         
-             }, 5000);
-     
-             setTimeout(function(){
-                 textNew = document.querySelector('#welcome-text-3');
-                 textNew.innerHTML = "We can work to restore nature's once abundant ecosystems with small, everyday tasks.";
-                 textNew.classList.add('fade-in');
-               }, 9000);
-     
-               setTimeout(function(){
-                 textNew = document.querySelector('#welcome-text-4');
-                 textNew.innerHTML = "Let's see where our work will get this city in 10, 20 years, shall we?";
-                 textNew.classList.add('fade-in');
-               }, 13000);
-     
-               setTimeout(function(){
-                 buttonEl.classList.remove('fade-out');
-                 buttonEl.innerHTML = "Enter Experience";
-                 buttonEl.style.display = "block";
-               }, 17000);
-     
-               setTimeout(function(){
-                 buttonEl.classList.add('fade-in');
-               }, 18000);
-     
-             round = 3;
-             return;
-           }
-           if (round == 3)
-           {
-            //start all ambient music
-             const ambientSounds = document.querySelectorAll('.ambient-music');
-             ambientSounds.forEach(function(soundEntity) {
-               soundEntity.components.sound.playSound();
-             });
-            document.querySelector('#user-gesture-overlay').classList.add('fade-out');
-            setTimeout(function(){
-              document.querySelector('#user-gesture-overlay').style.display = 'none';
-               }, 2000);
-           }
-         }
-       </script>
     </head>
     <body>
         <!-- by having a 2D "user gesture" we can allow sounds to play and the like. We will make it an overlay so nothing can be clicked before the user gesture ... -->
@@ -149,7 +32,6 @@
                 <div id = "welcome-text-2"> <br></div>
                 <div id = "welcome-text-3"> <br></div>
                 <div id = "welcome-text-4"><br> </div>
-                <br>
                 <br>
                 <button id="user-gesture-button" class = 'fade-in' onclick="startExperience()">Next</button>
             </div>
