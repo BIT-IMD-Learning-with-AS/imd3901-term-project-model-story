@@ -12,6 +12,7 @@
         <script src="js/bug.js"></script>
         <script src="js/lightSwitch.js"></script>
 
+        <script src ="js/environment-effects.js"></script>  
         <!--Copy and pasted from the source Anthony gave us.-->
         <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
         <script
@@ -43,18 +44,16 @@
             function startExperience() {
                 //hide user-gesture overlay
                 document.querySelector('#user-gesture-overlay').style.display = 'none';
-
                 //start all ambient music
                 const ambientSounds = document.querySelectorAll('.ambient-music');
                 ambientSounds.forEach(function (soundEntity) {
                     soundEntity.components.sound.playSound();
                 });
+                document.getElementById("scene_music").components.sound.playSound();
             }
         </script>
 
     </head>
-
-
     <body>
         <!-- by having a 2D "user gesture" we can allow sounds to play and the like. We will make it an overlay so nothing can be clicked before the user gesture ... -->
         <!-- https://developers.google.com/web/updates/2017/09/autoplay-policy-changes (fun memes on webpage;) -->
@@ -67,13 +66,13 @@
             </div>
         </div>
 
-        <a-scene id="scene" physics start-experience>
-
+        <a-scene id="scene" physics start-experience environment-effect>    
             <a-assets>
                 <!--Starting to load in some SFX here-->
                 <audio id="city_amb" src="assets/sound/citySounds.mp3" preload="auto" crossorigin="anonymous"></audio>
+                <audio id="bird_amb" src="assets/sound/birdSounds.mp3" preload="auto" crossorigin="anonymous"></audio>
+                <audio id="serenity_music" src = "assets/sound/Serenity.wav" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id = "good1_sfx" src = "assets/sound/goodSound_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
-                <audio id="good2_sfx" src = "assets/sound/goodSound_2.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="light1_sfx" src = "assets/sound/lightSwitch_1.ogg" preload = "auto" crossorigin = "anonymous"></audio>
                 <audio id="door_sfx" src = "assets/sound/thunk.ogg" preload = "auto" crossorigin = "anonymous"></audio>
 
@@ -290,9 +289,61 @@
 
             </a-assets>
 
-            <!--Sound coming from the windows test-->
-            <a-entity class = "ambient-music" position="-4 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
-            <a-entity class = "ambient-music" position="10 2 -9" sound="src:#city_amb; autoplay:false"></a-entity>
+                <a-asset-item id="apartment_model" response-type="arraybuffer" src="assets/models/apartment.gltf"></a-asset-item>
+                <a-asset-item id="nav_mesh" response-type="arraybuffer" src="assets/models/GLTF/NavMeshTP.gltf"></a-asset-item>
+
+
+            <!-- living room -->
+
+            <a-asset-item id="lS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofa.glb"></a-asset-item>
+            <a-asset-item id="tM_model" response-type="arraybuffer" src="assets/models/GLTF/televisionModern.glb"></a-asset-item>
+            <a-asset-item id="tCoffee_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffee.glb"></a-asset-item>
+            <a-asset-item id="lC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChair.glb"></a-asset-item>
+            <a-asset-item id="rugR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRounded.glb"></a-asset-item>
+            <a-asset-item id="cF_model" response-type="arraybuffer" src="assets/models/GLTF/ceilingFan.glb"></a-asset-item>
+
+            <!-- bedroom -->
+
+            <a-asset-item id="bedS_model" response-type="arraybuffer" src="assets/models/GLTF/bedSingle.glb"></a-asset-item>
+            <a-asset-item id="bCO_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseOpen.glb"></a-asset-item>
+            <a-asset-item id="desk_model" response-type="arraybuffer" src="assets/models/GLTF/desk.glb"></a-asset-item>
+            <a-asset-item id="cBD_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBedDrawer.glb"></a-asset-item>
+            <a-asset-item id="coatR_model" response-type="arraybuffer" src="assets/models/GLTF/coatRack.glb"></a-asset-item>
+            <a-asset-item id="sT_model" response-type="arraybuffer" src="assets/models/GLTF/sideTable.glb"></a-asset-item>
+            <a-asset-item id="sTD_model" response-type="arraybuffer" src="assets/models/GLTF/sideTableDrawers.glb"></a-asset-item>
+            <a-asset-item id="trashcan_model" response-type="arraybuffer" src="assets/models/GLTF/trashcan.glb"></a-asset-item>
+
+            <!-- bathroom -->
+
+            <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
+            <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
+            <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
+            <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
+            <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
+
+            <!-- kitchen -->
+
+            <a-asset-item id="kF_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridge.glb"></a-asset-item>
+            <a-asset-item id="kM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenMicrowave.glb"></a-asset-item>
+            <a-asset-item id="kSink_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenSink.glb"></a-asset-item>
+            <a-asset-item id="kSE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStoveElectric.glb"></a-asset-item>
+            <a-asset-item id="kBar_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBar.glb"></a-asset-item>
+            <a-asset-item id="kB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBlender.glb"></a-asset-item>
+            <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
+            <a-asset-item id="kC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinet.glb"></a-asset-item>
+            <a-asset-item id="sB_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBar.glb"></a-asset-item>
+            <a-asset-item id="kCU_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpper.glb"></a-asset-item>
+            <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
+            <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
+
+            <!--
+                <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
+                <a-asset-item id="kCCI_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerInner.glb"></a-asset-item>
+                <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
+            -->
+
+
+            <!-- other -->
 
             <!-- camera -->        
 
