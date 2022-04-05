@@ -36,7 +36,7 @@
             });
 
             //function called from user-gesture click
-            const startExperience = function () {
+            function startExperience () {
                 //hide user-gesture overlay
                 document.querySelector('#user-gesture-overlay').style.display = 'none';
 
@@ -56,7 +56,7 @@
         <!-- https://developers.google.com/web/updates/2017/09/autoplay-policy-changes (fun memes on webpage;) -->
         <div id="user-gesture-overlay">
             <div class="center">
-                <button id="user-gesture-button" onclick="startExperience();">Enter Experience</button>
+                <button id="user-gesture-button" onclick="startExperience()">Enter Experience</button>
                 <!-- loading gif from: https://www.behance.net/gallery/31234507/Open-source-Loading-GIF-Icons-Vol-1 -->
                 <img id="loading-animation"
                     src="https://cdn.glitch.com/4d85200f-900f-4f4a-b950-82c4af80c1fb%2Floader.gif?v=1611262527887">
