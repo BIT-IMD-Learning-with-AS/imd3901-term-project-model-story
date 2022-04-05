@@ -459,10 +459,28 @@
 
             <!--Lights-->
             <a-entity id="l1" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="15 18 -10"></a-entity>
-            <a-entity id="ls1" class="button interactive" position="0 20 0" geometry="primitive: box; width:1.0; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
+            <a-entity id="ls1" class="button interactive" position="15 20 -1.5" geometry="primitive: box; width:1.0; height:1.5; depth:0.8;" material="color:rgb(200, 200, 200);"
             animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
             animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
             animation__mouseclick="startEvents:click; dur:300;" ls1></a-entity>
+
+            <a-entity id="l2" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="-15 18 -10"></a-entity>
+            <a-entity id="ls2" class="button interactive" position="-12 20 -8.5" geometry="primitive: box; width:1.0; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
+            animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;" ls2></a-entity>
+
+            <a-entity id="l3" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="15 18 18"></a-entity>
+            <a-entity id="ls3" class="button interactive" position="25 20 15" geometry="primitive: box; width:1.0; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
+            animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;" ls3></a-entity>
+
+            <a-entity id="l4" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="-15 18 8.0"></a-entity>
+            <a-entity id="ls4" class="button interactive" position="-0.95 20 13" geometry="primitive: box; width:0.5; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
+            animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
+            animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
+            animation__mouseclick="startEvents:click; dur:300;" ls4></a-entity>
 
             <!--Teleporting-->
 
