@@ -68,16 +68,21 @@
         </div>
 
         <a-scene id="scene" physics start-experience>
-            <a-entity id="camera" camera look-controls wasd-controls position = "-26 20 5" rotation="0 0 0"> <!--spawning us high in an apartment-->
+
+            <!-- camera -->        
+            <a-entity id="camera" camera wasd-controls look-controls position="5 20 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
-                <!--
-                    
-                -->
-                <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
-                
+                <a-entity cursor="rayOrigin:mouse;" raycaster="far:40; interval:200; objects:.interactive;"></a-entity>
+            
+                <a-entity id = "sound-fx"></a-entity> <!--Blank sound FX holder to follow the player around when they succeed or fail at things-->
+                <a-entity id = "scene_music" class = "ambient-music" sound="src:#serenity_music; autoplay:false; loop:true; volume:0.1;"></a-entity>
+                <a-entity id = "city_sounds" class = "ambient-music" sound="src:#city_amb; autoplay:false; loop:true; volume:0.1;"></a-entity>
+                <a-entity id = "bird_sounds" class = "ambient-music" sound="src:#birds_amb; autoplay:false; loop:true; volume:0.1;"></a-entity>
+                            
             </a-entity>
+
             <a-assets>
-                <!--Starting to load in some SFX here-->
+                <!--Sound-->
                 <audio id="city_amb" src="assets/sound/citySounds.mp3" preload="auto" crossorigin="anonymous"></audio>
                 <audio id="birds_amb" src="assets/sound/birdSounds.mp3" preload="auto" crossorigin="anonymous"></audio>
                 <audio id="serenity_music" src = "assets/sound/Serenity.wav" preload = "auto" crossorigin = "anonymous"></audio>
@@ -90,6 +95,7 @@
                 <a-asset-item id="nav_mesh" response-type="arraybuffer" src="assets/models/GLTF/NavMeshTP.gltf"></a-asset-item>
 
 
+                <!--INTERIOR-->
                 <!--DOORS-->
                 <a-asset-item id = "balconyDoor01" response-type = "arraybuffer" src = "assets/models/APARTMENT/balconyDoor01.gltf"></a-asset-item>
                 <a-asset-item id = "balconyDoor02" response-type = "arraybuffer" src = "assets/models/APARTMENT/balconyDoor02.gltf"></a-asset-item>
@@ -103,142 +109,6 @@
                 <a-asset-item id = "smallWindow" response-type = "arraybuffer" src = "assets/models/APARTMENT/smallWindow.gltf"></a-asset-item>
 
                 <!-- living room -->
-            <!-- bathroom -->
-
-            <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
-            <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
-            <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
-            <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
-            <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
-
-            <!-- kitchen -->
-
-            <a-asset-item id="kF_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridge.glb"></a-asset-item>
-            <a-asset-item id="kM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenMicrowave.glb"></a-asset-item>
-            <a-asset-item id="kSink_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenSink.glb"></a-asset-item>
-            <a-asset-item id="kSE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStoveElectric.glb"></a-asset-item>
-            <a-asset-item id="kBar_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBar.glb"></a-asset-item>
-            <a-asset-item id="kB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBlender.glb"></a-asset-item>
-            <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
-            <a-asset-item id="kC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinet.glb"></a-asset-item>
-            <a-asset-item id="sB_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBar.glb"></a-asset-item>
-            <a-asset-item id="kCU_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpper.glb"></a-asset-item>
-            <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
-            <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
-
-            <!-- buildings outside -->
-
-            <a-asset-item id="skyA" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperA.glb"></a-asset-item>
-            <a-asset-item id="skyB" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperB.glb"></a-asset-item>
-            <a-asset-item id="skyC" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperC.glb"></a-asset-item>
-            <a-asset-item id="skyD" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperD.glb"></a-asset-item>
-            <a-asset-item id="skyE" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperE.glb"></a-asset-item>
-            <a-asset-item id="skyF" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperF.glb"></a-asset-item>
-
-            <a-asset-item id="lowA" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingA.glb"></a-asset-item>
-            <a-asset-item id="lowB" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingB.glb"></a-asset-item>
-            <a-asset-item id="lowC" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingC.glb"></a-asset-item>
-            <a-asset-item id="lowD" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingD.glb"></a-asset-item>
-            <a-asset-item id="lowE" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingE.glb"></a-asset-item>
-            <a-asset-item id="lowF" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingF.glb"></a-asset-item>
-            <a-asset-item id="lowG" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingG.glb"></a-asset-item>
-            <a-asset-item id="lowH" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingH.glb"></a-asset-item>
-            <a-asset-item id="lowI" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingI.glb"></a-asset-item>
-            <a-asset-item id="lowJ" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingJ.glb"></a-asset-item>
-            <a-asset-item id="lowK" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingK.glb"></a-asset-item>
-            
-            <a-asset-item id="rock" response-type="arraybuffer" src="assets/models/NATURE/cliff_block_rock.glb"></a-asset-item>
-            <a-asset-item id="slope" response-type="arraybuffer" src="assets/models/NATURE/cliff_blockSlope_rock.glb"></a-asset-item>
-            <a-asset-item id="steps" response-type="arraybuffer" src="assets/models/NATURE/cliff_steps_rock.glb"></a-asset-item>
-            <a-asset-item id="half_slope" response-type="arraybuffer" src="assets/models/NATURE/cliff_blockSlopeWalls_rock.glb"></a-asset-item>
-            <a-asset-item id="landbridge" response-type="arraybuffer" src="assets/models/NATURE/ground_pathRocks.glb"></a-asset-item>
-            <a-asset-item id="add_bridge" response-type="arraybuffer" src="assets/models/NATURE/cliff_rock.glb"></a-asset-item>
-
-            <a-asset-item id="two_curved" response-type="arraybuffer" src="assets/models/STREETS/road_curveIntersection.glb"></a-asset-item>
-            <a-asset-item id="straight_street" response-type="arraybuffer" src="assets/models/STREETS/road_straight.glb"></a-asset-item>
-            <a-asset-item id="curve_slant" response-type="arraybuffer" src="assets/models/STREETS/road_slantFlatCurve.glb"></a-asset-item>
-            
-            
-
-            
-
-            <!--
-                <a-asset-item id="slope" response-type="arraybuffer" src="assets/models/NATURE/cliff_blockSlope_rock.glb"></a-asset-item>
-                <a-asset-item id="steps" response-type="arraybuffer" src="assets/models/NATURE/cliff_steps_rock.glb"></a-asset-item>
-<a-asset-item id="" response-type="arraybuffer" src="assets/models/NATURE/"></a-asset-item>
-
-                <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
-                <a-asset-item id="kCCI_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerInner.glb"></a-asset-item>
-                <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
-            -->
-
-            <!-- buildings -->
-
-                <!-- assets 
-                
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_awning.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_awningWide.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_overhang.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_overhangWide.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_umbrella.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_umbrellaDetailed.glb"></a-asset-item>
-
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingA.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingB.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingC.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingD.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingE.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingF.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingG.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingA.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingB.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingC.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingD.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingE.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingF.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingG.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingH.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingI.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingJ.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingK.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingL.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingM.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingN.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_wideA.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_wideB.glb"></a-asset-item>
-
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/roof_center.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/roof_corner.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/roof_overhang.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/roof_side.glb"></a-asset-item>
-
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/sign_billboard.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/sign_hospital.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperA.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperB.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperC.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperD.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperE.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperF.glb"></a-asset-item>
-            <a-asset-item id="smallA" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingA.glb"></a-asset-item>
-            <a-asset-item id="smallB" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingB.glb"></a-asset-item>
-            <a-asset-item id="smallC" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingC.glb"></a-asset-item>
-            <a-asset-item id="smallD" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingD.glb"></a-asset-item>
-            <a-asset-item id="smallE" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingE.glb"></a-asset-item>
-            <a-asset-item id="smallF" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingF.glb"></a-asset-item>
-
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_doorA.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_doorB.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_solid.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowA.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowB.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowC.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowD.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowE.glb"></a-asset-item>
-            <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowF.glb"></a-asset-item>
-
-                -->
-
                 <a-asset-item id="lS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofa.glb"></a-asset-item>
                 <a-asset-item id="tM_model" response-type="arraybuffer" src="assets/models/GLTF/televisionModern.glb"></a-asset-item>
                 <a-asset-item id="tCoffee_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffee.glb"></a-asset-item>
@@ -256,9 +126,9 @@
                 <a-asset-item id="sT_model" response-type="arraybuffer" src="assets/models/GLTF/sideTable.glb"></a-asset-item>
                 <a-asset-item id="sTD_model" response-type="arraybuffer" src="assets/models/GLTF/sideTableDrawers.glb"></a-asset-item>
                 <a-asset-item id="trashcan_model" response-type="arraybuffer" src="assets/models/GLTF/trashcan.glb"></a-asset-item>
+                
 
                 <!-- bathroom -->
-
                 <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
                 <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
                 <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
@@ -266,7 +136,6 @@
                 <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
 
                 <!-- kitchen -->
-
                 <a-asset-item id="kF_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridge.glb"></a-asset-item>
                 <a-asset-item id="kM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenMicrowave.glb"></a-asset-item>
                 <a-asset-item id="kSink_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenSink.glb"></a-asset-item>
@@ -279,6 +148,121 @@
                 <a-asset-item id="kCU_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpper.glb"></a-asset-item>
                 <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
                 <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
+
+                
+                
+                <!-- EXTERIOR -->
+
+                <a-asset-item id="skyA" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperA.glb"></a-asset-item>
+                <a-asset-item id="skyB" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperB.glb"></a-asset-item>
+                <a-asset-item id="skyC" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperC.glb"></a-asset-item>
+                <a-asset-item id="skyD" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperD.glb"></a-asset-item>
+                <a-asset-item id="skyE" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperE.glb"></a-asset-item>
+                <a-asset-item id="skyF" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperF.glb"></a-asset-item>
+
+                <a-asset-item id="lowA" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingA.glb"></a-asset-item>
+                <a-asset-item id="lowB" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingB.glb"></a-asset-item>
+                <a-asset-item id="lowC" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingC.glb"></a-asset-item>
+                <a-asset-item id="lowD" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingD.glb"></a-asset-item>
+                <a-asset-item id="lowE" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingE.glb"></a-asset-item>
+                <a-asset-item id="lowF" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingF.glb"></a-asset-item>
+                <a-asset-item id="lowG" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingG.glb"></a-asset-item>
+                <a-asset-item id="lowH" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingH.glb"></a-asset-item>
+                <a-asset-item id="lowI" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingI.glb"></a-asset-item>
+                <a-asset-item id="lowJ" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingJ.glb"></a-asset-item>
+                <a-asset-item id="lowK" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingK.glb"></a-asset-item>
+            
+                <a-asset-item id="rock" response-type="arraybuffer" src="assets/models/NATURE/cliff_block_rock.glb"></a-asset-item>
+                <a-asset-item id="slope" response-type="arraybuffer" src="assets/models/NATURE/cliff_blockSlope_rock.glb"></a-asset-item>
+                <a-asset-item id="steps" response-type="arraybuffer" src="assets/models/NATURE/cliff_steps_rock.glb"></a-asset-item>
+                <a-asset-item id="half_slope" response-type="arraybuffer" src="assets/models/NATURE/cliff_blockSlopeWalls_rock.glb"></a-asset-item>
+                <a-asset-item id="landbridge" response-type="arraybuffer" src="assets/models/NATURE/ground_pathRocks.glb"></a-asset-item>
+                <a-asset-item id="add_bridge" response-type="arraybuffer" src="assets/models/NATURE/cliff_rock.glb"></a-asset-item>
+
+                <a-asset-item id="two_curved" response-type="arraybuffer" src="assets/models/STREETS/road_curveIntersection.glb"></a-asset-item>
+                <a-asset-item id="straight_street" response-type="arraybuffer" src="assets/models/STREETS/road_straight.glb"></a-asset-item>
+                <a-asset-item id="curve_slant" response-type="arraybuffer" src="assets/models/STREETS/road_slantFlatCurve.glb"></a-asset-item>
+            
+            
+
+            
+
+                <!--
+                <a-asset-item id="slope" response-type="arraybuffer" src="assets/models/NATURE/cliff_blockSlope_rock.glb"></a-asset-item>
+                <a-asset-item id="steps" response-type="arraybuffer" src="assets/models/NATURE/cliff_steps_rock.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/NATURE/"></a-asset-item>
+
+                <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
+                <a-asset-item id="kCCI_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerInner.glb"></a-asset-item>
+                <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
+                -->
+
+                <!-- buildings -->
+
+                <!-- assets 
+                
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_awning.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_awningWide.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_overhang.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_overhangWide.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_umbrella.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/detail_umbrellaDetailed.glb"></a-asset-item>
+
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingA.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingB.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingC.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingD.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingE.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingF.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/large_buildingG.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingA.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingB.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingC.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingD.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingE.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingF.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingG.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingH.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingI.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingJ.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingK.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingL.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingM.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingN.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_wideA.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/low_wideB.glb"></a-asset-item>
+
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/roof_center.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/roof_corner.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/roof_overhang.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/roof_side.glb"></a-asset-item>
+
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/sign_billboard.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/sign_hospital.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperA.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperB.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperC.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperD.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperE.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/skyscraperF.glb"></a-asset-item>
+                <a-asset-item id="smallA" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingA.glb"></a-asset-item>
+                <a-asset-item id="smallB" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingB.glb"></a-asset-item>
+                <a-asset-item id="smallC" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingC.glb"></a-asset-item>
+                <a-asset-item id="smallD" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingD.glb"></a-asset-item>
+                <a-asset-item id="smallE" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingE.glb"></a-asset-item>
+                <a-asset-item id="smallF" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingF.glb"></a-asset-item>
+
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_doorA.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_doorB.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_solid.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowA.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowB.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowC.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowD.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowE.glb"></a-asset-item>
+                <a-asset-item id="" response-type="arraybuffer" src="assets/models/BUILDINGS/wall_windowF.glb"></a-asset-item>
+
+                -->
 
                 <!--
                     <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
@@ -434,20 +418,6 @@
 
             </a-assets>
 
-            <!-- camera -->        
-            <a-entity id="camera" camera look-controls position = "5 20 0"> <!--spawning us high in an apartment-->
-                <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
-                <a-entity cursor="rayOrigin:mouse;" raycaster="far:40; interval:200; objects:.interactive;"></a-entity>
-
-                <a-entity id = "sound-fx"></a-entity> <!--Blank sound FX holder to follow the player around when they succeed or fail at things-->
-                <a-entity id = "scene_music" class = "ambient-music" sound="src:#serenity_music; autoplay:false; loop:true; volume:0.1;"></a-entity>
-                <a-entity id = "city_sounds" class = "ambient-music" sound="src:#city_amb; autoplay:false; loop:true; volume:0.1;"></a-entity>
-                <a-entity id = "bird_sounds" class = "ambient-music" sound="src:#birds_amb; autoplay:false; loop:true; volume:0.1;"></a-entity>
-                
-            </a-entity>
-
-
-
             <a-entity id = "outside" static-body>
             <!-- buildings -->  
             
@@ -509,15 +479,16 @@
             <a-entity id="straight" position="-60 11 -30" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
             <a-entity id="slantcurve" position="-43.5 5.5 26" rotation="0 -90 0" scale="11 11 11" gltf-model="#curve_slant" shadow static-body></a-entity>
             
-            <!-- bridge 
-            <a-entity id="half_slope_m" position="-40 10 0" rotation="0 -90 0" scale="11 5 5" gltf-model="#half_slope" shadow static-body></a-entity>
-            <a-entity id="land_bridge_m" position="-48 15.7 0" rotation="0 -90 0" scale="11 11 11" gltf-model="#landbridge" shadow static-body></a-entity>
-            <a-entity id="land_bridge_m" position="-58 15.7 0" rotation="0 -90 0" scale="11 11 11" gltf-model="#landbridge" shadow static-body></a-entity>
-            <a-entity id="add_bridge_m" position="-40.5 10.3 4" rotation="0 -90 0" scale="3 5 5" gltf-model="#add_bridge" shadow static-body></a-entity>
-            <a-entity id="add_bridge_m" position="-40.5 10.3 -4" rotation="0 -90 0" scale="3 5 5" gltf-model="#add_bridge" shadow static-body></a-entity>
-            <a-entity id="add_bridge_m" position="-60.5 10.3 4" rotation="0 -90 0" scale="3 5 5" gltf-model="#add_bridge" shadow static-body></a-entity>
-            <a-entity id="half_slope_m" position="-66 10 0" rotation="0 90 0" scale="11 5 5" gltf-model="#half_slope" shadow static-body></a-entity>
-            --> 
+            <!-- bridge  --> 
+            <a-entity id="half_slope_m" class = "landBridge" position="-40 10 0" rotation="0 -90 0" scale="11 5 5" gltf-model="#half_slope" visible = "false" shadow static-body></a-entity>
+            <a-entity id="land_bridge_m" class = "landBridge" position="-48 15.7 0" rotation="0 -90 0" scale="11 11 11" gltf-model="#landbridge" visible = "false" shadow static-body></a-entity>
+            <a-entity id="land_bridge_m" class = "landBridge" position="-58 15.7 0" rotation="0 -90 0" scale="11 11 11" gltf-model="#landbridge" visible = "false" shadow static-body></a-entity>
+            <a-entity id="add_bridge_m" class = "landBridge" position="-40.5 10.3 4" rotation="0 -90 0" scale="3 5 5" gltf-model="#add_bridge" visible = "false" shadow static-body></a-entity>
+            <a-entity id="add_bridge_m" class = "landBridge" position="-40.5 10.3 -4" rotation="0 -90 0" scale="3 5 5" gltf-model="#add_bridge" visible = "false" shadow static-body></a-entity>
+            <a-entity id="add_bridge_m" class = "landBridge" position="-60.5 10.3 4" rotation="0 -90 0" scale="3 5 5" gltf-model="#add_bridge" visible = "false" shadow static-body></a-entity>
+            <a-entity id="half_slope_m" class = "landBridge" position="-66 10 0" rotation="0 90 0" scale="11 5 5" gltf-model="#half_slope" visible = "false" shadow static-body></a-entity>
+
+
             <!-- extra
             <a-entity id="curved_m" position="-40 11 -30" scale="11 11 11" gltf-model="#curved" shadow static-body></a-entity>
             
@@ -537,7 +508,7 @@
                 <!--Environmental effect testing button-->
                 <a-entity id="environment_button" position = "5 10.2 10">
                     <a-entity class = "button interactive" 
-                                landBridge-effect
+                                bridge-effect
                                 position = "0 0.6 0" 
                                 geometry = "primitive:cylinder; radius: 0.15; height: 0.2;" 
                                 material = "color:rgb(255, 100, 100)"
@@ -620,47 +591,6 @@
             <a-entity id="kit_cab_up" position="25 20 3.1" scale="10 13 9" rotation ="0 -90 0" gltf-model="#kCU_model" shadow static-body></a-entity>
             <a-entity id="kit_cab_up" position="14 20 1" scale="10 13 9" rotation ="0 0 0" gltf-model="#kCUD_model" shadow static-body></a-entity>
             <a-entity id="kit_cab_up" position="18 20 1" scale="10 13 9" rotation ="0 0 0" gltf-model="#kCUD_model" shadow static-body></a-entity>
-
-            
-            <!-- other -->
-
-            </a-entity>
-
-           <!-- <a-entity id = "apartment" static-body>
-
-                
-                 loading GLTF models to the scene 
-                <a-entity id="floor" position="0 12.0 0"
-                geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
-                static-body></a-entity>
-                <a-entity id="roof" position="0 16 0" rotation="-270 0 0" scale="20 20 20"
-                geometry="primitive:plane; width:1.0; height:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
-
-                <a-entity id="wall" position="10 13 0" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:1.0; height:6.0; depth:20.0;" material="color:rgb(200, 200, 200);"></a-entity>
-                <a-entity id="wall" position="-10 13 0" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:1.0; height:6.0; depth:20.0;" material="color:rgb(200, 200, 200);"></a-entity>
-                <a-entity id="wall" position="0 13 10" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:20.0; height:6.0; depth:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
-
-                <a-entity id="wall" position="0 11 -10" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:20.0; height:4.0; depth:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
-                <a-entity id="wall" position="0 16 -10" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:20.0; height:3.0; depth:1.0;" material="color:rgb(200, 200, 200);"></a-entity>
-                         
-                <a-entity id="wall" position="3 13 -10" rotation="0 0 0" scaale="1 1 1"
-                geometry="primitive: box; width:5.0; height:6.0; depth: 1;" material="color:rgb(200, 200, 200);"></a-entity>              
-                <a-entity id="wall" position="3 13 7" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:0.4; height:6.0; depth:9.0;" material="color:rgb(200, 200, 200);"></a-entity>
-                <a-entity id="wall" position="3 13 -7" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:0.4; height:6.0; depth:6.0;" material="color:rgb(200, 200, 200);"></a-entity>
-                <a-entity id="wall" position="7 13 0" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:8.0; height:6.0; depth:0.4;" material="color:rgb(200, 200, 200);"></a-entity>
-                <a-entity id="wall" position="7 13 0" rotation="0 0 0" scale="1 1 1"
-                geometry="primitive: box; width:8.0; height:6.0; depth:0.4;" material="color:rgb(200, 200, 200);"></a-entity>
-
-
-            </a-entity>-->
 
             <!-- Collision Testing and Physics Testing
             <a-box color = "#AA0000" position = "-3 14 -4"
