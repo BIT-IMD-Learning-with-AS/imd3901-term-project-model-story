@@ -22,7 +22,7 @@ AFRAME.registerComponent('time-effect', {
             }
             else {
                 //set Day
-                bg.setAttribute('environment', 'preset:forest;');
+                bg.setAttribute('environment', 'preset:default;');
                 isDay = true;
                 CONTEXT_AF.el.emit('day', '', true)
             }
