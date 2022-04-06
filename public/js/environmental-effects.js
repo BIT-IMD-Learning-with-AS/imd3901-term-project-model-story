@@ -38,6 +38,12 @@ AFRAME.registerComponent('stars-effect', {
              //Either spawn lights or...?
              console.log("stars changed.");
 
+             const walls = document.querySelectorAll(".star-walls");
+             for (let i = 0; i < walls.length; i++) {
+                 walls[i].setAttribute('visible', false);
+                 walls[i].setAttribute('scale', ("0,0,0"));
+                 walls[i].setAttribute('position', ("0,-100,0"));
+             }
          });
      }
  });

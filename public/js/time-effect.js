@@ -17,12 +17,20 @@ AFRAME.registerComponent('time-effect', {
             if (isDay === true) {
                 //set Night
                 bg.setAttribute('environment', 'preset:starry;');
+                const walls = document.querySelectorAll(".star-walls");
+                for (let i = 0; i < walls.length; i++) {
+                    walls[i].setAttribute('visible', true);
+                } 
                 isDay = false;
                 CONTEXT_AF.el.emit('night', '', true)
             }
             else {
                 //set Day
                 bg.setAttribute('environment', 'preset:default;');
+                const walls = document.querySelectorAll(".star-walls");
+                for (let i = 0; i < walls.length; i++) {
+                    walls[i].setAttribute('visible', false);
+                } 
                 isDay = true;
                 CONTEXT_AF.el.emit('day', '', true)
             }
