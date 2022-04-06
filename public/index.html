@@ -146,6 +146,10 @@
             <a-asset-item id="lowI" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingI.glb"></a-asset-item>
             <a-asset-item id="lowJ" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingJ.glb"></a-asset-item>
             <a-asset-item id="lowK" response-type="arraybuffer" src="assets/models/BUILDINGS/low_buildingK.glb"></a-asset-item>
+
+            <a-asset-item id="smallA" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingA.glb"></a-asset-item>
+            <a-asset-item id="smallC" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingC.glb"></a-asset-item>
+            <a-asset-item id="smallD" response-type="arraybuffer" src="assets/models/BUILDINGS/small_buildingD.glb"></a-asset-item>
             
             <a-asset-item id="rock" response-type="arraybuffer" src="assets/models/NATURE/cliff_block_rock.glb"></a-asset-item>
             <a-asset-item id="slope" response-type="arraybuffer" src="assets/models/NATURE/cliff_blockSlope_rock.glb"></a-asset-item>
@@ -156,7 +160,14 @@
 
             <a-asset-item id="two_curved" response-type="arraybuffer" src="assets/models/STREETS/road_curveIntersection.glb"></a-asset-item>
             <a-asset-item id="straight_street" response-type="arraybuffer" src="assets/models/STREETS/road_straight.glb"></a-asset-item>
+            <a-asset-item id="straight_street_b" response-type="arraybuffer" src="assets/models/STREETS/road_straightBarrier.glb"></a-asset-item>
             <a-asset-item id="curve_slant" response-type="arraybuffer" src="assets/models/STREETS/road_slantFlatCurve.glb"></a-asset-item>
+            <a-asset-item id="curve_slant_b" response-type="arraybuffer" src="assets/models/STREETS/road_slantCurveBarrier.glb"></a-asset-item>
+            <a-asset-item id="roadabout" response-type="arraybuffer" src="assets/models/STREETS/road_roundabout.glb"></a-asset-item>
+            <a-asset-item id="light_4" response-type="arraybuffer" src="assets/models/STREETS/light_curvedCross.glb"></a-asset-item>
+            <a-asset-item id="light_1" response-type="arraybuffer" src="assets/models/STREETS/light_curved.glb"></a-asset-item>
+            <a-asset-item id="light_2" response-type="arraybuffer" src="assets/models/STREETS/light_curvedDouble.glb"></a-asset-item>
+            <a-asset-item id="pillar" response-type="arraybuffer" src="assets/models/STREETS/bridge_pillar.glb"></a-asset-item>
             
             
 
@@ -241,148 +252,7 @@
 
             <!-- other -->
 
-                <!--assets
-
-                <a-asset-item id="bC_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinet.glb"></a-asset-item>
-                <a-asset-item id="bCD_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomCabinetDrawer.glb"></a-asset-item>
-                <a-asset-item id="bM_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomMirror.glb"></a-asset-item>
-                <a-asset-item id="bS_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomSink.glb"></a-asset-item>
-                <a-asset-item id="bSS_model" response-type="arraybuffer" src="assets/models/GLTF/bathroomSinkSquare.glb"></a-asset-item>
-                <a-asset-item id="bathtub_model" response-type="arraybuffer" src="assets/models/GLTF/bathtub.glb"></a-asset-item>
-                <a-asset-item id="bear_model" response-type="arraybuffer" src="assets/models/GLTF/bear.glb"></a-asset-item>
-                <a-asset-item id="bB_model" response-type="arraybuffer" src="assets/models/GLTF/bedBunk.glb"></a-asset-item>
-                <a-asset-item id="bedD_model" response-type="arraybuffer" src="assets/models/GLTF/bedDouble.glb"></a-asset-item>
-                <a-asset-item id="bedS_model" response-type="arraybuffer" src="assets/models/GLTF/bedSingle.glb"></a-asset-item>
-                <a-asset-item id="bench_model" response-type="arraybuffer" src="assets/models/GLTF/bench.glb"></a-asset-item>
-                <a-asset-item id="benchC_model" response-type="arraybuffer" src="assets/models/GLTF/benchCushion.glb"></a-asset-item>
-                <a-asset-item id="bCL_model" response-type="arraybuffer" src="assets/models/GLTF/benchCushionLow.glb"></a-asset-item>
-                <a-asset-item id="bCC_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseClosed.glb"></a-asset-item>
-                <a-asset-item id="bCCW_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseClosedWide.glb"></a-asset-item>
-                <a-asset-item id="bCO_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseOpen.glb"></a-asset-item>
-                <a-asset-item id="bCOL_model" response-type="arraybuffer" src="assets/models/GLTF/bookcaseOpenLow.glb"></a-asset-item>
-                <a-asset-item id="books_model" response-type="arraybuffer" src="assets/models/GLTF/books.glb"></a-asset-item>
-
-                <a-asset-item id="cB_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBed.glb"></a-asset-item>
-                <a-asset-item id="cBD_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBedDrawer.glb"></a-asset-item>
-                <a-asset-item id="cBDT_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetBedDrawerTable.glb"></a-asset-item>
-                <a-asset-item id="cT_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetTelevision.glb"></a-asset-item>
-                <a-asset-item id="cTD_model" response-type="arraybuffer" src="assets/models/GLTF/cabinetTelevisionDoors.glb"></a-asset-item>
-                <a-asset-item id="cBC_model" response-type="arraybuffer" src="assets/models/GLTF/cardboardBoxClosed.glb"></a-asset-item>
-                <a-asset-item id="cBO_model" response-type="arraybuffer" src="assets/models/GLTF/cardboardBoxOpen.glb"></a-asset-item>
-                <a-asset-item id="cF_model" response-type="arraybuffer" src="assets/models/GLTF/ceilingFan.glb"></a-asset-item>
-                <a-asset-item id="chair_model" response-type="arraybuffer" src="assets/models/GLTF/chair.glb"></a-asset-item>
-                <a-asset-item id="cC_model" response-type="arraybuffer" src="assets/models/GLTF/chairCushion.glb"></a-asset-item>
-                <a-asset-item id="cD_model" response-type="arraybuffer" src="assets/models/GLTF/chairDesk.glb"></a-asset-item>
-                <a-asset-item id="cMC_model" response-type="arraybuffer" src="assets/models/GLTF/chairModernCushion.glb"></a-asset-item>
-                <a-asset-item id="cMFC_model" response-type="arraybuffer" src="assets/models/GLTF/chairModernFrameCushion.glb"></a-asset-item>
-                <a-asset-item id="cR_model" response-type="arraybuffer" src="assets/models/GLTF/chairRounded.glb"></a-asset-item>
-                <a-asset-item id="coatR_model" response-type="arraybuffer" src="assets/models/GLTF/coatRack.glb"></a-asset-item>
-                <a-asset-item id="cRS_model" response-type="arraybuffer" src="assets/models/GLTF/coatRackStanding.glb"></a-asset-item>
-                <a-asset-item id="cK_model" response-type="arraybuffer" src="assets/models/GLTF/computerKeyboard.glb"></a-asset-item>
-                <a-asset-item id="cM_model" response-type="arraybuffer" src="assets/models/GLTF/computerMouse.glb"></a-asset-item>
-                <a-asset-item id="cS_model" response-type="arraybuffer" src="assets/models/GLTF/computerScreen.glb"></a-asset-item>
-
-                <a-asset-item id="desk_model" response-type="arraybuffer" src="assets/models/GLTF/desk.glb"></a-asset-item>
-                <a-asset-item id="dC_model" response-type="arraybuffer" src="assets/models/GLTF/deskCorner.glb"></a-asset-item>
-                <a-asset-item id="doorway_model" response-type="arraybuffer" src="assets/models/GLTF/doorway.glb"></a-asset-item>
-                <a-asset-item id="dF_model" response-type="arraybuffer" src="assets/models/GLTF/doorwayFront.glb"></a-asset-item>
-                <a-asset-item id="dO_model" response-type="arraybuffer" src="assets/models/GLTF/doorwayOpen.glb"></a-asset-item>
-                <a-asset-item id="dryer_model" response-type="arraybuffer" src="assets/models/GLTF/dryer.glb"></a-asset-item>
-
-                <a-asset-item id="fC_model" response-type="arraybuffer" src="assets/models/GLTF/floorCorner.glb"></a-asset-item>
-                <a-asset-item id="fCR_model" response-type="arraybuffer" src="assets/models/GLTF/floorCornerRound.glb"></a-asset-item>
-                <a-asset-item id="fF_model" response-type="arraybuffer" src="assets/models/GLTF/floorFull.glb"></a-asset-item>
-                <a-asset-item id="fH_model" response-type="arraybuffer" src="assets/models/GLTF/floorHalf.glb"></a-asset-item>
-
-                <a-asset-item id="hL_model" response-type="arraybuffer" src="assets/models/GLTF/hoodLarge.glb"></a-asset-item>
-                <a-asset-item id="hM_model" response-type="arraybuffer" src="assets/models/GLTF/hoodModern.glb"></a-asset-item>
-
-                <a-asset-item id="kBar_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBar.glb"></a-asset-item>
-                <a-asset-item id="kBE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBarEnd.glb"></a-asset-item>
-                <a-asset-item id="kB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenBlender.glb"></a-asset-item>
-                <a-asset-item id="kC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinet.glb"></a-asset-item>
-                <a-asset-item id="kCCI_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerInner.glb"></a-asset-item>
-                <a-asset-item id="kCCR_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetCornerRound.glb"></a-asset-item>
-                <a-asset-item id="kCD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetDrawer.glb"></a-asset-item>
-                <a-asset-item id="kCU_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpper.glb"></a-asset-item>
-                <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
-                <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
-                <a-asset-item id="kCM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCoffeeMachine.glb"></a-asset-item>
-                <a-asset-item id="kF_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridge.glb"></a-asset-item>
-                <a-asset-item id="kFB_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridgeBuiltIn.glb"></a-asset-item>
-                <a-asset-item id="kFL_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridgeLarge.glb"></a-asset-item>
-                <a-asset-item id="kFS_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenFridgeSmall.glb"></a-asset-item>
-                <a-asset-item id="kM_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenMicrowave.glb"></a-asset-item>
-                <a-asset-item id="kSink_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenSink.glb"></a-asset-item>
-                <a-asset-item id="kStove_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStove.glb"></a-asset-item>
-                <a-asset-item id="kSE_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenStoveElectric.glb"></a-asset-item>
-
-                <a-asset-item id="lRF_model" response-type="arraybuffer" src="assets/models/GLTF/lampRoundFloor.glb"></a-asset-item>
-                <a-asset-item id="lRT_model" response-type="arraybuffer" src="assets/models/GLTF/lampRoundTable.glb"></a-asset-item>
-                <a-asset-item id="lSC_model" response-type="arraybuffer" src="assets/models/GLTF/lampSquareCeiling.glb"></a-asset-item>
-                <a-asset-item id="lSF_model" response-type="arraybuffer" src="assets/models/GLTF/lampSquareFloor.glb"></a-asset-item>
-                <a-asset-item id="lST_model" response-type="arraybuffer" src="assets/models/GLTF/lampSquareTable.glb"></a-asset-item>
-                <a-asset-item id="lW_model" response-type="arraybuffer" src="assets/models/GLTF/lampWall.glb"></a-asset-item>
-                <a-asset-item id="laptop_model" response-type="arraybuffer" src="assets/models/GLTF/laptop.glb"></a-asset-item>
-                <a-asset-item id="lC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChair.glb"></a-asset-item>
-                <a-asset-item id="lCR_model" response-type="arraybuffer" src="assets/models/GLTF/loungeChairRelax.glb"></a-asset-item>
-                <a-asset-item id="lDC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeDesignChair.glb"></a-asset-item>
-                <a-asset-item id="lDS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeDesignSofa.glb"></a-asset-item>
-                <a-asset-item id="lDSC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeDesignSofaCorner.glb"></a-asset-item>
-                <a-asset-item id="lS_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofa.glb"></a-asset-item>
-                <a-asset-item id="lSofaC_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofaCorner.glb"></a-asset-item>
-                <a-asset-item id="lSL_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofaLong.glb"></a-asset-item>
-                <a-asset-item id="lSO_model" response-type="arraybuffer" src="assets/models/GLTF/loungeSofaOttoman.glb"></a-asset-item>
-
-                <a-asset-item id="paneling_model" response-type="arraybuffer" src="assets/models/GLTF/paneling.glb"></a-asset-item>
-                <a-asset-item id="pillow_model" response-type="arraybuffer" src="assets/models/GLTF/pillow.glb"></a-asset-item>
-                <a-asset-item id="pB_model" response-type="arraybuffer" src="assets/models/GLTF/pillowBlue.glb"></a-asset-item>
-                <a-asset-item id="pBL_model" response-type="arraybuffer" src="assets/models/GLTF/pillowBlueLong.glb"></a-asset-item>
-                <a-asset-item id="pS1_model" response-type="arraybuffer" src="assets/models/GLTF/plantSmall1.glb"></a-asset-item>
-                <a-asset-item id="pS2_model" response-type="arraybuffer" src="assets/models/GLTF/plantSmall2.glb"></a-asset-item>
-                <a-asset-item id="pS3_model" response-type="arraybuffer" src="assets/models/GLTF/plantSmall3.glb"></a-asset-item>
-                <a-asset-item id="pP_model" response-type="arraybuffer" src="assets/models/GLTF/pottedPlant.glb"></a-asset-item>
-
-                <a-asset-item id="radio_model" response-type="arraybuffer" src="assets/models/GLTF/radio.glb"></a-asset-item>
-                <a-asset-item id="rD_model" response-type="arraybuffer" src="assets/models/GLTF/rugDoormat.glb"></a-asset-item>
-                <a-asset-item id="rR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRectangle.glb"></a-asset-item>
-                <a-asset-item id="rRound_model" response-type="arraybuffer" src="assets/models/GLTF/rugRound.glb"></a-asset-item>
-                <a-asset-item id="rugR_model" response-type="arraybuffer" src="assets/models/GLTF/rugRounded.glb"></a-asset-item>
-                <a-asset-item id="rS_model" response-type="arraybuffer" src="assets/models/GLTF/rugSquare.glb"></a-asset-item>
-
-                <a-asset-item id="shower_model" response-type="arraybuffer" src="assets/models/GLTF/shower.glb"></a-asset-item>
-                <a-asset-item id="sR_model" response-type="arraybuffer" src="assets/models/GLTF/showerRound.glb"></a-asset-item>
-                <a-asset-item id="sT_model" response-type="arraybuffer" src="assets/models/GLTF/sideTable.glb"></a-asset-item>
-                <a-asset-item id="sTD_model" response-type="arraybuffer" src="assets/models/GLTF/sideTableDrawers.glb"></a-asset-item>
-                <a-asset-item id="speaker_model" response-type="arraybuffer" src="assets/models/GLTF/speaker.glb"></a-asset-item>
-                <a-asset-item id="sS_model" response-type="arraybuffer" src="assets/models/GLTF/speakerSmall.glb"></a-asset-item>
-                <a-asset-item id="stairs_model" response-type="arraybuffer" src="assets/models/GLTF/stairs.glb"></a-asset-item>
-                <a-asset-item id="sC_model" response-type="arraybuffer" src="assets/models/GLTF/stairsCorner.glb"></a-asset-item>
-                <a-asset-item id="sO_model" response-type="arraybuffer" src="assets/models/GLTF/stairsOpen.glb"></a-asset-item>
-                <a-asset-item id="sOS_model" response-type="arraybuffer" src="assets/models/GLTF/stairsOpenSingle.glb"></a-asset-item>
-                <a-asset-item id="sB_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBar.glb"></a-asset-item>
-                <a-asset-item id="sBS_model" response-type="arraybuffer" src="assets/models/GLTF/stoolBarSquare.glb"></a-asset-item>
-
-                <a-asset-item id="table_model" response-type="arraybuffer" src="assets/models/GLTF/table.glb"></a-asset-item>
-                <a-asset-item id="tC_model" response-type="arraybuffer" src="assets/models/GLTF/tableCloth.glb"></a-asset-item>
-                <a-asset-item id="tCoffee_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffee.glb"></a-asset-item>
-                <a-asset-item id="tCG_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffeeGlass.glb"></a-asset-item>
-                <a-asset-item id="tCGS_model" response-type="arraybuffer" src="assets/models/GLTF/tableCoffeeGlassSquare.glb"></a-asset-item>
-                <a-asset-item id="tCross_model" response-type="arraybuffer" src="assets/models/GLTF/tableCross.glb"></a-asset-item>
-                <a-asset-item id="tCC_model" response-type="arraybuffer" src="assets/models/GLTF/tableCrossCloth.glb"></a-asset-item>
-                <a-asset-item id="tGlass_model" response-type="arraybuffer" src="assets/models/GLTF/tableGlass.glb"></a-asset-item>
-                <a-asset-item id="tR_model" response-type="arraybuffer" src="assets/models/GLTF/tableRound.glb"></a-asset-item>
-                <a-asset-item id="tA_model" response-type="arraybuffer" src="assets/models/GLTF/televisionAntenna.glb"></a-asset-item>
-                <a-asset-item id="tM_model" response-type="arraybuffer" src="assets/models/GLTF/televisionModern.glb"></a-asset-item>
-                <a-asset-item id="tV_model" response-type="arraybuffer" src="assets/models/GLTF/televisionVintage.glb"></a-asset-item>
-                <a-asset-item id="toaster_model" response-type="arraybuffer" src="assets/models/GLTF/toaster.glb"></a-asset-item>
-                <a-asset-item id="toilet_model" response-type="arraybuffer" src="assets/models/GLTF/toilet.glb"></a-asset-item>
-                <a-asset-item id="tS_model" response-type="arraybuffer" src="assets/models/GLTF/toiletSquare.glb"></a-asset-item>
-                <a-asset-item id="trashcan_model" response-type="arraybuffer" src="assets/models/GLTF/trashcan.glb"></a-asset-item>
-
-                <a-asset-item id="washer_model" response-type="arraybuffer" src="assets/models/GLTF/washer.glb"></a-asset-item>
-                <a-asset-item id="wDS_model" response-type="arraybuffer" src="assets/models/GLTF/washerDryerStacked.glb"></a-asset-item>
-                -->
+            
 
             </a-assets>
 
@@ -407,13 +277,25 @@
             <a-entity id="skyC_m" position="0 0 90" scale="11 11 11" gltf-model="#skyC" shadow static-body></a-entity>
             <a-entity id="skyD_m" position="-20 0 70" scale="11 11 11" gltf-model="#skyD" shadow static-body></a-entity>
             <a-entity id="skyE_m" position="-40 0 40" rotation="0 70 0" scale="11 11 11" gltf-model="#skyE" shadow static-body></a-entity>
-            <a-entity id="skyF_m" position="-70 0 23" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
+            <a-entity id="skyF_m" position="-70 0 28" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
+            <a-entity id="skyB_m" position="-85 0 15" scale="11 11 11" gltf-model="#skyB" shadow static-body></a-entity>
+            <a-entity id="skyD_m" position="-100 0 10" scale="11 11 11" gltf-model="#skyD" shadow static-body></a-entity>
+            <a-entity id="skyA_m" position="-120 0 -10" scale="11 11 11" gltf-model="#skyA" shadow static-body></a-entity>
+            
+            <a-entity id="skyB_m" position="-85 0 -15" scale="11 11 11" gltf-model="#skyB" shadow static-body></a-entity>
+            <a-entity id="skyD_m" position="-100 0 -25" scale="11 11 11" gltf-model="#skyD" shadow static-body></a-entity>
+            <a-entity id="skyA_m" position="-120 0 -30" scale="11 11 11" gltf-model="#skyA" shadow static-body></a-entity>
+            <a-entity id="skyB_m" position="-85 0 -45" scale="11 11 11" gltf-model="#skyB" shadow static-body></a-entity>
+            <a-entity id="skyD_m" position="-100 0 -60" scale="11 11 11" gltf-model="#skyD" shadow static-body></a-entity>
+            <a-entity id="skyA_m" position="-120 0 -60" scale="11 11 11" gltf-model="#skyA" shadow static-body></a-entity>
+            <a-entity id="skyF_m" position="-84 0 40" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
+            <a-entity id="skyE_m" position="-100 0 70" rotation="0 70 0" scale="11 11 11" gltf-model="#skyE" shadow static-body></a-entity>
 
             <a-entity id="lowA_m" position="50 0 50" scale="11 11 11" gltf-model="#lowA" shadow static-body></a-entity>
             <a-entity id="lowB_m" position="43 0 60" scale="11 11 11" gltf-model="#lowB" shadow static-body></a-entity>
             <a-entity id="lowC_m" position="0 0 75" scale="11 11 11" gltf-model="#lowC" shadow static-body></a-entity>
             <a-entity id="lowD_m" position="-30 0 60" scale="11 11 11" gltf-model="#lowD" shadow static-body></a-entity>
-            <a-entity id="lowE_m" position="-60 0 40"  scale="11 11 11" gltf-model="#lowE" shadow static-body></a-entity>
+            <a-entity id="lowE_m" position="-40 0 25"  scale="11 11 11" gltf-model="#lowE" shadow static-body></a-entity>
             <a-entity id="lowF_m" position="60 0 58" scale="11 11 11" gltf-model="#lowF" shadow static-body></a-entity>
             <a-entity id="lowG_m" position="30 0 50" scale="11 11 11" gltf-model="#lowG" shadow static-body></a-entity>
             <a-entity id="lowH_m" position="28 0 65" scale="11 11 11" gltf-model="#lowH" shadow static-body></a-entity>
@@ -424,39 +306,73 @@
             <a-entity id="lowH_m" position="9 0 53" scale="11 11 11" gltf-model="#lowH" shadow static-body></a-entity>
             <a-entity id="lowB_m" position="11 0 40" scale="11 11 11" gltf-model="#lowB" shadow static-body></a-entity>
 
+            <a-entity id="smallA_m" position="-68 10 10" scale="11 11 11" gltf-model="#smallA" shadow static-body></a-entity>
+            <a-entity id="smallC_m" position="-40 10 -20" scale="11 11 11" gltf-model="#smallC" shadow static-body></a-entity>
+            <a-entity id="smallC_m" position="-68 10 -15" scale="11 11 11" gltf-model="#smallC" shadow static-body></a-entity>
+            <a-entity id="smallD_m" position="-68 10 -26" scale="11 11 11" rotation="0 90 0" gltf-model="#smallD" shadow static-body></a-entity>
+            <a-entity id="smallD_m" position="-40 10 -30" scale="11 11 11" rotation="0 -90 0" gltf-model="#smallD" shadow static-body></a-entity>
+
             <!-- land --> 
             
             <a-entity id="rock_m" position="-40 0 -10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-40 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-40 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-40 0 -20" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-40 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-40 0 -40" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-40 0 -50" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-40 0 -60" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+
             <a-entity id="rock_m" position="-50 0 -10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-50 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-50 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>                
+            <a-entity id="rock_m" position="-50 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity> 
+            <a-entity id="rock_m" position="-50 0 -20" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-50 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-50 0 -40" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-50 0 -50" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-50 0 -60" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+
             <a-entity id="rock_m" position="-60 0 -10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-60 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-60 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-60 0 -20" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-50 0 -20" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-40 0 -20" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-60 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-60 0 -40" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-60 0 -50" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-60 0 -60" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            
+            <a-entity id="rock_m" position="-70 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-70 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-70 0 -10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-70 0 -20" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-70 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-70 0 -10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-70 0 0" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-70 0 10" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-60 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-50 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-            <a-entity id="rock_m" position="-40 0 -30" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
-
-
+            <a-entity id="rock_m" position="-70 0 -40" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-70 0 -50" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-70 0 -60" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            
+            
+            
             <!-- roads --> 
             <a-entity id="straight" position="-60 11 0" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
             <a-entity id="straight" position="-60 11 10" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
             <a-entity id="straight" position="-60 11 -10" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
             <a-entity id="straight" position="-60 11 -20" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
             <a-entity id="straight" position="-60 11 -30" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
+
+            <a-entity id="straight_b" position="-51.8 11 -40" rotation="0 0 0" scale="11 11 11" gltf-model="#straight_street_b" shadow static-body></a-entity>
+            <a-entity id="straight_b" position="-51.8 11 1.5" rotation="0 0 0" scale="11 11 11" gltf-model="#straight_street_b" shadow static-body></a-entity>
+            <a-entity id="straight_b" position="-51.8 11 -9" rotation="0 0 0" scale="11 11 11" gltf-model="#straight_street_b" shadow static-body></a-entity>
+            <a-entity id="straight_b" position="-51.8 11 -20" rotation="0 0 0" scale="11 11 11" gltf-model="#straight_street_b" shadow static-body></a-entity>
+            <a-entity id="straight_b" position="-51.8 11 -30" rotation="0 0 0" scale="11 11 11" gltf-model="#straight_street_b" shadow static-body></a-entity>
+
             <a-entity id="slantcurve" position="-43.5 5.5 26" rotation="0 -90 0" scale="11 11 11" gltf-model="#curve_slant" shadow static-body></a-entity>
-            
-            <!-- bridge 
+            <a-entity id="slantcurve_b" position="-43.5 5.5 26" rotation="0 -90 0" scale="11 11 11" gltf-model="#curve_slant_b" shadow static-body></a-entity>
+            <a-entity id="pillar_m" position="-44 0 20" rotation="0 -90 0" scale="11 19 11" gltf-model="#pillar" shadow static-body></a-entity>
+            <a-entity id="pillar_m" position="-41 0 20" rotation="0 -90 0" scale="11 19 11" gltf-model="#pillar" shadow static-body></a-entity>            
+            <a-entity id="roadabout_m" position="-60 11 -50" rotation="0 90 0" scale="11 11 11" gltf-model="#roadabout" shadow static-body></a-entity>
+
+
+            <!-- bridge -->  
             <a-entity id="half_slope_m" position="-40 10 0" rotation="0 -90 0" scale="11 5 5" gltf-model="#half_slope" shadow static-body></a-entity>
             <a-entity id="land_bridge_m" position="-48 15.7 0" rotation="0 -90 0" scale="11 11 11" gltf-model="#landbridge" shadow static-body></a-entity>
             <a-entity id="land_bridge_m" position="-58 15.7 0" rotation="0 -90 0" scale="11 11 11" gltf-model="#landbridge" shadow static-body></a-entity>
@@ -464,7 +380,12 @@
             <a-entity id="add_bridge_m" position="-40.5 10.3 -4" rotation="0 -90 0" scale="3 5 5" gltf-model="#add_bridge" shadow static-body></a-entity>
             <a-entity id="add_bridge_m" position="-60.5 10.3 4" rotation="0 -90 0" scale="3 5 5" gltf-model="#add_bridge" shadow static-body></a-entity>
             <a-entity id="half_slope_m" position="-66 10 0" rotation="0 90 0" scale="11 5 5" gltf-model="#half_slope" shadow static-body></a-entity>
-            --> 
+
+
+           
+            
+           
+           
             <!-- extra
             <a-entity id="curved_m" position="-40 11 -30" scale="11 11 11" gltf-model="#curved" shadow static-body></a-entity>
             
