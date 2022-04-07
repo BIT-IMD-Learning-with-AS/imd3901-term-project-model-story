@@ -5,6 +5,7 @@ AFRAME.registerComponent('bridge-effect', {
     init : function () {
         const CONTEXT_AF = this;
         CONTEXT_AF.el.addEventListener('click', function() {
+            document.getElementById('good-sound-fx').components.sound.playSound();
             //make land bridge visible.
             const bridges = document.querySelectorAll(".landBridge");
             for (let i = 0; i < bridges.length; i++) {
@@ -20,6 +21,7 @@ AFRAME.registerComponent('birds-effect', {
      init : function () {
          const CONTEXT_AF = this;
          CONTEXT_AF.el.addEventListener('click', function() {
+            document.getElementById('good-sound-fx').components.sound.playSound();
              //Changing city sounds to the birds.
              document.getElementById("city_sounds").pause();
              document.getElementById("bird_sounds").components.sound.playSound();
@@ -35,6 +37,7 @@ AFRAME.registerComponent('stars-effect', {
      init : function () {
          const CONTEXT_AF = this;
          CONTEXT_AF.el.addEventListener('click', function() {
+            document.getElementById('good-sound-fx').components.sound.playSound();
 
              const walls = document.querySelectorAll(".star-walls");
              for (let i = 0; i < walls.length; i++) {
@@ -50,6 +53,8 @@ AFRAME.registerComponent('plant-effect', {
      init : function () {
          const CONTEXT_AF = this;
          CONTEXT_AF.el.addEventListener('click', function() {
+
+            document.getElementById('good-sound-fx').components.sound.playSound();
              //Plants growing
              const plants = document.querySelectorAll(".top-plants");
              for (let i = 0; i < plants.length; i++) {
@@ -64,8 +69,8 @@ AFRAME.registerComponent('plant-effect', {
              //generate 50 random trees.
              for (var i = 0; i < 100; i++){
                 //randomly generate position and tree type.
-                var randX=Math.floor((Math.random() * 149) -49);
-                var randZ=Math.floor((Math.random() * 149) -49);
+                var randX=Math.floor((Math.random() * 199) -99);
+                var randZ=Math.floor((Math.random() * 149) -29);
                 var randT=Math.floor(Math.random() * 7) + 1;
 
                 const tree = document.createElement("a-entity");
@@ -100,7 +105,7 @@ AFRAME.registerComponent('plant-effect', {
                 }
 
                 tree.setAttribute('position', {x: randX, y:0.1, z:randZ});
-                tree.setAttribute('scale','7, 7, 7');
+                tree.setAttribute('scale','6, 6, 6');
 
                 //add to scene
                 let trees = document.getElementById("trees")
@@ -116,8 +121,9 @@ AFRAME.registerComponent('river-effect', {
      init : function () {
          const CONTEXT_AF = this;
          CONTEXT_AF.el.addEventListener('click', function() {
+            document.getElementById('good-sound-fx').components.sound.playSound();
             console.log("river changed.");
-             //Either changing the material, or once again changing one asset for another.
+             //Change visibility once river model is available.
 
          });
      }
