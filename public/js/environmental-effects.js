@@ -35,8 +35,6 @@ AFRAME.registerComponent('stars-effect', {
      init : function () {
          const CONTEXT_AF = this;
          CONTEXT_AF.el.addEventListener('click', function() {
-             //Either spawn lights or...?
-             console.log("stars changed.");
 
              const walls = document.querySelectorAll(".star-walls");
              for (let i = 0; i < walls.length; i++) {
