@@ -90,7 +90,7 @@ AFRAME.registerComponent('start-experience', {
 
         setTimeout(function(){
           buttonEl.classList.remove('fade-out');
-          buttonEl.innerHTML = "Enter Experience";
+          buttonEl.innerHTML = "How To Play";
           buttonEl.style.display = "block";
         }, 17000);
 
@@ -102,6 +102,33 @@ AFRAME.registerComponent('start-experience', {
       return;
     }
     if (round == 3)
+    {
+      textEl.classList.add('fade-out');
+      buttonEl.classList.add('fade-out');
+      document.querySelector('#welcome-text-2').classList.add('fade-out');
+      document.querySelector('#welcome-text-3').classList.add('fade-out');
+      document.querySelector('#welcome-text-4').classList.add('fade-out');
+
+      setTimeout(function(){
+       textEl.classList.remove('fade-out');
+       buttonEl.classList.remove('fade-out');
+       document.querySelector('#welcome-text-2').innerHTML = "";
+       document.querySelector('#welcome-text-3').innerHTML = "";
+       document.querySelector('#welcome-text-4').innerHTML = "";
+       buttonEl.innerHTML = "Enter Experience";
+       textEl.innerHTML = "MOVE: Click on Yellow Teleport Pads <br> LOOK: Click and Drag Mouse <br> INTERACT: Pick Up and Move Objects to Solve All 5 Puzzles <br> TIME: Click the Clock to Toggle Between Day/Night";
+      }, 2000);
+
+      setTimeout(function(){
+        textEl.classList.add('fade-in');
+        buttonEl.classList.add('fade-in');
+      }, 3000);
+
+      round = 4;
+      return;
+    }
+
+    if (round == 4)
     {
      //start all ambient music
       const ambientSounds = document.querySelectorAll('.ambient-music');
