@@ -15,8 +15,8 @@ AFRAME.registerComponent('tele-button', {
 
         CONTEXT_AF.el.addEventListener('click', function () {
 
-            camera.setAttribute('position', pos);
-            camera.object3D.position.y += 8;
+            camera.setAttribute('position', {x: pos.x, y: camera.object3D.position.y, z: pos.z});
+            //camera.object3D.position.y += 8;
         });
 
 
