@@ -17,6 +17,7 @@ AFRAME.registerComponent('game', {
 
     //light puzzle
     var lightsOn = 4;
+    var picturesRight = 0;
     
     CONTEXT_AF.el.addEventListener('lightOn', function () {
       lightsOn = lightsOn + 1;
@@ -27,6 +28,30 @@ AFRAME.registerComponent('game', {
         el.emit('lightWin', null, true);
       }
     });
+
+    CONTEXT_AF.el.addEventListener('rotateOn', function () {
+      picturesRight = picturesRight - 1;
+    });
+    CONTEXT_AF.el.addEventListener('rotateOff', function () {
+      picturesRight = picturesRight + 1;
+      if (picturesRight == 4) {
+        el.emit('pictureWin', null, true);
+      }
+    });
+
+    CONTEXT_AF.el.addEventListener('pictureWin', function () {
+      plantPuzzle = true;
+      document.getElementById('good-sound-fx').components.sound.playSound();
+
+      //make land bridge visible.
+      const bridges = document.querySelectorAll(".landBridge");
+      for (let i = 0; i < bridges.length; i++) {
+        bridges[i].setAttribute('visible', true);
+      } 
+    });
+
+
+
     CONTEXT_AF.el.addEventListener('lightWin', function () {
       lightPuzzle = true;
       document.getElementById('good-sound-fx').components.sound.playSound();
@@ -38,9 +63,6 @@ AFRAME.registerComponent('game', {
         walls[i].setAttribute('position', ("0,-100,0"));
       }
     });
-
-
-
 
   }
 });

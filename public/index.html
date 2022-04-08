@@ -14,6 +14,7 @@
     <script src="js/lightSwitch.js"></script>
     <script src="js/gameMaster.js"></script>
     <script src="js/environmental-effects.js"></script>
+    <script src = "js/pictureFrames.js"></script>
     
 
     <!--Copy and pasted from the source Anthony gave us.-->
@@ -204,6 +205,17 @@
                 src="assets/models/ALLROOMS/lightSwitch.gltf"></a-asset-item>
             <a-asset-item id="wateringCan_model" response-type="arraybuffer"
                 src="assets/models/ALLROOMS/wateringCan.gltf"></a-asset-item>
+
+            <a-asset-item id="frame01_model" response-type = "arraybuffer" src="assets/models/GLTF/frame01.gltf"></a-asset-item>
+            <a-asset-item id="frame02_model" response-type = "arraybuffer" src="assets/models/GLTF/frame02.gltf"></a-asset-item>
+            <a-asset-item id="frame03_model" response-type = "arraybuffer" src="assets/models/GLTF/frame03.gltf"></a-asset-item>
+            <a-asset-item id="frame04_model" response-type = "arraybuffer" src="assets/models/GLTF/frame04.gltf"></a-asset-item>
+            <a-asset-item id="frame05_model" response-type = "arraybuffer" src="assets/models/GLTF/frame05.gltf"></a-asset-item>
+            <a-asset-item id="frame06_model" response-type = "arraybuffer" src="assets/models/GLTF/frame06.gltf"></a-asset-item>
+            <a-asset-item id="frame07_model" response-type = "arraybuffer" src="assets/models/GLTF/frame07.gltf"></a-asset-item>
+            <a-asset-item id="frame08_model" response-type = "arraybuffer" src="assets/models/GLTF/frame08.gltf"></a-asset-item>
+            <a-asset-item id="frame09_model" response-type = "arraybuffer" src="assets/models/GLTF/frame09.gltf"></a-asset-item>
+            <a-asset-item id="frame10_model" response-type = "arraybuffer" src="assets/models/GLTF/frame10.gltf"></a-asset-item>
 
 
             <!-- EXTERIOR -->
@@ -398,7 +410,7 @@
 
             <!--Environmental effect testing button-->
             <a-entity id="environment_button" position="5 10.2 10">
-                <a-entity class="button interactive" plant-effect position="0 0.6 0"
+                <a-entity class="button interactive" frame1 position="0 0.6 0"
                     geometry="primitive:cylinder; radius: 0.15; height: 0.2;" material="color:rgb(255, 100, 100)"
                     animation__mouseenter="property:material.color; type:color; to:rgb(255,0,0); startEvents:mouseenter; dur:200;"
                     animation__mouseleave="property:material.color; type:color; to:rgb(255,100,100); startEvents:mouseleave; dur:200;"
@@ -666,6 +678,18 @@
                 animation__mouseclick="startEvents:click; dur:300;" tele-button>
             </a-entity>
 
+            <!-- Picture Frames (Interactable)-->
+            <a-entity id = "frame01" position = "-26.8 23 12" gltf-model = "#frame01_model" scale = "70 70 70" rotation = "0 90 12" shadow static-body 
+            animation__mouseclick="startEvents:click; dur:300;" frame1></a-entity>
+            <a-entity id = "frame02" position = "-26.8 25 17" gltf-model = "#frame02_model" scale = "70 70 70" rotation = "0 90 -20" shadow static-body
+            animation__mouseclick="startEvents:click; dur:300;" frame2></a-entity>
+            <a-entity id = "frame03" position = "-26.8 19 17" gltf-model = "#frame03_model" scale = "70 70 70" rotation = "0 90 19" shadow static-body
+            animation__mouseclick="startEvents:click; dur:300;" frame3></a-entity>
+            <a-entity id = "frame04" position = "-22 20 20.5" gltf-model = "#frame04_model" scale = "150 150 150" rotation = "180 0 -8" shadow static-body
+            animation__mouseclick="startEvents:click; dur:300;" frame4></a-entity>
+
+            <!--Picture Frames (Decorative)
+            Adding these in later.-->
 
             <!--PLANTS FOR THE PUZZLE-->
             <a-entity class="top-plants" position="50, 16.5, 50" geometry="primitive: box" scale="5, 2, 5"
