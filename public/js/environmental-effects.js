@@ -122,8 +122,12 @@ AFRAME.registerComponent('river-effect', {
          const CONTEXT_AF = this;
          CONTEXT_AF.el.addEventListener('click', function() {
             document.getElementById('good-sound-fx').components.sound.playSound();
-            console.log("river changed.");
              //Change visibility once river model is available.
+             const lights = document.querySelectorAll(".riverlight");
+             for (let i = 0; i < lights.length; i++) {
+                 lights[i].setAttribute('visible', true);
+                 console.log("river changed.");
+             }
 
          });
      }
