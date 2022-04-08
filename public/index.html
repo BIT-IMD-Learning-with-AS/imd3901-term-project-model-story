@@ -19,7 +19,6 @@
             src="http://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
         <!-- Pickup Code from scrath -->
         <script src="js/pickup.js"></script>
-        <script src="js/placement.js"></script>
         <!-- Component Super-Hands Test-->
         <!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
             <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
@@ -149,6 +148,10 @@
                 <a-asset-item id="kCUC_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperCorner.glb"></a-asset-item>
                 <a-asset-item id="kCUD_model" response-type="arraybuffer" src="assets/models/GLTF/kitchenCabinetUpperDouble.glb"></a-asset-item>
 
+                <!-- All Rooms -->
+                <a-asset-item id="cricket_model" response-type="arraybuffer" src="assets/models/ALLROOMS/cricket.gltf"></a-asset-item>
+                <a-asset-item id="lightSwitch_model" response-type="arraybuffer" src="assets/models/ALLROOMS/lightSwitch.gltf"></a-asset-item>
+                <a-asset-item id="wateringCan_model" response-type="arraybuffer" src="assets/models/ALLROOMS/wateringCan.gltf"></a-asset-item>
                 
                 
                 <!-- EXTERIOR -->
@@ -278,7 +281,7 @@
                 geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;" material="color:rgb(200, 200, 200);"
                 static-body></a-entity>
 
-                <a-entity id="apartment_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#apartment_model" shadow static-body></a-entity>
+                <a-entity id="apartment_build" position="-0.1 10 0" scale="19.8 19.8 19.8" gltf-model="#apartment_model" shadow static-body></a-entity>
                 
                 <!--Environmental effect testing button-->
                 <a-entity id="environment_button" position = "5 10.2 10">
@@ -297,18 +300,18 @@
                     DOORS
                     UNOPENABLE, as it's not a priority and more of a slice-of-life thing.
                 -->           
-                <a-entity id="balconyDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#bal1_test" shadow static-body></a-entity>
-                <a-entity id="balconyDoor02_build" position="1 10.2 0" scale="0.2 0.2 0.2" gltf-model="#balconyDoor02" shadow static-body></a-entity>
-                <a-entity id="closetDoor01_build" position="0 10.2 0" scale="0.2 0.2 0.2" gltf-model="#closetDoor01" shadow static-body></a-entity>
-                <a-entity id="closetDoor02_build" rotation = "0 -45 0" position="-9 10.2 18" scale="0.2 0.2 0.2" gltf-model="#closetDoor02" shadow static-body></a-entity>
-                <a-entity id="bedroomDoor_build" rotation = "0 -75 0" position="2 10.2 3" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
-                <a-entity id="bathroomDoor_build" rotation = "0 -75 0 " position="2 10.2 -15.5" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
-                <a-entity id="hallwayDoor_build" position="-2 10 -23" rotation = "0 90 0" scale="0.2 0.2 0.2" gltf-model="#normalDoor" shadow static-body></a-entity>
+                <a-entity id="balconyDoor01_build" position="0 10.2 0" scale="19.8 19.8 19.8" gltf-model="#balconyDoor01" shadow static-body></a-entity>
+                <a-entity id="balconyDoor02_build" position="1 10.2 0" scale="19.8 19.8 19.8" gltf-model="#balconyDoor02" shadow static-body></a-entity>
+                <a-entity id="closetDoor01_build" position="0 10.2 0" scale="19.8 19.8 19.8" gltf-model="#closetDoor01" shadow static-body></a-entity>
+                <a-entity id="closetDoor02_build" rotation = "0 -45 0" position="-9 10.2 18" scale="19.8 19.8 19.8" gltf-model="#closetDoor02" shadow static-body></a-entity>
+                <a-entity id="bedroomDoor_build" rotation = "0 -75 0" position="2 10.2 3" scale="19.8 19.8 19.8" gltf-model="#normalDoor" shadow static-body></a-entity>
+                <a-entity id="bathroomDoor_build" rotation = "0 -75 0 " position="2 10.2 -15.5" scale="19.8 19.8 19.8" gltf-model="#normalDoor" shadow static-body></a-entity>
+                <a-entity id="hallwayDoor_build" position="-2 10 -23" rotation = "0 90 0" scale="19.8 19.8 19.8" gltf-model="#normalDoor" shadow static-body></a-entity>
                 
                 <!--Windows-->
-                <a-entity id="bathroomWindow_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#largeWindow" shadow static-body></a-entity>
-                <a-entity id="smallBedroomWindow_build" position="0 10 0" scale="0.2 0.2 0.2" gltf-model="#smallWindow" shadow static-body></a-entity>
-                <a-entity id="largeBedroomWindow_build" position="0 10 20.5" scale="0.2 0.2 0.2" gltf-model="#smallWindow" shadow static-body></a-entity>
+                <a-entity id="bathroomWindow_build" position="0 10 0" scale="19.8 19.8 19.8" gltf-model="#largeWindow" shadow static-body></a-entity>
+                <a-entity id="smallBedroomWindow_build" position="0 10 0" scale="19.8 19.8 19.8" gltf-model="#smallWindow" shadow static-body></a-entity>
+                <a-entity id="largeBedroomWindow_build" position="0 10 20.5" scale="19.8 19.8 19.8" gltf-model="#smallWindow" shadow static-body></a-entity>
 
             
             <!---->
