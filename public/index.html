@@ -64,11 +64,13 @@
         </div>
 
         <a-scene id="scene" physics start-experience>
-            <a-entity id="camera" camera look-controls wasd-controls position = "-26 20 5" rotation="0 0 0"> <!--spawning us high in an apartment-->
+            <a-entity light="type:spot; intensity:3; castShadow:true; shadowBias:-0.0005; angle:0; penumbra:0.3;" position = "19 7 55"></a-entity>
+            <a-entity id="camera" camera look-controls wasd-controls position = "20 20 35" rotation="0 0 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <!--
                     
                 -->
+                
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive;"></a-entity>
                 
             </a-entity>
@@ -81,6 +83,7 @@
 
                 <a-asset-item id="apartment_model" response-type="arraybuffer" src="assets/models/apartment.gltf"></a-asset-item>
                 <a-asset-item id="nav_mesh" response-type="arraybuffer" src="assets/models/GLTF/NavMeshTP.gltf"></a-asset-item>
+
 
 
             <!-- living room -->
@@ -157,6 +160,7 @@
             <a-asset-item id="half_slope" response-type="arraybuffer" src="assets/models/NATURE/cliff_blockSlopeWalls_rock.glb"></a-asset-item>
             <a-asset-item id="landbridge" response-type="arraybuffer" src="assets/models/NATURE/ground_pathRocks.glb"></a-asset-item>
             <a-asset-item id="add_bridge" response-type="arraybuffer" src="assets/models/NATURE/cliff_rock.glb"></a-asset-item>
+            <a-asset-item id="river_straight" response-type="arraybuffer" src="assets/models/NATURE/ground_riverStraight.glb"></a-asset-item>
 
             <a-asset-item id="two_curved" response-type="arraybuffer" src="assets/models/STREETS/road_curveIntersection.glb"></a-asset-item>
             <a-asset-item id="straight_street" response-type="arraybuffer" src="assets/models/STREETS/road_straight.glb"></a-asset-item>
@@ -262,7 +266,8 @@
 
             <!-- camera -->        
 
-
+            
+            
 
 
             <a-entity id = "outside" static-body>
@@ -302,9 +307,9 @@
             <a-entity id="lowJ_m" position="-60 0 40"  scale="11 11 11" gltf-model="#lowJ" shadow static-body></a-entity>
             <a-entity id="lowK_m" position="50 0 50" scale="11 11 11" gltf-model="#lowK" shadow static-body></a-entity>
             <a-entity id="lowJ_m_2" position="-10 0 40"  scale="11 11 11" gltf-model="#lowJ" shadow static-body></a-entity>
-            <a-entity id="lowF_m" position="-10 0 58" scale="11 11 11" gltf-model="#lowF" shadow static-body></a-entity>
-            <a-entity id="lowH_m" position="9 0 53" scale="11 11 11" gltf-model="#lowH" shadow static-body></a-entity>
-            <a-entity id="lowB_m" position="11 0 40" scale="11 11 11" gltf-model="#lowB" shadow static-body></a-entity>
+            <a-entity id="lowF_m" position="-10 0 50" scale="11 11 11" gltf-model="#lowF" shadow static-body></a-entity>
+            <a-entity id="lowH_m" position="9 0 48" scale="11 11 11" gltf-model="#lowH" shadow static-body></a-entity>
+            <a-entity id="lowB_m" position="18 0 45" scale="11 11 11" gltf-model="#lowB" shadow static-body></a-entity>
 
             <a-entity id="smallA_m" position="-68 10 10" scale="11 11 11" gltf-model="#smallA" shadow static-body></a-entity>
             <a-entity id="smallC_m" position="-40 10 -20" scale="11 11 11" gltf-model="#smallC" shadow static-body></a-entity>
@@ -350,8 +355,15 @@
             <a-entity id="rock_m" position="-70 0 -50" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-70 0 -60" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             
-            
-            
+            <a-entity id="river" position="9 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            <a-entity id="river" position="19 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            <a-entity id="river" position="29 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            <a-entity id="river" position="-2 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            <a-entity id="river" position="-11 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            <a-entity id="river" position="-19 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+
+
+
             <!-- roads --> 
             <a-entity id="straight" position="-60 11 0" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
             <a-entity id="straight" position="-60 11 10" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
@@ -575,11 +587,11 @@ a
             </a-entity>
 
             <a-entity class = "ground"
-            position = "0, 1.1, 0"
+            position = "0, 2, 0"
             geometry = "primitive: plane"
             scale = "300, 300, 0"
             rotation = "270, 0, 0"
-            material = "color: rgb(0, 51, 20);"
+            material = "color: rgba(26,51,46,255);"
         ></a-entity>
         
             <a-entity class = "back-environment" id = "bg" environment="preset:default;"></a-entity>
