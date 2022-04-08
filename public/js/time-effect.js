@@ -22,7 +22,7 @@ AFRAME.registerComponent('time-effect', {
                     walls[i].setAttribute('visible', true);
                 } 
                 isDay = false;
-                CONTEXT_AF.el.emit('night', '', true)
+                CONTEXT_AF.el.emit('night')
             }
             else {
                 //set Day
@@ -32,7 +32,7 @@ AFRAME.registerComponent('time-effect', {
                     walls[i].setAttribute('visible', false);
                 } 
                 isDay = true;
-                CONTEXT_AF.el.emit('day', '', true)
+                CONTEXT_AF.el.emit('day')
             }
         });
    
