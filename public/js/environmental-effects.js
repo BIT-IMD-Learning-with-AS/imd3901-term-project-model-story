@@ -1,4 +1,5 @@
 'use strict'
+var puzzleComplete = 0;
 
 //Land Bridge
 AFRAME.registerComponent('bridge-effect', {
@@ -53,6 +54,10 @@ AFRAME.registerComponent('plant-effect', {
      init : function () {
          const CONTEXT_AF = this;
          CONTEXT_AF.el.addEventListener('click', function() {
+
+            puzzleComplete ++;
+            const currentText = document.getElementById("puzzle-text");
+            currentText.setAttribute('text', 'value', 'Puzzles: ' + puzzleComplete + '/5');
 
             document.getElementById('good-sound-fx').components.sound.playSound();
              //Plants growing

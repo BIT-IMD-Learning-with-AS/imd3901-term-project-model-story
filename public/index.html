@@ -70,7 +70,7 @@
         <a-scene id="scene" physics start-experience>
 
             <!-- camera -->        
-            <a-entity id="camera" camera wasd-controls look-controls position="5 20 0"> <!--spawning us high in an apartment-->
+            <a-entity id="camera" camera look-controls position="5 20 0"> <!--spawning us high in an apartment-->
                 <!--<a-entity light="type:spot; intensity:1.3; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position = "0 1 0"></a-entity>-->
                 <a-entity cursor="rayOrigin:mouse;" raycaster="far:40; interval:200; objects:.interactive;"></a-entity>
             
@@ -78,6 +78,8 @@
                 <a-entity id = "scene_music" class = "ambient-music" sound="src:#serenity_music; autoplay:false; loop:true; volume:0.1;"></a-entity>
                 <a-entity id = "city_sounds" class = "ambient-music" sound="src:#city_amb; autoplay:false; loop:true; volume:0.1;"></a-entity>
                 <a-entity id = "bird_sounds" class = "ambient-music" sound="src:#birds_amb; autoplay:false; loop:true; volume:0.1;"></a-entity>
+
+                <a-entity id = "puzzle-text" position = "2.2 0.6 -1" text = "value: Puzzles: 0/5; width:2; font: https://cdn.aframe.io/fonts/Aileron-Semibold.fnt"></a-entity>
                             
             </a-entity>
 
@@ -659,8 +661,7 @@
                 material = "color: rgb(128,128,128);"
             ></a-entity>
 
-            <a-entity class = "back-environment" id = "bg" environment="preset:default;"></a-entity>
-        
+            <a-entity class = "back-environment" id = "bg" environment="preset:default;"></a-entity>        
         
         </a-scene>
     </body>
