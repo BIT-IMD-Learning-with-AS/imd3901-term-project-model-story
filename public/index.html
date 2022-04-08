@@ -415,20 +415,20 @@
 
                 <!-- lights for river --> 
 
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="9 6 62"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="19 6 62"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="29 6 62"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="39 6 62"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-2 6 62"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-11 6 62"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="9 6 62" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="19 6 62" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="29 6 62" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="39 6 62" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-2 6 62" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-11 6 62" visible = "false"></a-entity>
  
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-21 6 62"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-21 6 51"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 51"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-21 6 62" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-21 6 51" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 51" visible = "false"></a-entity>
  
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 40"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 30"></a-entity>
-             <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 20"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 40" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 30" visible = "false"></a-entity>
+             <a-entity class="riverlight" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 20" visible = "false"></a-entity>
 
             <!-- roads -->
             <a-entity id="straight" position="-60 11 0" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
@@ -484,7 +484,7 @@
 
             <!--Environmental effect testing button-->
             <a-entity id="environment_button" position="5 10.2 10">
-                <a-entity class="button interactive" plant-effect position="0 0.6 0"
+                <a-entity class="button interactive" river-effect position="0 0.6 0"
                     geometry="primitive:cylinder; radius: 0.15; height: 0.2;" material="color:rgb(255, 100, 100)"
                     animation__mouseenter="property:material.color; type:color; to:rgb(255,0,0); startEvents:mouseenter; dur:200;"
                     animation__mouseleave="property:material.color; type:color; to:rgb(255,100,100); startEvents:mouseleave; dur:200;"
