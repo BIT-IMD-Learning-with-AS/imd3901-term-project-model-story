@@ -161,6 +161,7 @@
             <a-asset-item id="landbridge" response-type="arraybuffer" src="assets/models/NATURE/ground_pathRocks.glb"></a-asset-item>
             <a-asset-item id="add_bridge" response-type="arraybuffer" src="assets/models/NATURE/cliff_rock.glb"></a-asset-item>
             <a-asset-item id="river_straight" response-type="arraybuffer" src="assets/models/NATURE/ground_riverStraight.glb"></a-asset-item>
+            <a-asset-item id="river_bend" response-type="arraybuffer" src="assets/models/NATURE/ground_riverBend.glb"></a-asset-item>
 
             <a-asset-item id="two_curved" response-type="arraybuffer" src="assets/models/STREETS/road_curveIntersection.glb"></a-asset-item>
             <a-asset-item id="straight_street" response-type="arraybuffer" src="assets/models/STREETS/road_straight.glb"></a-asset-item>
@@ -271,16 +272,20 @@
 
 
             <a-entity id = "outside" static-body>
-            <!-- buildings -->  
+            <!-- buildings   
             
-            <a-entity id="skyA_m" position="40 0 60" scale="11 11 11" gltf-model="#skyA" shadow static-body></a-entity>
+ 
+        
+        -->
+            
+            <a-entity id="skyA_m" position="50 0 60" scale="11 11 11" gltf-model="#skyA" shadow static-body></a-entity>
             <a-entity id="skyD_m" position="60 0 50" scale="11 11 11" gltf-model="#skyD" shadow static-body></a-entity>
             <a-entity id="skyF_m" position="60 0 20" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
             <a-entity id="skyF_m" position="-80 0 -10" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
             <a-entity id="skyC_m" position="75 0 40" scale="11 11 11" gltf-model="#skyC" shadow static-body></a-entity>
             <a-entity id="skyB_m" position="20 0 80" scale="11 11 11" gltf-model="#skyB" shadow static-body></a-entity>
             <a-entity id="skyC_m" position="0 0 90" scale="11 11 11" gltf-model="#skyC" shadow static-body></a-entity>
-            <a-entity id="skyD_m" position="-20 0 70" scale="11 11 11" gltf-model="#skyD" shadow static-body></a-entity>
+            <a-entity id="skyD_m" position="-20 0 80" scale="11 11 11" gltf-model="#skyD" shadow static-body></a-entity>
             <a-entity id="skyE_m" position="-40 0 40" rotation="0 70 0" scale="11 11 11" gltf-model="#skyE" shadow static-body></a-entity>
             <a-entity id="skyF_m" position="-70 0 28" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
             <a-entity id="skyB_m" position="-85 0 15" scale="11 11 11" gltf-model="#skyB" shadow static-body></a-entity>
@@ -296,6 +301,13 @@
             <a-entity id="skyF_m" position="-84 0 40" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
             <a-entity id="skyE_m" position="-100 0 70" rotation="0 70 0" scale="11 11 11" gltf-model="#skyE" shadow static-body></a-entity>
 
+            <a-entity id="skyB_m" position="50 0 70" scale="11 11 11" gltf-model="#skyB" shadow static-body></a-entity>
+            <a-entity id="skyD_m" position="-50 0 70" scale="11 11 11" gltf-model="#skyD" shadow static-body></a-entity>
+            <a-entity id="skyE_m" position="40 0 90" rotation="0 70 0" scale="11 11 11" gltf-model="#skyE" shadow static-body></a-entity>
+            <a-entity id="skyE_m" position="-40 0 90" rotation="0 70 0" scale="11 11 11" gltf-model="#skyE" shadow static-body></a-entity>
+            <a-entity id="skyF_m" position="10 0 100" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
+            <a-entity id="skyF_m" position="-20 0 100" scale="11 11 11" gltf-model="#skyF" shadow static-body></a-entity>
+
             <a-entity id="lowA_m" position="50 0 50" scale="11 11 11" gltf-model="#lowA" shadow static-body></a-entity>
             <a-entity id="lowB_m" position="43 0 60" scale="11 11 11" gltf-model="#lowB" shadow static-body></a-entity>
             <a-entity id="lowC_m" position="0 0 75" scale="11 11 11" gltf-model="#lowC" shadow static-body></a-entity>
@@ -303,12 +315,11 @@
             <a-entity id="lowE_m" position="-40 0 25"  scale="11 11 11" gltf-model="#lowE" shadow static-body></a-entity>
             <a-entity id="lowF_m" position="60 0 58" scale="11 11 11" gltf-model="#lowF" shadow static-body></a-entity>
             <a-entity id="lowG_m" position="30 0 50" scale="11 11 11" gltf-model="#lowG" shadow static-body></a-entity>
-            <a-entity id="lowH_m" position="28 0 65" scale="11 11 11" gltf-model="#lowH" shadow static-body></a-entity>
+            <a-entity id="lowH_m" position="28 0 75" scale="11 11 11" gltf-model="#lowH" shadow static-body></a-entity>
             <a-entity id="lowJ_m" position="-60 0 40"  scale="11 11 11" gltf-model="#lowJ" shadow static-body></a-entity>
             <a-entity id="lowK_m" position="50 0 50" scale="11 11 11" gltf-model="#lowK" shadow static-body></a-entity>
-            <a-entity id="lowJ_m_2" position="-10 0 40"  scale="11 11 11" gltf-model="#lowJ" shadow static-body></a-entity>
-            <a-entity id="lowF_m" position="-10 0 50" scale="11 11 11" gltf-model="#lowF" shadow static-body></a-entity>
-            <a-entity id="lowH_m" position="9 0 48" scale="11 11 11" gltf-model="#lowH" shadow static-body></a-entity>
+            <a-entity id="lowJ_m_2" position="-20 0 40"  scale="11 11 11" gltf-model="#lowJ" shadow static-body></a-entity>
+            <a-entity id="lowF_m" position="-20 0 30" scale="11 11 11" gltf-model="#lowF" shadow static-body></a-entity>
             <a-entity id="lowB_m" position="18 0 45" scale="11 11 11" gltf-model="#lowB" shadow static-body></a-entity>
 
             <a-entity id="smallA_m" position="-68 10 10" scale="11 11 11" gltf-model="#smallA" shadow static-body></a-entity>
@@ -316,6 +327,8 @@
             <a-entity id="smallC_m" position="-68 10 -15" scale="11 11 11" gltf-model="#smallC" shadow static-body></a-entity>
             <a-entity id="smallD_m" position="-68 10 -26" scale="11 11 11" rotation="0 90 0" gltf-model="#smallD" shadow static-body></a-entity>
             <a-entity id="smallD_m" position="-40 10 -30" scale="11 11 11" rotation="0 -90 0" gltf-model="#smallD" shadow static-body></a-entity>
+               
+
 
             <!-- land --> 
             
@@ -355,14 +368,53 @@
             <a-entity id="rock_m" position="-70 0 -50" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             <a-entity id="rock_m" position="-70 0 -60" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
             
+            <!-- lights  
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="9 6 62"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="19 6 62"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="29 6 62"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="39 6 62"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-2 6 62"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-11 6 62"></a-entity>
+
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-21 6 62"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-21 6 51"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 51"></a-entity>
+
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 40"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 30"></a-entity>
+            <a-entity id="l1" light="type: point; color: #2596be; distance: 20.0; intensity: 2.0" position="-10 6 20"></a-entity>
+
+            --> 
+
             <a-entity id="river" position="9 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
             <a-entity id="river" position="19 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
             <a-entity id="river" position="29 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            <a-entity id="river" position="39 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
             <a-entity id="river" position="-2 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
             <a-entity id="river" position="-11 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
-            <a-entity id="river" position="-19 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            
+            <a-entity id="river_b" position="-21 5 62" rotation="0 90 0" scale="11 11 11" gltf-model="#river_bend" shadow static-body></a-entity>
+            <a-entity id="river_b" position="-21 5 51" rotation="0 0 0" scale="11 11 11" gltf-model="#river_bend" shadow static-body></a-entity>
+            <a-entity id="river_b" position="-10 5 51" rotation="0 180 0" scale="11 11 11" gltf-model="#river_bend" shadow static-body></a-entity>
+            
+            <a-entity id="river" position="-10 5 40" rotation="0 0 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            <a-entity id="river" position="-10 5 30" rotation="0 0 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
+            <a-entity id="river" position="-10 5 20" rotation="0 0 0" scale="11 11 11" gltf-model="#river_straight" shadow static-body></a-entity>
 
+            <a-entity id="rock_m" position="0 -6 51" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="10 -6 51" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="20 -6 51" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="30 -6 51" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="00 -6 41" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="10 -6 41" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="20 -6 41" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="30 -6 41" scale="11 11 11" gltf-model="#rock" shadow static-body></a-entity>
 
+            <a-entity id="rock_m" position="30 -6 95" scale="106 11 56" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="10 -6 95" scale="106 11 56" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-40 -6 95" scale="106 11 56" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-68 -6 19" scale="106 11 56" gltf-model="#rock" shadow static-body></a-entity>
+            <a-entity id="rock_m" position="-79 -6 39" scale="106 11 56" gltf-model="#rock" shadow static-body></a-entity>
 
             <!-- roads --> 
             <a-entity id="straight" position="-60 11 0" rotation="0 90 0" scale="11 11 11" gltf-model="#straight_street" shadow static-body></a-entity>
