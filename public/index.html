@@ -574,8 +574,15 @@ a
             tele-button>
             </a-entity>
 
-
-            <a-entity class = "back-environment" id = "bg" environment="preset:forest;"></a-entity>
+            <a-entity class = "ground"
+            position = "0, 1.1, 0"
+            geometry = "primitive: plane"
+            scale = "300, 300, 0"
+            rotation = "270, 0, 0"
+            material = "color: rgb(0, 51, 20);"
+        ></a-entity>
+        
+            <a-entity class = "back-environment" id = "bg" environment="preset:default;"></a-entity>
         
         
         </a-scene>
