@@ -86,9 +86,6 @@
                 sound="src:#city_amb; autoplay:false; loop:true; volume:0.1;"></a-entity>
             <a-entity id="bird_sounds" class="ambient-music"
                 sound="src:#birds_amb; autoplay:false; loop:true; volume:0.1;"></a-entity>
-
-            <a-entity id = "puzzle-text" position = "2.2 0.6 -2" text = "value: Puzzles: 0/5; width:2; font: https://cdn.aframe.io/fonts/Aileron-Semibold.fnt%22%3E"></a-entity>
-
         </a-entity>
 
         <a-assets>
@@ -519,7 +516,7 @@
 
             <!--Environmental effect testing button-->
             <a-entity id="environment_button" position="5 10.2 10">
-                <a-entity class="button interactive" river-effect position="0 0.6 0"
+                <a-entity class="button interactive" plant-effect position="0 0.6 0"
                     geometry="primitive:cylinder; radius: 0.15; height: 0.2;" material="color:rgb(255, 100, 100)"
                     animation__mouseenter="property:material.color; type:color; to:rgb(255,0,0); startEvents:mouseenter; dur:200;"
                     animation__mouseleave="property:material.color; type:color; to:rgb(255,100,100); startEvents:mouseleave; dur:200;"
@@ -789,36 +786,51 @@
             </a-entity>
 
             <!--Testing interior plants-->
-            <a-entity id="plant01-01" class = 'new-plants' position = '5, 11, 12' scale = "90 90 90" gltf-model = "#plant01_01"></a-entity>
-            <a-entity id="plant01-02" class = 'new-plants' position = '5, 11, 12' scale = "90 90 90"  gltf-model = "#plant01_02" visible = "false"></a-entity>
-            <a-entity id="plant01-03" class = 'new-plants' position = '5, 11, 12' scale = "90 90 90" gltf-model = "#plant01_03"  visible = "false"></a-entity>
-            <a-entity id="plant01-04" class = 'new-plants' position = '5, 11, 12' scale = "90 90 90" gltf-model = "#plant01_04"  visible = "false"></a-entity>
-            <a-entity id="plant01-05" class = 'new-plants' position = '5, 11, 12' scale = "90 90 90" gltf-model = "#plant01_05"  visible = "false"></a-entity>
-            <a-entity id="plant02-01" class = 'new-plants' position = '7, 11, 12' scale = "90 90 90" gltf-model = "#plant02_01"></a-entity>
-            <a-entity id="plant02-02" class = 'new-plants' position = '7, 11, 12' scale = "90 90 90" gltf-model = "#plant02_02" visible = "false"></a-entity>
-            <a-entity id="plant02-03" class = 'new-plants' position = '7, 11, 12' scale = "90 90 90" gltf-model = "#plant02_03" visible = "false"></a-entity>
-            <a-entity id="plant02-04" class = 'new-plants' position = '7, 11, 12' scale = "90 90 90" gltf-model = "#plant02_04" visible = "false"></a-entity>
-            <a-entity id="plant02-05" class = 'new-plants' position = '7, 11, 12' scale = "90 90 90" gltf-model = "#plant02_05" visible = "false"></a-entity>
-            <a-entity id="plant03-01" class = 'new-plants' position = '9, 11, 12' scale = "90 90 90" gltf-model = "#plant03_01"></a-entity>
-            <a-entity id="plant03-02" class = 'new-plants' position = '9, 11, 12' scale = "90 90 90" gltf-model = "#plant03_02"  visible = "false"></a-entity>
-            <a-entity id="plant03-03" class = 'new-plants' position = '9, 11, 12' scale = "90 90 90" gltf-model = "#plant03_03"  visible = "false"></a-entity>
-            <a-entity id="plant03-04" class = 'new-plants' position = '9, 11, 12' scale = "90 90 90" gltf-model = "#plant03_04"  visible = "false"></a-entity>
-            <a-entity id="plant03-05" class = 'new-plants' position = '9, 11, 12' scale = "90 90 90" gltf-model = "#plant03_05"  visible = "false"></a-entity>
-            <a-entity id="plant04-01" class = 'new-plants' position = '11, 11, 12' scale = "90 90 90" gltf-model = "#plant04_01"></a-entity>
-            <a-entity id="plant04-02" class = 'new-plants' position = '11, 11, 12' scale = "90 90 90" gltf-model = "#plant04_02"  visible = "false"></a-entity>
-            <a-entity id="plant04-03" class = 'new-plants' position = '11, 11, 12' scale = "90 90 90" gltf-model = "#plant04_03"  visible = "false"></a-entity>
-            <a-entity id="plant04-04" class = 'new-plants' position = '11, 11, 12' scale = "90 90 90" gltf-model = "#plant04_04"  visible = "false"></a-entity>
-            <a-entity id="plant04-05" class = 'new-plants' position = '11, 11, 12' scale = "90 90 90" gltf-model = "#plant04_05"  visible = "false"></a-entity>
-            <a-entity id="plant05-01" class = 'new-plants' position = '3, 11, 12' scale = "90 90 90" gltf-model = "#plant05_01"></a-entity>
-            <a-entity id="plant05-02" class = 'new-plants' position = '3, 11, 12' scale = "90 90 90" gltf-model = "#plant05_02" visible = "false"></a-entity>
-            <a-entity id="plant05-03" class = 'new-plants' position = '3, 11, 12' scale = "90 90 90" gltf-model = "#plant05_03" visible = "false"></a-entity>
-            <a-entity id="plant05-04" class = 'new-plants' position = '3, 11, 12' scale = "90 90 90" gltf-model = "#plant05_04" visible = "false"></a-entity>
-            <a-entity id="plant05-05" class = 'new-plants' position = '3, 11, 12' scale = "90 90 90" gltf-model = "#plant05_05" visible = "false"></a-entity>
-            <a-entity id="plant06-01" class = 'new-plants' position = '1, 11, 12' scale = "90 90 90" gltf-model = "#plant06_01"></a-entity>
-            <a-entity id="plant06-02" class = 'new-plants' position = '1, 11, 12' scale = "90 90 90" gltf-model = "#plant06_02" visible = "false"></a-entity>
-            <a-entity id="plant06-03" class = 'new-plants' position = '1, 11, 12' scale = "90 90 90" gltf-model = "#plant06_03" visible = "false"></a-entity>
-            <a-entity id="plant06-04" class = 'new-plants' position = '1, 11, 12' scale = "90 90 90" gltf-model = "#plant06_04" visible = "false"></a-entity>
-            <a-entity id="plant06-05" class = 'new-plants' position = '1, 11, 12' scale = "90 90 90" gltf-model = "#plant06_05" visible = "false"></a-entity>
+            <!--balcony plants-->
+            <a-entity id="plant01-01" class = 'plant01' position = '24, 11.2, 32' scale = "120 120 120" gltf-model = "#plant01_01"></a-entity>
+            <a-entity id="plant01-02" class = 'plant01' position = '24, 11.2, 32' scale = "120 120 120"  gltf-model = "#plant01_02" visible = "false"></a-entity>
+            <a-entity id="plant01-03" class = 'plant01' position = '24, 11.2, 32' scale = "120 120 120" gltf-model = "#plant01_03"  visible = "false"></a-entity>
+            <a-entity id="plant01-04" class = 'plant01' position = '24, 11.2, 32' scale = "120 120 120" gltf-model = "#plant01_04"  visible = "false"></a-entity>
+            <a-entity id="plant01-05" class = 'plant01' position = '24, 11.2, 32' scale = "120 120 120" gltf-model = "#plant01_05"  visible = "false"></a-entity>
+
+            <a-entity id="plant02-01" class = 'plant01' position = '24, 11.2, 24' scale = "120 120 120" gltf-model = "#plant01_01"></a-entity>
+            <a-entity id="plant02-02" class = 'plant01' position = '24, 11.2, 24' scale = "120 120 120"  gltf-model = "#plant01_02" visible = "false"></a-entity>
+            <a-entity id="plant02-03" class = 'plant01' position = '24, 11.2, 24' scale = "120 120 120" gltf-model = "#plant01_03"  visible = "false"></a-entity>
+            <a-entity id="plant02-04" class = 'plant01' position = '24, 11.2, 24' scale = "120 120 120" gltf-model = "#plant01_04"  visible = "false"></a-entity>
+            <a-entity id="plant02-05" class = 'plant01' position = '24, 11.2, 24' scale = "120 120 120" gltf-model = "#plant01_05"  visible = "false"></a-entity>
+
+            <a-entity id="plant03-01" class = 'plant03' position = '22.5, 11.2, 27' rotation = "0 90 0" scale = "150 150 150" gltf-model = "#plant03_01"></a-entity>
+            <a-entity id="plant03-02" class = 'plant03' position = '22.5, 11.2, 27' rotation = "0 90 0" scale = "150 150 150" gltf-model = "#plant03_02"  visible = "false"></a-entity>
+            <a-entity id="plant03-03" class = 'plant03' position = '22.5, 11.2, 27' rotation = "0 90 0" scale = "150 150 150" gltf-model = "#plant03_03"  visible = "false"></a-entity>
+            <a-entity id="plant03-04" class = 'plant03' position = '22.5, 11.2, 27' rotation = "0 90 0" scale = "150 150 150" gltf-model = "#plant03_04"  visible = "false"></a-entity>
+            <a-entity id="plant03-05" class = 'plant03' position = '22.5, 11.2, 27' rotation = "0 90 0" scale = "150 150 150" gltf-model = "#plant03_05"  visible = "false"></a-entity>
+            
+            <!--kitchen plant-->
+            <a-entity id="plant07-01" class = 'plant02' position = '12.5, 16, 1' scale = "70 70 70" gltf-model = "#plant02_01"></a-entity>
+            <a-entity id="plant07-02" class = 'plant02' position = '12.5, 16, 1' scale = "70 70 70" gltf-model = "#plant02_02" visible = "false"></a-entity>
+            <a-entity id="plant07-03" class = 'plant02' position = '12.5, 16, 1' scale = "70 70 70" gltf-model = "#plant02_03" visible = "false"></a-entity>
+            <a-entity id="plant07-04" class = 'plant02' position = '12.5, 16, 1' scale = "70 70 70" gltf-model = "#plant02_04" visible = "false"></a-entity>
+            <a-entity id="plant07-05" class = 'plant02' position = '12.5, 16, 1' scale = "70 70 70" gltf-model = "#plant02_05" visible = "false"></a-entity>
+
+            <!--Living Room plant-->
+            <a-entity id="plant04-01" class = 'plant04' position = '12.5, 11, -3.5' scale = "150 150 150" gltf-model = "#plant04_01"></a-entity>
+            <a-entity id="plant04-02" class = 'plant04' position = '12.5, 11, -3.5' scale = "150 150 150" gltf-model = "#plant04_02"  visible = "false"></a-entity>
+            <a-entity id="plant04-03" class = 'plant04' position = '12.5, 11, -3.5' scale = "150 150 150" gltf-model = "#plant04_03"  visible = "false"></a-entity>
+            <a-entity id="plant04-04" class = 'plant04' position = '12.5, 11, -3.5' scale = "150 150 150" gltf-model = "#plant04_04"  visible = "false"></a-entity>
+            <a-entity id="plant04-05" class = 'plant04' position = '12.5, 11, -3.5' scale = "150 150 150" gltf-model = "#plant04_05"  visible = "false"></a-entity>
+
+            <!--Bedroom Plants-->            
+            <a-entity id="plant05-01" class = 'plant05' position = '-7.5, 16.8, 18' scale = "90 90 90" gltf-model = "#plant05_01"></a-entity>
+            <a-entity id="plant05-02" class = 'plant05' position = '-7.5, 16.8, 18' scale = "90 90 90" gltf-model = "#plant05_02" visible = "false"></a-entity>
+            <a-entity id="plant05-03" class = 'plant05' position = '-7.5, 16.8, 18' scale = "90 90 90" gltf-model = "#plant05_03" visible = "false"></a-entity>
+            <a-entity id="plant05-04" class = 'plant05' position = '-7.5, 16.8, 18' scale = "90 90 90" gltf-model = "#plant05_04" visible = "false"></a-entity>
+            <a-entity id="plant05-05" class = 'plant05' position = '-7.5, 16.8, 18' scale = "90 90 90" gltf-model = "#plant05_05" visible = "false"></a-entity>
+            
+            <a-entity id="plant06-01" class = 'plant06' position = '-9.5, 16.8, 18.5' scale = "90 90 90" gltf-model = "#plant06_01"></a-entity>
+            <a-entity id="plant06-02" class = 'plant06' position = '-9.5, 16.8, 18.5' scale = "90 90 90" gltf-model = "#plant06_02" visible = "false"></a-entity>
+            <a-entity id="plant06-03" class = 'plant06' position = '-9.5, 16.8, 18.5' scale = "90 90 90" gltf-model = "#plant06_03" visible = "false"></a-entity>
+            <a-entity id="plant06-04" class = 'plant06' position = '-9.5, 16.8, 18.5' scale = "90 90 90" gltf-model = "#plant06_04" visible = "false"></a-entity>
+            <a-entity id="plant06-05" class = 'plant06' position = '-9.5, 16.8, 18.5' scale = "90 90 90" gltf-model = "#plant06_05" visible = "false"></a-entity>
 
 
             <!--PLANTS FOR THE PUZZLE-->

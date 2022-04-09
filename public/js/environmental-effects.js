@@ -111,6 +111,119 @@ AFRAME.registerComponent('plant-effect', {
                 let trees = document.getElementById("trees")
                 trees.appendChild(tree)
 
+                //plant growth
+                //JANKY I KNOW, SORRY
+                //plant01
+                document.getElementById('plant01-01').setAttribute('visible', false);
+                document.getElementById('plant01-02').setAttribute('visible', true);
+                setTimeout(function(){
+                    document.getElementById('plant01-02').setAttribute('visible', false);
+                    document.getElementById('plant01-03').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant01-03').setAttribute('visible', false);
+                    document.getElementById('plant01-04').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant01-04').setAttribute('visible', false);
+                    document.getElementById('plant01-05').setAttribute('visible', true);
+                },1000);
+
+                //plant02
+                document.getElementById('plant02-01').setAttribute('visible', false);
+                document.getElementById('plant02-02').setAttribute('visible', true);
+                setTimeout(function(){
+                    document.getElementById('plant02-02').setAttribute('visible', false);
+                    document.getElementById('plant02-03').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant02-03').setAttribute('visible', false);
+                    document.getElementById('plant02-04').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant02-04').setAttribute('visible', false);
+                    document.getElementById('plant02-05').setAttribute('visible', true);
+                },1000);
+
+                //plant03
+                document.getElementById('plant03-01').setAttribute('visible', false);
+                document.getElementById('plant03-02').setAttribute('visible', true);
+                setTimeout(function(){
+                    document.getElementById('plant03-02').setAttribute('visible', false);
+                    document.getElementById('plant03-03').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant03-03').setAttribute('visible', false);
+                    document.getElementById('plant03-04').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant03-04').setAttribute('visible', false);
+                    document.getElementById('plant03-05').setAttribute('visible', true);
+                },1000);
+
+                //plant04
+                document.getElementById('plant04-01').setAttribute('visible', false);
+                document.getElementById('plant04-02').setAttribute('visible', true);
+                setTimeout(function(){
+                    document.getElementById('plant04-02').setAttribute('visible', false);
+                    document.getElementById('plant04-03').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant04-03').setAttribute('visible', false);
+                    document.getElementById('plant04-04').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant04-04').setAttribute('visible', false);
+                    document.getElementById('plant04-05').setAttribute('visible', true);
+                },1000);
+
+                //plant 05
+                document.getElementById('plant05-01').setAttribute('visible', false);
+                document.getElementById('plant05-02').setAttribute('visible', true);
+                setTimeout(function(){
+                    document.getElementById('plant05-02').setAttribute('visible', false);
+                    document.getElementById('plant05-03').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant05-03').setAttribute('visible', false);
+                    document.getElementById('plant05-04').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant05-04').setAttribute('visible', false);
+                    document.getElementById('plant05-05').setAttribute('visible', true);
+                },1000);
+
+                //plant 06
+                document.getElementById('plant06-01').setAttribute('visible', false);
+                document.getElementById('plant06-02').setAttribute('visible', true);
+                setTimeout(function(){
+                    document.getElementById('plant06-02').setAttribute('visible', false);
+                    document.getElementById('plant06-03').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant06-03').setAttribute('visible', false);
+                    document.getElementById('plant06-04').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant06-04').setAttribute('visible', false);
+                    document.getElementById('plant06-05').setAttribute('visible', true);
+                },1000);
+
+                //plant 07
+                document.getElementById('plant07-01').setAttribute('visible', false);
+                document.getElementById('plant07-02').setAttribute('visible', true);
+                setTimeout(function(){
+                    document.getElementById('plant07-02').setAttribute('visible', false);
+                    document.getElementById('plant07-03').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant07-03').setAttribute('visible', false);
+                    document.getElementById('plant07-04').setAttribute('visible', true);
+                },1000);
+                setTimeout(function(){
+                    document.getElementById('plant07-04').setAttribute('visible', false);
+                    document.getElementById('plant07-05').setAttribute('visible', true);
+                },1000);
              }
          });
      }
