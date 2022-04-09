@@ -13,7 +13,15 @@ AFRAME.registerComponent('game', {
     var cleanPuzzle = false;
     const CONTEXT_AF = this;
 
-    //var puzzleComplete = 0;
+    var puzzleComplete = 0;
+
+    var checkWinState = setInterval(function(){
+      if (puzzleComplete == 5)
+      {
+        //end game state
+        console.log('GAME OVER');
+      }
+    }, 1000)
 
 
 
@@ -33,19 +41,18 @@ AFRAME.registerComponent('game', {
       lightPuzzle = true;
       document.getElementById('good-sound-fx').components.sound.playSound();
 
+      //UPDATE TEXT
+      puzzleComplete = 5;
+      const currentText = document.getElementById("puzzle-text");
+      currentText.setAttribute('text', 'value', 'Puzzles: ' + puzzleComplete + '/5');
+
       const walls = document.querySelectorAll(".star-walls");
       for (let i = 0; i < walls.length; i++) {
         walls[i].setAttribute('visible', false);
         walls[i].setAttribute('scale', ("0,0,0"));
         walls[i].setAttribute('position', ("0,-100,0"));
-        //puzzleComplete ++;
-        //const currentText = document.getElementById("puzzle-text");
-        //currentText.setAttribute('text', 'value', 'Puzzles: ' + puzzleComplete + '/5');
       }
     });
-
-
-
 
   }
 });
