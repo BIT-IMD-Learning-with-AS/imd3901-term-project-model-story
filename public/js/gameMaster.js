@@ -13,6 +13,8 @@ AFRAME.registerComponent('game', {
     var cleanPuzzle = false;
     const CONTEXT_AF = this;
 
+    //var puzzleComplete = 0;
+
 
 
     //light puzzle
@@ -36,6 +38,9 @@ AFRAME.registerComponent('game', {
         walls[i].setAttribute('visible', false);
         walls[i].setAttribute('scale', ("0,0,0"));
         walls[i].setAttribute('position', ("0,-100,0"));
+        //puzzleComplete ++;
+        //const currentText = document.getElementById("puzzle-text");
+        //currentText.setAttribute('text', 'value', 'Puzzles: ' + puzzleComplete + '/5');
       }
     });
 
