@@ -207,6 +207,18 @@
             <a-asset-item id="wateringCan_model" response-type="arraybuffer"
                 src="assets/models/ALLROOMS/wateringCan.gltf"></a-asset-item>
 
+                <!-- frames -->
+
+                <a-asset-item id= "frame_1" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_1_2.gltf"></a-asset-item>
+                <a-asset-item id= "frame_2" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_2.gltf"></a-asset-item>
+                <a-asset-item id= "frame_2_5" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_2_2.gltf"></a-asset-item>
+                <a-asset-item id= "frame_3" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_3.gltf"></a-asset-item>
+                <a-asset-item id= "frame_3_5" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_3_2.gltf"></a-asset-item>
+                <a-asset-item id= "frame_4" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_4.gltf"></a-asset-item>
+                <a-asset-item id= "frame_4_5" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_4_2.gltf"></a-asset-item>
+                <a-asset-item id= "frame_5" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_5.gltf"></a-asset-item>
+                <a-asset-item id= "frame_5_5" response-type = "arraybuffer" src="assets/models/ALLROOMS/frames/Frame_5_2.gltf"></a-asset-item>
+
             <!--PLANT MODELS-->
             
             <a-asset-item id= "plant01_01" response-type = "arraybuffer" src="assets/models/plants/plant01/plant01_01.gltf"></a-asset-item>
@@ -519,12 +531,17 @@
 
 
             <!-- Paintings -->
+            <a-entity id="frame1" position="-22 22 21" rotation="0 180 0" scale="1 1 1" gltf-model="#frame_1" shadow static-body></a-entity>
+            <a-entity id="frame4" position="22 22 -21" rotation="0 0 0" scale="1 1 1" gltf-model="#frame_4" shadow static-body></a-entity>
+            <a-entity id="frame4" position="16 22 -21" rotation="0 0 0" scale="1 1 1" gltf-model="#frame_4" shadow static-body></a-entity>
+            <a-entity id="frame5_5" position="26 22 -11" rotation="0 -90 0" scale="2 2 2" gltf-model="#frame_5_5" shadow static-body></a-entity>
+
             <a-entity pickup="objVal:1;" dynamic-body class="interactive" position="-12 15 17"
-            geometry="primitive:box; width:1; height:3; depth:3;" material="color:red"></a-entity>
+            gltf-model="#frame_2" rotation="0 90 0" scale="0.5 0.5 0.5"></a-entity>
             <a-entity pickup="objVal:2;" dynamic-body class="interactive" position="25 13 14.5"
-            geometry="primitive:box; width:1; height:3; depth:3;" material="color:blue"></a-entity>
+            gltf-model="#frame_4" rotation="0 90 0" scale="0.5 0.5 0.5"></a-entity>
             <a-entity pickup="objVal:3;" dynamic-body class="interactive" position="-7 13 -16"
-            geometry="primitive:box; width:1; height:3; depth:3;" material="color:yellow"></a-entity>
+            gltf-model="#frame_5"  rotation="0 90 0" scale="0.5 0.5 0.5"></a-entity>
             <!-- Paintings Hooks -->  
             <a-entity id="placement1" position="-27 19 12" geometry="primitive:cylinder; radius:0.3; height:0.5;"
             material="color:black"></a-entity>
