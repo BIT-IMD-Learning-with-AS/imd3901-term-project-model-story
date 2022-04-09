@@ -22,8 +22,8 @@ AFRAME.registerComponent('game', {
       {
         //end game state
         console.log('GAME OVER');
-        textEl = document.querySelector('#welcome-text');
-        buttonEl = document.querySelector('#user-gesture-button');
+        const textEl = document.querySelector('#welcome-text');
+        const buttonEl = document.querySelector('#user-gesture-button');
         //messy code, but the transitions work.
         if (round == 0)
         {
