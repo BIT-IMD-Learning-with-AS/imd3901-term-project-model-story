@@ -476,11 +476,27 @@
 
             <!-- apartment layout -->
 
-            <a-entity id="floor" position="0 10.0 0" geometry="primitive: box; depth: 20.0; width:20.0; height:1.0;"
-                material="color:rgb(200, 200, 200);" static-body></a-entity>
+            <a-entity id="floor" position="0 10.0 0" geometry="primitive: box; depth: 55.0; width:55.0; height:1.0;"
+                material="color:rgb(200, 200, 200); transparent: true; opacity: 0.0;" static-body></a-entity>
 
             <a-entity id="apartment_build" position="-0.1 10 0" scale="19.8 19.8 19.8" gltf-model="#apartment_model"
                 shadow static-body></a-entity>
+
+
+            <!-- Paintings -->
+            <a-entity pickup="objVal:1;" dynamic-body class="interactive" position="-12 15 17"
+            geometry="primitive:box; width:1; height:3; depth:3;" material="color:red"></a-entity>
+            <a-entity pickup="objVal:2;" dynamic-body class="interactive" position="25 13 14.5"
+            geometry="primitive:box; width:1; height:3; depth:3;" material="color:blue"></a-entity>
+            <a-entity pickup="objVal:3;" dynamic-body class="interactive" position="-7 13 -16"
+            geometry="primitive:box; width:1; height:3; depth:3;" material="color:yellow"></a-entity>
+            <!-- Paintings Hooks -->  
+            <a-entity id="placement1" position="-27 19 12" geometry="primitive:cylinder; radius:0.3; height:0.5;"
+            material="color:black"></a-entity>
+            <a-entity id="placement2" position="-27 23 14" geometry="primitive:cylinder; radius:0.3; height:0.5;"
+            material="color:black"></a-entity>
+            <a-entity id="placement3" position="-27 20 18" geometry="primitive:cylinder; radius:0.3; height:0.5;"
+            material="color:black"></a-entity>
 
             <!--Environmental effect testing button-->
             <a-entity id="environment_button" position="5 10.2 10">
