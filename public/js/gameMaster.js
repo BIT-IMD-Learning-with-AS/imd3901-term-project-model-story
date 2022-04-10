@@ -14,7 +14,6 @@ AFRAME.registerComponent('game', {
     const CONTEXT_AF = this;
 
     var puzzleComplete = 0;
-    var round = 0;
     const textEl = document.querySelector('#welcome-text');
     const buttonEl = document.querySelector('#user-gesture-button');
 
@@ -36,7 +35,6 @@ AFRAME.registerComponent('game', {
       document.getElementById('good-sound-fx').components.sound.playSound();
 
       //UPDATE TEXT
-      puzzleComplete = 5;
       el.emit('checkWin');
 
       const walls = document.querySelectorAll(".star-walls");
@@ -49,7 +47,7 @@ AFRAME.registerComponent('game', {
 
     CONTEXT_AF.el.addEventListener('checkWin', function() {
       console.log('CHECKING WIN...');
-      if (puzzleComplete == 5)
+      if (puzzleComplete == 4)
       {
         //start credits
         console.log('GAME OVER');
@@ -187,7 +185,7 @@ AFRAME.registerComponent('game', {
       else {
         puzzleComplete ++;
         const currentText = document.getElementById("puzzle-text");
-        currentText.setAttribute('text', 'value', 'Puzzles: ' + puzzleComplete + '/5');
+        currentText.setAttribute('text', 'value', 'Puzzles: ' + puzzleComplete + '/4');
       }
     });
 
