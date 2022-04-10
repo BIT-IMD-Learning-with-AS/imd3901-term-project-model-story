@@ -10,6 +10,7 @@ AFRAME.registerComponent('pickup', {
         //called when program starts
         //only called once AFRAME is built
 
+        const gm = document.getElementById('game');
         const CONTEXT_AF        = this; // 'this' is this component
         CONTEXT_AF.camera       = document.querySelector('#camera');
         CONTEXT_AF.scene        = document.querySelector('#scene');
@@ -48,6 +49,7 @@ AFRAME.registerComponent('pickup', {
 
                     //Set Position to Placement
                     clone.setAttribute('position', {x: CONTEXT_AF.placement1.object3D.position.x, y: CONTEXT_AF.placement1.object3D.position.y, z: CONTEXT_AF.placement1.object3D.position.z});
+                    gm.emit('frame');
                 }
                 else if(this.getAttribute("pickup").objVal == 2 && Math.abs(objPosX - placePos2X) < reachDist && Math.abs(objPosZ - placePos2Z) < reachDist){
                     //If Object 2 and near Placement
@@ -60,6 +62,7 @@ AFRAME.registerComponent('pickup', {
 
                     //Set Position to Placement
                     clone.setAttribute('position', {x: CONTEXT_AF.placement2.object3D.position.x, y: CONTEXT_AF.placement2.object3D.position.y, z: CONTEXT_AF.placement2.object3D.position.z});
+                    gm.emit('frame');
                 }
                 else if(this.getAttribute("pickup").objVal == 3 && Math.abs(objPosX - placePos3X) < reachDist && Math.abs(objPosZ - placePos3Z) < reachDist){
                     //If Object 3 and near Placement
@@ -72,6 +75,7 @@ AFRAME.registerComponent('pickup', {
 
                     //Set Position to Placement
                     clone.setAttribute('position', {x: CONTEXT_AF.placement3.object3D.position.x, y: CONTEXT_AF.placement3.object3D.position.y, z: CONTEXT_AF.placement3.object3D.position.z});
+                    gm.emit('frame');
                 }
                 else{
                     //Drop
@@ -83,7 +87,7 @@ AFRAME.registerComponent('pickup', {
                     this.parentNode.removeChild(this);
 
                     //Set Position to camera
-                    clone.setAttribute('position', {x: CONTEXT_AF.camera.object3D.position.x, z: CONTEXT_AF.camera.object3D.position.z});
+                    clone.setAttribute('position', {x: CONTEXT_AF.camera.object3D.position.x + 3, z: CONTEXT_AF.camera.object3D.position.z});
                     
                     //Not sure if everything is going to have physics. I assume it will if its an interactable element.
                     //dynamic-body needs to be re-added

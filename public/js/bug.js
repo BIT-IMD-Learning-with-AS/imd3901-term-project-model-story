@@ -5,25 +5,33 @@ AFRAME.registerComponent('bug', {
     },
     init : function () {
         var found = false;
+        var day = true;
         const CONTEXT_AF = this;
+        const gm = document.getElementById('game');
+        const clock = document.getElementById('clock');
         CONTEXT_AF.el.object3D.visible = false;
 
         CONTEXT_AF.el.addEventListener('click', function() {
-            if (found === false) {
-                found = true;
-                context.el.emit('foundBug', '', true);
 
+            if (found == false) {
+                found = true;
+                gm.emit('foundBug');
+                CONTEXT_AF.el.object3D.visible = false;
             }
         });
 
-        CONTEXT_AF.el.addEventListener('day', function(){
-            CONTEXT_AF.el.object3D.visible = false;
-            console.log('Hear you');
+        clock.addEventListener('click', function(){
+            if (day){
+                if (!found){
+                    CONTEXT_AF.el.object3D.visible = true;
+                }
+                day = false;
+            }
+            else{
+                CONTEXT_AF.el.object3D.visible = false;
+                day = true;
+            }
         })
 
-        CONTEXT_AF.el.addEventListener('night', function(){
-            CONTEXT_AF.el.object3D.visible = true;
-        })
-   
     }
 });
