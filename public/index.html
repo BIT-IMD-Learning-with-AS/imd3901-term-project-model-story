@@ -190,6 +190,12 @@
                 src="assets/models/ALLROOMS/wateringCan.gltf"></a-asset-item>
             <a-asset-item id="clock_model" response-type="arraybuffer"
                 src="assets/models/ALLROOMS/clock.gltf"></a-asset-item>
+            <a-asset-item id="lamp1_model" response-type="arraybuffer"
+                src="assets/models/ALLROOMS/lamp.gltf"></a-asset-item>
+            <a-asset-item id="lamp2_model" response-type="arraybuffer"
+                src="assets/models/ALLROOMS/lampTall.gltf"></a-asset-item>
+            <a-asset-item id="lamp3_model" response-type="arraybuffer"
+                src="assets/models/ALLROOMS/lampChandelier.gltf"></a-asset-item>
 
             <!-- frames -->
 
@@ -682,11 +688,11 @@
             <a-entity pickup="objVal:3;" dynamic-body class="interactive" position="-7 13 -16" gltf-model="#frame_5"
                 rotation="0 90 0" scale="0.5 0.5 0.5"></a-entity>
             <!-- Paintings Hooks -->
-            <a-entity id="placement1" position="-27 19 12" geometry="primitive:cylinder; radius:0.3; height:0.5;"
+            <a-entity id="placement1" position="-27 19 12" geometry="primitive:cylinder; radius:0.1; height:0.5;"
                 material="color:black"></a-entity>
-            <a-entity id="placement2" position="-27 23 14" geometry="primitive:cylinder; radius:0.3; height:0.5;"
+            <a-entity id="placement2" position="-27 23 14" geometry="primitive:cylinder; radius:0.1; height:0.5;"
                 material="color:black"></a-entity>
-            <a-entity id="placement3" position="-27 20 18" geometry="primitive:cylinder; radius:0.3; height:0.5;"
+            <a-entity id="placement3" position="-27 20 18" geometry="primitive:cylinder; radius:0.1; height:0.5;"
                 material="color:black"></a-entity>
 
             <!--Environmental effect testing button
@@ -823,6 +829,14 @@
                 shadow static-body></a-entity>
 
 
+            <!-- Lights -->
+            <a-entity position="-17 16 -19" scale="0.7 0.7 0.7" rotation="0 0 0" gltf-model="#lamp1_model"
+                shadow static-body></a-entity>
+            <a-entity position="24 11 19" scale="0.7 0.7 0.7" rotation="0 0 0" gltf-model="#lamp2_model"
+                shadow static-body></a-entity>
+            <a-entity position="20 29.5 -15" scale="0.7 0.7 0.7" rotation="0 90 0" gltf-model="#lamp3_model"
+                shadow static-body></a-entity>
+
             <!-- Collision Testing and Physics Testing
             <a-box color = "#AA0000" position = "-3 14 -4"
             dynamic-body ></a-box>
@@ -871,37 +885,47 @@
             </a-entity>
 
             <!--Lights-->
-            <a-entity id="l1" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="15 18 -10">
+            <a-entity id="l1" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="20 20 -15">
             </a-entity>
-            <a-entity id="ls1" class="button interactive" position="15 20 -1.5"
+            <a-entity id="ls1" position="15 20 -2" class="button interactive" scale="0.5 0.5 0.5" rotation="0 90 0" gltf-model="#lightSwitch_model" shadow
+                static-body animation__mouseclick="startEvents:click; dur:300;" ls1></a-entity>
+            
+            <!--old light-->
+            <!--<a-entity id="ls1" class="button interactive" position="15 20 -1.5"
                 geometry="primitive: box; width:1.0; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
                 animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
                 animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
-                animation__mouseclick="startEvents:click; dur:300;" ls1></a-entity>
+                animation__mouseclick="startEvents:click; dur:300;" ls1></a-entity>-->
 
-            <a-entity id="l2" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="-15 18 -10">
+            <a-entity id="l2" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="-17 19 -18">
             </a-entity>
-            <a-entity id="ls2" class="button interactive" position="-12 20 -8.5"
+            <a-entity id="ls2" position="-13 20 -9" class="button interactive" scale="0.5 0.5 0.5" rotation="0 90 0" gltf-model="#lightSwitch_model" shadow
+                static-body animation__mouseclick="startEvents:click; dur:300;" ls2></a-entity>
+            <!--<a-entity id="ls2" class="button interactive" position="-12 20 -8.5"
                 geometry="primitive: box; width:1.0; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
                 animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
                 animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
-                animation__mouseclick="startEvents:click; dur:300;" ls2></a-entity>
+                animation__mouseclick="startEvents:click; dur:300;" ls2></a-entity>-->
 
             <a-entity id="l3" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="15 18 18">
             </a-entity>
-            <a-entity id="ls3" class="button interactive" position="25 20 15"
+            <a-entity id="ls3" position="26 20 15" class="button interactive" scale="0.5 0.5 0.5" rotation="0 180 0" gltf-model="#lightSwitch_model" shadow
+                static-body animation__mouseclick="startEvents:click; dur:300;" ls3></a-entity>
+            <!--<a-entity id="ls3" class="button interactive" position="25 20 15"
                 geometry="primitive: box; width:1.0; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
                 animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
                 animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
-                animation__mouseclick="startEvents:click; dur:300;" ls3></a-entity>
+                animation__mouseclick="startEvents:click; dur:300;" ls3></a-entity>-->
 
             <a-entity id="l4" light="type: point; color: #FF0; distance: 20.0; intensity: 2.0" position="-15 18 8.0">
             </a-entity>
-            <a-entity id="ls4" class="button interactive" position="-0.95 20 13"
+            <a-entity id="ls4" position="-1.5 20 13" class="button interactive" scale="0.5 0.5 0.5" rotation="0 180 0" gltf-model="#lightSwitch_model" shadow
+                static-body animation__mouseclick="startEvents:click; dur:300;" ls4></a-entity>
+            <!--<a-entity id="ls4" class="button interactive" position="-0.95 20 13"
                 geometry="primitive: box; width:0.8; height:1.5; depth:1.0;" material="color:rgb(200, 200, 200);"
                 animation__mouseenter="property:material.color; type:color; to:rgb(240, 240, 240); startEvents:mouseenter; dur:200;"
                 animation__mouseleave="property:material.color; type:color; to:rgb(200, 200, 200); startEvents:mouseleave; dur:200;"
-                animation__mouseclick="startEvents:click; dur:300;" ls4></a-entity>
+                animation__mouseclick="startEvents:click; dur:300;" ls4></a-entity>-->
 
             <!--Teleporting-->
 
@@ -1019,19 +1043,19 @@
 
             <!--kitchen plant-->
 
-            <a-entity position='12.5, 16, 1' growth="objVal:6;"
+            <a-entity position='13, 15.8, 1' growth="objVal:6;"
                 geometry="primitive: box; height: 3; width: 3; depth: 3;" material="transparent: true; opacity: 0.0;"
                 class="button interactive">
                 <a-entity id="plant07-01" class='plant02' position='0, 0, 0' scale="70 70 70" gltf-model="#plant02_01">
                 </a-entity>
             </a-entity>
-            <a-entity id="plant07-02" class='plant02' position='12.5, 16, 1' scale="70 70 70" gltf-model="#plant02_02"
+            <a-entity id="plant07-02" class='plant02' position='13, 15.5, 1' scale="70 70 70" gltf-model="#plant02_02"
                 visible="false"></a-entity>
-            <a-entity id="plant07-03" class='plant02' position='12.5, 16, 1' scale="70 70 70" gltf-model="#plant02_03"
+            <a-entity id="plant07-03" class='plant02' position='13, 15.5, 1' scale="70 70 70" gltf-model="#plant02_03"
                 visible="false"></a-entity>
-            <a-entity id="plant07-04" class='plant02' position='12.5, 16, 1' scale="70 70 70" gltf-model="#plant02_04"
+            <a-entity id="plant07-04" class='plant02' position='13, 15.5, 1' scale="70 70 70" gltf-model="#plant02_04"
                 visible="false"></a-entity>
-            <a-entity id="plant07-05" class='plant02' position='12.5, 16, 1' scale="70 70 70" gltf-model="#plant02_05"
+            <a-entity id="plant07-05" class='plant02' position='13, 15.5, 1' scale="70 70 70" gltf-model="#plant02_05"
                 visible="false"></a-entity>
 
             <!--Living Room plant-->
