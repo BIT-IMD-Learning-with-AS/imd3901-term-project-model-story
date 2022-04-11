@@ -144,7 +144,7 @@ AFRAME.registerComponent('game', {
 
     CONTEXT_AF.el.addEventListener('checkWin', function() {
       console.log('CHECKING WIN...');
-      if (puzzleComplete == 4)
+      if (puzzleComplete >= 3)
       {
         //start credits
         console.log('GAME OVER');
