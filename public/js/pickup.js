@@ -48,7 +48,7 @@ AFRAME.registerComponent('pickup', {
                     this.parentNode.removeChild(this);
 
                     //Set Position to Placement
-                    clone.setAttribute('position', {x: CONTEXT_AF.placement1.object3D.position.x, y: CONTEXT_AF.placement1.object3D.position.y, z: CONTEXT_AF.placement1.object3D.position.z});
+                    clone.setAttribute('position', {x: CONTEXT_AF.placement1.object3D.position.x + 1, y: CONTEXT_AF.placement1.object3D.position.y, z: CONTEXT_AF.placement1.object3D.position.z});
                     gm.emit('frame');
                 }
                 else if(this.getAttribute("pickup").objVal == 2 && Math.abs(objPosX - placePos2X) < reachDist && Math.abs(objPosZ - placePos2Z) < reachDist){
@@ -61,7 +61,7 @@ AFRAME.registerComponent('pickup', {
                     this.parentNode.removeChild(this);
 
                     //Set Position to Placement
-                    clone.setAttribute('position', {x: CONTEXT_AF.placement2.object3D.position.x, y: CONTEXT_AF.placement2.object3D.position.y, z: CONTEXT_AF.placement2.object3D.position.z});
+                    clone.setAttribute('position', {x: CONTEXT_AF.placement2.object3D.position.x + 1, y: CONTEXT_AF.placement2.object3D.position.y, z: CONTEXT_AF.placement2.object3D.position.z});
                     gm.emit('frame');
                 }
                 else if(this.getAttribute("pickup").objVal == 3 && Math.abs(objPosX - placePos3X) < reachDist && Math.abs(objPosZ - placePos3Z) < reachDist){
@@ -74,7 +74,7 @@ AFRAME.registerComponent('pickup', {
                     this.parentNode.removeChild(this);
 
                     //Set Position to Placement
-                    clone.setAttribute('position', {x: CONTEXT_AF.placement3.object3D.position.x, y: CONTEXT_AF.placement3.object3D.position.y, z: CONTEXT_AF.placement3.object3D.position.z});
+                    clone.setAttribute('position', {x: CONTEXT_AF.placement3.object3D.position.x + 1, y: CONTEXT_AF.placement3.object3D.position.y, z: CONTEXT_AF.placement3.object3D.position.z});
                     gm.emit('frame');
                 }
                 else{

@@ -299,7 +299,7 @@ AFRAME.registerComponent('start-experience', {
 });
 //function called from user-gesture click.
 //THIS IS THE INTRODUCTION
-var round = 0;
+var round = 0; //Switch to 0
 function startExperience() {
   const textEl = document.querySelector('#welcome-text');
   const buttonEl = document.querySelector('#user-gesture-button');

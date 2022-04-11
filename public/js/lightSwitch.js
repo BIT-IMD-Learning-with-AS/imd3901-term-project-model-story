@@ -16,11 +16,13 @@ AFRAME.registerComponent('ls1', {
                 l.setAttribute('light', "intensity: 0.0;");
                 on = false;
                 gm.emit('lightOff');
+                this.setAttribute('rotation', '180 90 0')
             }
             else{
                 l.setAttribute('light', "intensity: 2.0;");
                 on = true;
                 gm.emit('lightOn');
+                this.setAttribute('rotation', '0 90 0')
             }
         });
 
@@ -42,11 +44,13 @@ AFRAME.registerComponent('ls2', {
                 l.setAttribute('light', "intensity: 0.0;");
                 on = false;
                 gm.emit('lightOff');
+                this.setAttribute('rotation', '180 90 0')
             }
             else{
                 l.setAttribute('light', "intensity: 2.0;");
                 on = true;
                 gm.emit('lightOn');
+                this.setAttribute('rotation', '0 90 0')
             }
         });
 
@@ -68,11 +72,13 @@ AFRAME.registerComponent('ls3', {
                 l.setAttribute('light', "intensity: 0.0;");
                 on = false;
                 gm.emit('lightOff');
+                this.setAttribute('rotation', '180 180 0')
             }
             else{
                 l.setAttribute('light', "intensity: 2.0;");
                 on = true;
                 gm.emit('lightOn');
+                this.setAttribute('rotation', '0 180 0')
             }
         });
 
@@ -94,11 +100,13 @@ AFRAME.registerComponent('ls4', {
                 l.setAttribute('light', "intensity: 0.0;");
                 on = false;
                 gm.emit('lightOff', null, true);
+                this.setAttribute('rotation', '180 180 0')
             }
             else{
                 l.setAttribute('light', "intensity: 2.0;");
                 on = true;
                 gm.emit('lightOn', null, true);
+                this.setAttribute('rotation', '0 180 0')
             }
         });
 
