@@ -188,6 +188,8 @@
                 src="assets/models/ALLROOMS/lightSwitch.gltf"></a-asset-item>
             <a-asset-item id="wateringCan_model" response-type="arraybuffer"
                 src="assets/models/ALLROOMS/wateringCan.gltf"></a-asset-item>
+            <a-asset-item id="clock_model" response-type="arraybuffer"
+                src="assets/models/ALLROOMS/clock.gltf"></a-asset-item>
 
             <!-- frames -->
 
@@ -838,11 +840,12 @@
 
             <!--Making a clock to toggle Day/Night-->
             <a-entity id="clock" class="button interactive" position="0 19 -5"
-                geometry="primitive:cylinder; radius:2; height:1;" rotation="0, 0, 90" material="color:white;"
+                geometry="primitive:cylinder; radius:2; height:1;" rotation="0, 0, 90" material="color:white; transparent: true; opacity: 0.0;"
                 time-effect sound="src:#light1_sfx; on:click;"
                 animation__mouseenter="property:material.color; type:color; to:rgb(128, 128, 128); startEvents:mouseenter; dur:200;"
                 animation__mouseleave="property:material.color; type:color; to:rgb(255, 255, 255); startEvents:mouseleave; dur:200;"
                 animation__mouseclick="startEvents:click; dur:300;">
+                <a-entity gltf-model = "#clock_model" rotation="90, 0, 0"></a-entity>
             </a-entity>
 
             <!--cricket puzzle-->
