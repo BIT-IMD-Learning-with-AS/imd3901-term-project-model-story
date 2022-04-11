@@ -6,7 +6,8 @@ Our team will be focusing on creating a Mother Earth VR Mural under the guidance
 More info to come.
 
 ## How to Run This Project ##
-Instruction incoming
+Visit https://missing-piece.glitch.me
+or download the project and in terminal run "node .\app.js"
 
 ## Team Members and Roles ##
 
